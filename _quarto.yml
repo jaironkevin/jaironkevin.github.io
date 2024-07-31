@@ -1,0 +1,44 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "*.md"
+
+website:
+  back-to-top-navigation: true
+  favicon: favicon.png
+  title: "Jairon Ojeda"
+  site-url: "https://mariecurie.com"
+  navbar:
+    background: "#536878"
+    left:
+      - href: blog/index.qmd
+        text: Blog
+      - href: publications/index.qmd
+        text: Publicaciones
+      - href: software/index.qmd
+        text: Software
+      - href: portafolio/index.qmd
+        text: Portafolio
+      - href: servicios/index.qmd
+        text: Servicios
+  page-footer:
+    left: "Website made with Quarto, 2024 by Jairon Ojeda"
+    right:
+      - icon: github
+        href: https://github.com/mariecurie
+      - icon: linkedin
+        href: https://www.linkedin.com/in/tu-perfil
+    background: "#536878"
+
+
+date-format: "D MMMM YYYY"
+
+format:
+  html:
+    theme: tango
+    css: styles.css
+    toc: true
+    html-math-method: katex
+    include-in-header:
+      file: header.html

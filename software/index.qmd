@@ -1,0 +1,3 @@
+# Funciones de automatización
+
+Aquí presentare funciones personalizadas en R o Python o posibles librerías que se puedan ir creando.

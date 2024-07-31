@@ -8,7 +8,7 @@ website:
   back-to-top-navigation: true
   favicon: favicon.png
   title: "Jairon Ojeda"
-  site-url: "https://mariecurie.com"
+  site-url: "https://jaironkevin.github.io/Jairon-Ojeda.github.io/"
   navbar:
     background: "#536878"
     left:
@@ -42,3 +42,5 @@ format:
     html-math-method: katex
     include-in-header:
       file: header.html
+execute:
+  freeze: auto

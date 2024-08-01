@@ -1,0 +1,20 @@
+[
+  {
+    "listing": "/portafolio/index.html",
+    "items": [
+      "/portafolio/1_por_Pen.html"
+    ]
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/1_Estadisticadatascience.html"
+    ]
+  },
+  {
+    "listing": "/publications/index.html",
+    "items": [
+      "/publications/uranium.html"
+    ]
+  }
+]

@@ -1,9 +1,9 @@
-/* =Typography
+/* =Typography Tamaño General de la Fuente
 -----------------------------------------------------------------------------*/
 body {
   font-family: 'Merriweather', Georgia, 'Times New Roman', Times, Serif;
-  font-size: 0.85em;
-  line-height: 1.5em;
+  font-size: 0.95em; /* Cambia 0.85em por 1em o el valor que desees */
+  line-height: 1.5em; 
   background-color: #faf8f8;
 }
 
@@ -309,4 +309,19 @@ div.quarto-about-trestles .about-entity .about-link:hover {
 
 #mlb2-4240669.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody, #mlb2-4240669.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
   padding: 0px !important;
+}
+
+
+/* Justificar el texto del contenido */
+p {
+  text-align: justify;
+}
+
+/* Fondo específico para la página de entrada */
+.home-page {
+  background-image: url("/fondo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff; /* Cambia el color del texto si es necesario */
 }

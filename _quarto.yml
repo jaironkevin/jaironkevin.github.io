@@ -26,11 +26,10 @@ website:
     left: "Website made with Quarto, 2024 by Jairon Ojeda"
     right:
       - icon: github
-        href: https://github.com/mariecurie
+        href: https://github.com/jaironkevin
       - icon: linkedin
-        href: https://www.linkedin.com/in/tu-perfil
+        href: www.linkedin.com/in/jairon-ojeda
     background: "#536878"
-
 
 date-format: "D MMMM YYYY"
 
@@ -38,6 +37,7 @@ format:
   html:
     theme: tango
     css: styles.css
+    code-copy: true
     toc: true
     html-math-method: katex
     include-in-header:

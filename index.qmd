@@ -1,0 +1,28 @@
+---
+about:
+  template: trestles
+  image: Jairo.png
+  links:
+    - icon: github
+      text: github
+      href: https://github.com/jaironkevin
+    - icon: envelope
+      text: mail
+      href: mailto:jairokevinojedas1999@gmail.com
+    - icon: linkedin
+      text: linkedin
+      href: www.linkedin.com/in/jairon-ojeda
+    - text: CV
+      href: D:/MI WEB SITE PERSONAL/CV/CV_OJEDA_SILUPU_2024.pdf
+---
+
+**Jairon Ojeda. S**<br>
+Bachiller en estadísta<br>
+Por la Universidad Nacional de Piura<br>
+Piura, Perú
+
+Exploro y comparto conocimientos sobre estadística y análisis de datos. Aquí encontrarás insights en mi Blog, acceso a mis Publicaciones académicas, herramientas útiles en Software, oportunidades de Negociación en proyectos estadísticos, recursos para Enseñar estadística, y más.
+
+> *"Transformando datos en conocimientos, y conocimientos en decisiones."*
+
+

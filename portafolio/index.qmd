@@ -1,0 +1,15 @@
+---
+title: "Mi Portafolio"
+description: Bienvenido a mi portafolio profesional, aquí encontrarás una visión general de mis habilidades y experiencia en análisis de datos y estadística, destacando casos reales y prácticos en R y Python.
+listing:
+  contents: .
+  sort: "date desc"
+  type: grid
+  categories: numbered
+  sort-ui: true
+  filter-ui: true
+page-layout: full
+---
+
+
+

@@ -1,0 +1,18 @@
+---
+listing:
+  contents: .
+  template: pubs.ejs
+  sort: "date desc"
+  categories: false
+  sort-ui: [date, title, author]
+  filter-ui: [date, title, author, details]
+  date-format: "YYYY"
+  page-size: 50
+sidebar: false
+page-layout: full
+title-block-banner: false
+---
+
+# Publicaciones
+
+Aquí se podrán observar publicaciones como tesis, artículos, entre otros, que posiblemente se vayan publicando con el tiempo. Por ahora queda pendiente.... 

@@ -17,4 +17,3 @@ StripTrailingWhitespace: Yes
 LineEndingConversion: Native
 
 UseNativePipeOperator: Yes
-

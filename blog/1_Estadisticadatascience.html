@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jairon K Ojeda">
+
+<title>El Rol Fundamental de los Estadísticos – Jairon Ojeda</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/0fba9333d8.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Jairon Ojeda</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../blog/index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../publications/index.html"> 
+<span class="menu-text">Publicaciones</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../software/index.html"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../portafolio/index.html"> 
+<span class="menu-text">Portafolio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../servicios/index.html"> 
+<span class="menu-text">Servicios</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#la-estadística-en-acción-en-los-distintos-sectores" id="toc-la-estadística-en-acción-en-los-distintos-sectores" class="nav-link active" data-scroll-target="#la-estadística-en-acción-en-los-distintos-sectores">La Estadística en acción en los distintos Sectores</a>
+  <ul class="collapse">
+  <li><a href="#salud-y-medicina" id="toc-salud-y-medicina" class="nav-link" data-scroll-target="#salud-y-medicina">Salud y Medicina</a></li>
+  <li><a href="#economía-y-finanzas" id="toc-economía-y-finanzas" class="nav-link" data-scroll-target="#economía-y-finanzas">Economía y Finanzas</a></li>
+  <li><a href="#marketing-y-publicidad" id="toc-marketing-y-publicidad" class="nav-link" data-scroll-target="#marketing-y-publicidad">Marketing y Publicidad</a></li>
+  <li><a href="#ciencias-sociales" id="toc-ciencias-sociales" class="nav-link" data-scroll-target="#ciencias-sociales">Ciencias Sociales</a></li>
+  <li><a href="#medio-ambiente" id="toc-medio-ambiente" class="nav-link" data-scroll-target="#medio-ambiente">Medio Ambiente</a></li>
+  <li><a href="#agricultura" id="toc-agricultura" class="nav-link" data-scroll-target="#agricultura">Agricultura</a></li>
+  <li><a href="#política-y-gobierno" id="toc-política-y-gobierno" class="nav-link" data-scroll-target="#política-y-gobierno">Política y Gobierno</a></li>
+  <li><a href="#seguridad-y-criminología" id="toc-seguridad-y-criminología" class="nav-link" data-scroll-target="#seguridad-y-criminología">Seguridad y Criminología</a></li>
+  <li><a href="#energía-y-recursos-naturales" id="toc-energía-y-recursos-naturales" class="nav-link" data-scroll-target="#energía-y-recursos-naturales">Energía y Recursos Naturales</a></li>
+  <li><a href="#psicología-y-comportamiento-humano" id="toc-psicología-y-comportamiento-humano" class="nav-link" data-scroll-target="#psicología-y-comportamiento-humano">Psicología y Comportamiento Humano</a></li>
+  <li><a href="#demografía-y-estudios-poblacionales" id="toc-demografía-y-estudios-poblacionales" class="nav-link" data-scroll-target="#demografía-y-estudios-poblacionales">Demografía y Estudios Poblacionales</a></li>
+  <li><a href="#sector-inmobiliario" id="toc-sector-inmobiliario" class="nav-link" data-scroll-target="#sector-inmobiliario">Sector Inmobiliario</a></li>
+  <li><a href="#banca-y-seguros" id="toc-banca-y-seguros" class="nav-link" data-scroll-target="#banca-y-seguros">Banca y seguros</a></li>
+  </ul></li>
+  <li><a href="#desafíos-para-los-estadísticos-frente-al-mercado-laboral" id="toc-desafíos-para-los-estadísticos-frente-al-mercado-laboral" class="nav-link" data-scroll-target="#desafíos-para-los-estadísticos-frente-al-mercado-laboral">Desafíos para los Estadísticos frente al mercado laboral</a></li>
+  <li><a href="#ser-estadístico-es-ser-científico-de-datos" id="toc-ser-estadístico-es-ser-científico-de-datos" class="nav-link" data-scroll-target="#ser-estadístico-es-ser-científico-de-datos">¿Ser estadístico es ser científico de datos?</a></li>
+  <li><a href="#confusión-en-los-roles" id="toc-confusión-en-los-roles" class="nav-link" data-scroll-target="#confusión-en-los-roles">Confusión en los Roles</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">El Rol Fundamental de los Estadísticos</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Data Science</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jairon K Ojeda </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">31 julio 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>En el vasto universo del conocimiento, pocas disciplinas tienen la capacidad de influir en nuestras vidas de manera tan profunda y diversa como la estadística. Este campo, a menudo subestimado, es la piedra angular para construir una comprensión precisa y matizada del mundo que nos rodea.</p>
+<p>La estadística va más allá de las operaciones matemáticas básicas como sumar, restar, multiplicar o dividir; es la disciplina que revela la complejidad detrás de los números, pues nos permite interpretar y dar sentido a los datos recopilados a través de observaciones y experimentos, proporcionando un marco esencial para tomar decisiones fundamentadas en evidencia, alejadas de simples conjeturas.</p>
+<p>Para quienes aún no han tenido la oportunidad de explorar el mundo de la estadística, la invitación es clara: háganlo con curiosidad y pasión. La estadística no es simplemente una herramienta ni se reduce al uso de un software para generar resultados; es una forma de ver y comprender nuestro entorno. Esta disciplina desafía nuestras percepciones, enriquece nuestro conocimiento y fortalece nuestra capacidad para tomar decisiones, incluso se ha llegado a describir la profesión de estadístico como “la más sexy”, lo cual, sin duda, es algo positivo.</p>
+<section id="la-estadística-en-acción-en-los-distintos-sectores" class="level2">
+<h2 class="anchored" data-anchor-id="la-estadística-en-acción-en-los-distintos-sectores">La Estadística en acción en los distintos Sectores</h2>
+<p>ELa estadística es una herramienta polifacética, presente en casi todos los aspectos de la vida moderna. Desde la medicina hasta la economía, la educación, las ciencias sociales y el deporte, entre otros, su alcance es ilimitado. Gracias a su capacidad para analizar datos y extraer información valiosa, se ha convertido en un pilar fundamental para la toma de decisiones y la resolución de problemas en diversos campos, la estadística es, en esencia, una disciplina todo terreno que nos permite comprender mejor el mundo y optimizar procesos en cualquier sector. A continuación, se presentan una breve descripción de la estadística en acción en distintos sectores:</p>
+<section id="salud-y-medicina" class="level3">
+<h3 class="anchored" data-anchor-id="salud-y-medicina">Salud y Medicina</h3>
+<p>En salud y medicina, la estadística juega un papel fundamental al evaluar la eficacia de tratamientos a través de ensayos clínicos (p.&nbsp;ej., pruebas t para comparar grupos de pacientes) y modelos como la regresión de Cox para analizar la supervivencia. En la gestión de brotes, como el ébola, se utilizan modelos SIR para predecir la propagación y asignar recursos. La predicción de rehospitalizaciones, mediante regresión logística, permite identificar pacientes con alto riesgo, optimizando las intervenciones tempranas y reduciendo costos; además, estudios como el de Framingham usan análisis multivariable para identificar factores de riesgo de enfermedades crónicas, mientras que la simulación de Monte Carlo ayuda en la gestión hospitalaria, prediciendo la demanda de recursos como camas y personal. Es importante mencionar que esto solo es la punta del iceberg, pues existen innumerables aplicaciones en este campo.</p>
+</section>
+<section id="economía-y-finanzas" class="level3">
+<h3 class="anchored" data-anchor-id="economía-y-finanzas">Economía y Finanzas</h3>
+<p>En economía y finanzas, la estadística es esencial para el análisis de mercados, la gestión de riesgos y la toma de decisiones. Los modelos de series temporales, como ARIMA y GARCH, se usan para predecir precios de activos y volatilidad en el mercado bursátil. En la evaluación de riesgos crediticios, la regresión logística y los árboles de decisión permiten identificar la probabilidad de incumplimiento de pagos, además, los métodos de análisis de regresión y correlación se aplican para estudiar la relación entre variables económicas, como el impacto de las tasas de interés en la inflación. En inversiones, la simulación de Monte Carlo ayuda a modelar escenarios de rendimiento de portafolios, optimizando estrategias financieras.</p>
+</section>
+<section id="marketing-y-publicidad" class="level3">
+<h3 class="anchored" data-anchor-id="marketing-y-publicidad">Marketing y Publicidad</h3>
+<p>En marketing y publicidad, la estadística permite comprender el comportamiento del consumidor y optimizar estrategias de mercado. Mediante análisis de regresión y modelos de atribución, se identifica el impacto de diferentes canales publicitarios en las ventas, resolviendo el problema de asignar eficientemente los presupuestos de marketing. Los análisis de clusters y segmentación de mercado permiten agrupar consumidores con características similares, lo que facilita la creación de campañas personalizadas. Las pruebas A/B se utilizan para evaluar la efectividad de cambios en anuncios o páginas web, ayudando a maximizar las conversiones. Además, el análisis predictivo, como el modelo de propensión a la compra, estima la probabilidad de que un cliente realice una compra futura, permitiendo una toma de decisiones más informada.</p>
+</section>
+<section id="ciencias-sociales" class="level3">
+<h3 class="anchored" data-anchor-id="ciencias-sociales">Ciencias Sociales</h3>
+<p>En las ciencias sociales, la estadística es crucial para analizar y entender fenómenos complejos relacionados con el comportamiento humano y las estructuras sociales pues los métodos estadísticos permiten analizar encuestas y estudios de opinión pública para identificar tendencias y patrones en actitudes y comportamientos, por ejemplo, el análisis de regresión múltiple se utiliza para investigar la relación entre variables como el nivel educativo y los ingresos, ayudando a comprender cómo estos factores interactúan. Los modelos de análisis de conglomerados agrupan a los individuos en segmentos con características similares, facilitando el estudio de fenómenos como la pobreza o la movilidad social, además, el análisis de series temporales se aplica para examinar cambios en variables sociales a lo largo del tiempo, como el desempleo o las tasas de criminalidad. Estos enfoques estadísticos proporcionan una base sólida para desarrollar políticas públicas, intervenciones sociales y programas de bienestar, basados en datos empíricos y no en suposiciones.</p>
+</section>
+<section id="medio-ambiente" class="level3">
+<h3 class="anchored" data-anchor-id="medio-ambiente">Medio Ambiente</h3>
+<p>En el campo del medio ambiente, la estadística es esencial para abordar problemas complejos relacionados con la sostenibilidad y la gestión de recursos. Los modelos de regresión espacial permiten analizar la distribución de fenómenos ambientales, como la contaminación del aire o la deforestación, en función de factores geográficos. Los modelos de series temporales, como los modelos ARIMA y SARIMA, se utilizan para prever patrones en datos ambientales, como las variaciones estacionales en la calidad del agua o las temperaturas globales. En la gestión de recursos naturales, los modelos de simulación de Monte Carlo ayudan a evaluar la incertidumbre en los pronósticos de disponibilidad de recursos y la gestión de riesgos asociados con eventos extremos, como sequías o inundaciones. Además, el análisis de componentes principales (PCA) se emplea para reducir la dimensionalidad de grandes conjuntos de datos ambientales, identificando las variables más influyentes y facilitando la interpretación de los efectos del cambio climático. Estas técnicas estadísticas avanzadas proporcionan herramientas poderosas para diseñar políticas ambientales efectivas y para la investigación en sostenibilidad.</p>
+</section>
+<section id="agricultura" class="level3">
+<h3 class="anchored" data-anchor-id="agricultura">Agricultura</h3>
+<p>En agricultura, la estadística es clave para mejorar la producción y sostenibilidad de los cultivos. Los modelos de regresión y análisis multivariable se utilizan para estudiar el impacto de factores como el tipo de suelo, las condiciones climáticas y las prácticas de cultivo en el rendimiento de los cultivos. Las técnicas de diseño experimental, como los diseños de bloques aleatorios y los ensayos factoriales, permiten optimizar las prácticas agrícolas al evaluar la eficacia de diferentes tratamientos o técnicas en parcelas experimentales. Los modelos predictivos, como los modelos de series temporales y redes neuronales, se aplican para prever rendimientos futuros basándose en datos históricos y condiciones actuales, lo que ayuda a planificar mejor las cosechas y la gestión de recursos. Además, el análisis de componentes principales (PCA) se usa para identificar los factores más relevantes que afectan la producción agrícola, facilitando la toma de decisiones sobre qué variables ajustar para mejorar la eficiencia. Estas técnicas avanzadas permiten a los agricultores y gestores agrícolas tomar decisiones basadas en datos precisos, mejorando la productividad y sostenibilidad de las prácticas agrícolas.</p>
+</section>
+<section id="política-y-gobierno" class="level3">
+<h3 class="anchored" data-anchor-id="política-y-gobierno">Política y Gobierno</h3>
+<p>En el ámbito de la política y el gobierno, la estadística desempeña un papel fundamental en la formulación y evaluación de políticas públicas. Los modelos de regresión lineal y logística se utilizan para analizar los efectos de políticas económicas y sociales sobre variables clave, como el crecimiento económico y la equidad social. Las encuestas y estudios de opinión aplican técnicas de muestreo y análisis estadístico para capturar la percepción pública sobre temas políticos, facilitando la toma de decisiones informadas. Los modelos econométricos y series temporales permiten prever los impactos de cambios en políticas fiscales y monetarias, ayudando a diseñar estrategias efectivas para el manejo de la economía. Además, el análisis espacial se usa para examinar la distribución geográfica de variables como el desempleo o la pobreza, identificando áreas que requieren intervención específica. El análisis de redes proporciona información sobre las relaciones entre actores políticos y sociales, permitiendo comprender mejor las dinámicas de poder y colaboración. Estas técnicas estadísticas avanzadas permiten a los responsables de políticas y funcionarios gubernamentales tomar decisiones basadas en datos precisos, optimizando la eficacia de las políticas públicas y mejorando la gestión gubernamental.</p>
+</section>
+<section id="seguridad-y-criminología" class="level3">
+<h3 class="anchored" data-anchor-id="seguridad-y-criminología">Seguridad y Criminología</h3>
+<p>En el campo de la seguridad y la criminología, la estadística es crucial para entender y prevenir la criminalidad, así como para mejorar la eficacia de las estrategias de seguridad pública. Los modelos de regresión y análisis de series temporales se emplean para identificar patrones y tendencias en la delincuencia, como el aumento o disminución de crímenes en diferentes áreas y períodos. Modelos espaciales, como el análisis de patrones de delitos con funciones de densidad kernel, ayudan a mapear y visualizar la distribución geográfica de los crímenes, lo que permite a las fuerzas del orden identificar zonas de alta incidencia y asignar recursos de manera más efectiva. El análisis de redes sociales se utiliza para investigar y desmantelar estructuras criminales al examinar las conexiones entre individuos y grupos involucrados en actividades delictivas. Las técnicas de modelado predictivo, como el análisis de riesgo y los modelos de predicción de delitos, permiten anticipar la ocurrencia de crímenes y desarrollar estrategias preventivas basadas en datos históricos y variables socioeconómicas. Además, el análisis de supervivencia y los modelos de eventos ayudan a estudiar la duración de comportamientos delictivos y la reincidencia de delincuentes, proporcionando información valiosa para el diseño de programas de rehabilitación y reintegración. Estas técnicas estadísticas avanzadas proporcionan herramientas efectivas para mejorar la seguridad pública, reducir la criminalidad y optimizar la asignación de recursos en el ámbito de la criminología.</p>
+</section>
+<section id="energía-y-recursos-naturales" class="level3">
+<h3 class="anchored" data-anchor-id="energía-y-recursos-naturales">Energía y Recursos Naturales</h3>
+<p>En el sector de energía y recursos naturales, la estadística es esencial para optimizar la gestión y explotación de recursos. Los modelos de series temporales y modelos predictivos, como ARIMA y modelos de redes neuronales, se utilizan para prever la demanda y oferta de energía, así como para estimar la producción futura de recursos como el petróleo y el gas. Modelos de simulación de Monte Carlo ayudan a evaluar la incertidumbre en la producción y los precios, mientras que el análisis multivariante y modelos de regresión exploran las relaciones entre variables como las condiciones climáticas y la eficiencia energética. Los modelos de optimización permiten gestionar la distribución y uso de recursos naturales, maximizando la eficiencia y minimizando costos. Además, el análisis espacial y modelos de simulación se aplican para evaluar el impacto ambiental de la explotación de recursos y planificar el desarrollo sostenible. Estas técnicas estadísticas avanzadas proporcionan herramientas poderosas para una toma de decisiones informada, mejorando la gestión de recursos y promoviendo prácticas sostenibles en el sector energético.</p>
+</section>
+<section id="psicología-y-comportamiento-humano" class="level3">
+<h3 class="anchored" data-anchor-id="psicología-y-comportamiento-humano">Psicología y Comportamiento Humano</h3>
+<p>En psicología y comportamiento humano, la estadística es crucial para analizar y comprender fenómenos complejos relacionados con la mente y el comportamiento. Modelos de regresión lineal y logística se utilizan para investigar la relación entre variables psicológicas, como el impacto de factores ambientales y biológicos en trastornos mentales, las pruebas factoriales y análisis de conglomerados permiten identificar patrones en datos de encuestas y estudios de casos, facilitando la clasificación de diferentes tipos de trastornos y comportamientos. Modelos de ecuaciones estructurales se aplican para examinar las relaciones causales entre variables, como la influencia de la autoeficacia en el rendimiento académico. El análisis de series temporales se usa para estudiar la variabilidad en comportamientos a lo largo del tiempo, como en la monitorización de cambios en la ansiedad o la depresión, además, el análisis de redes ayuda a entender las interacciones entre diferentes variables psicológicas y sociales, proporcionando una visión más holística del comportamiento humano. Estas técnicas avanzadas permiten a los psicólogos desarrollar intervenciones basadas en datos precisos, mejorar la comprensión de los procesos mentales y diseñar estrategias efectivas para el tratamiento y la prevención de trastornos psicológicos.</p>
+</section>
+<section id="demografía-y-estudios-poblacionales" class="level3">
+<h3 class="anchored" data-anchor-id="demografía-y-estudios-poblacionales">Demografía y Estudios Poblacionales</h3>
+<p>En demografía y estudios poblacionales, la estadística es fundamental para analizar y prever tendencias en la estructura y dinámica de las poblaciones. Modelos de proyección demográfica, como los modelos de cohortes y los modelos de crecimiento exponencial, se utilizan para estimar futuros cambios en la población basados en tasas de natalidad, mortalidad y migración. El análisis de series temporales ayuda a identificar patrones históricos y estacionales en los datos poblacionales, permitiendo una mejor planificación de recursos y políticas públicas. Modelos de regresión multivariada y análisis espacial examinan las relaciones entre variables demográficas y socioeconómicas, como el impacto de la educación en el crecimiento poblacional o las diferencias regionales en la tasa de natalidad, adicional a ello, el análisis de componentes principales (PCA) se aplica para reducir la dimensionalidad de grandes conjuntos de datos poblacionales, facilitando la identificación de factores clave que afectan las tendencias demográficas.</p>
+</section>
+<section id="sector-inmobiliario" class="level3">
+<h3 class="anchored" data-anchor-id="sector-inmobiliario">Sector Inmobiliario</h3>
+<p>En el sector inmobiliario, la estadística juega un papel crucial en la evaluación de propiedades, la identificación de tendencias del mercado y la toma de decisiones de inversión. Modelos de regresión múltiple se utilizan para analizar cómo factores como la ubicación, el tamaño y las características de una propiedad influyen en su valor de mercado. Modelos de series temporales y análisis de tendencia permiten prever cambios en los precios de los bienes raíces y la demanda a lo largo del tiempo. Las técnicas de análisis espacial, como el análisis de densidad de kernel, ayudan a identificar zonas de alta demanda y valorar el impacto de las características del vecindario en los precios de las propiedades. Además, el análisis de cluster permite segmentar el mercado en grupos con características similares, facilitando la identificación de nichos de mercado y oportunidades de inversión. Modelos predictivos, como los modelos de aprendizaje automático, pueden prever la evolución del mercado inmobiliario basándose en datos históricos y actuales, optimizando las estrategias de inversión y la planificación del desarrollo urbano.</p>
+</section>
+<section id="banca-y-seguros" class="level3">
+<h3 class="anchored" data-anchor-id="banca-y-seguros">Banca y seguros</h3>
+<p>En banca y seguros, la estadística es esencial para la evaluación de riesgos, la fijación de precios y la gestión de carteras. Modelos de regresión logística y análisis de crédito se utilizan para evaluar la probabilidad de incumplimiento de los prestatarios y ajustar las tasas de interés en función del riesgo asociado. Los modelos de valor en riesgo (VaR) y modelos de simulación de Monte Carlo ayudan a medir y gestionar los riesgos financieros en carteras de inversión, permitiendo a las instituciones bancarias y aseguradoras anticipar pérdidas potenciales y protegerse contra eventos adversos. El credit score o puntaje crediticio es una herramienta clave para evaluar la solvencia de los prestatarios y ajustar las condiciones de crédito en consecuencia. La estadística y el aprendizaje automático juegan un papel crucial en la determinación y mejora de estos puntajes. Modelos de regresión logística y análisis de crédito han sido tradicionalmente utilizados para calcular el riesgo crediticio, evaluando variables como el historial de pagos, la cantidad de deuda y los ingresos del prestatario. Sin embargo, con el avance de la tecnología, técnicas más recientes como redes neuronales y máquinas de soporte vectorial (SVM) se están empleando para construir modelos predictivos más precisos. Estos enfoques utilizan grandes volúmenes de datos, incluidos datos alternativos como el comportamiento en redes sociales y el uso de teléfonos móviles, para mejorar la precisión en la predicción de incumplimientos. El análisis de clustering también se utiliza para segmentar a los prestatarios en grupos con características similares, permitiendo a las instituciones financieras personalizar sus estrategias de evaluación y gestión de riesgos, además, algoritmos de aprendizaje automático, como árboles de decisión y ensemble methods (por ejemplo, random forests), están ganando popularidad por su capacidad para manejar datos complejos y no lineales, ofreciendo una evaluación más robusta</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>“Los campos o sectores donde se puede involucrar la estadística es muy amplia, y los modelos o métodos estadísticos en cada campo también, dependiendo el objetivo que se desea conseguir, por lo tanto lo que se ha descrito solo es referencial”</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="desafíos-para-los-estadísticos-frente-al-mercado-laboral" class="level2">
+<h2 class="anchored" data-anchor-id="desafíos-para-los-estadísticos-frente-al-mercado-laboral">Desafíos para los Estadísticos frente al mercado laboral</h2>
+<p>La estadística, como ciencia que utiliza datos como materia prima, ha evolucionado significativamente en respuesta al crecimiento exponencial de la información. En el pasado, las empresas empleaban documentación manual para reportes e inventarios, pero hoy en día, la digitalización ha transformado este proceso. Las herramientas informáticas han facilitado el manejo de grandes volúmenes de datos, permitiendo realizar cálculos estadísticos de manera más eficiente. A pesar de la automatización, la estadística no se ha quedado atrás; ha integrado modelos avanzados en plataformas digitales, optimizando el análisis y asegurando la correcta aplicación de métodos siendo conscientes del cuando, como y porque usar cada método, como configurar o adaptar un determinado logaritmo de acuerdo a cada necesidad.</p>
+<p>No obstante, en la actualidad, muchos profesionales de otras disciplinas están adoptando roles que tradicionalmente correspondían a estadísticos, a menudo sin la formación adecuada. Rob J. Hyndman, estadístico australiano, señaló en un evento conjunto de la Sociedad de Estadística de Australia y otras organizaciones, que los estadísticos enfrentan una crisis existencial al ver cómo otros grupos, como los científicos informáticos, realizan análisis de datos. Hyndman expresó preocupación por la apropiación de su disciplina por parte de estos grupos, sugiriendo que los estadísticos son los más capacitados para el modelado de datos.</p>
+<p>Por otro lado, el creciente número de bootcamps y cursos que enseñan aplicaciones estadísticas sin proporcionar una sólida formación teórica ha dado lugar a la proliferación de profesionales poco calificados en el campo de la estadística. Como resultado, el mercado de trabajo para estadísticos se encuentra saturado con candidatos de otras carreras, que carecen de la profundidad necesaria. Es fundamental reconocer que la estadística no debe limitarse a la simple aplicación de modelos, sino que debe entenderse como una disciplina amplia que abarca el análisis de datos y la interpretación de la incertidumbre. Considerada de esta manera, la estadística sigue siendo una disciplina con un futuro prometedor y una relevancia significativa en el análisis de datos.</p>
+</section>
+<section id="ser-estadístico-es-ser-científico-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="ser-estadístico-es-ser-científico-de-datos">¿Ser estadístico es ser científico de datos?</h2>
+<p>Hay quienes se formulan la pregunta, “Ciencia de datos: ¿el fin de la estadística?” lo cual ha generado debate. Sin embargo, independientemente de la denominación—ya sea ciencia de datos, informática, análisis o cualquier otro término—el análisis de datos sigue siendo una aplicación fundamental de la estadística. A pesar de que algunos consideran que la estadística es una parte menor dentro del campo de la ciencia de datos, que incluso algunas universidades ofrecen programas de ciencia de datos con una inclusión superficial de cursos estadísticos, ser científico de datos implica un conjunto de habilidades más complejo y variado. De hecho, el perfil del científico de datos se subdivide en múltiples especializaciones, cada una con un enfoque y competencias particulares que van más allá de la aplicación de métodos estadísticos.</p>
+<p>En una primera perspectiva estrecha, para ser un científico de datos hay que saber mucho de estadística, matemáticas, informática, programación y disciplinas de aplicación, si eso es cierto, nunca existiría un científico de datos. En una segunda visión más amplia, todos ellos son científicos de datos, aunque con diferentes especializaciones, perspectivas y formaciones diferentes, sin embargo, la estadística sigue siendo la base que sostiene los cimientos de la ciencia de los datos, es decir es la ciencia detrás de los datos. Sin embargo, es mucho mejor adoptar una visión amplia e inclusiva, por ejemplo, un estadístico podría decir “soy un científico de datos porque hago análisis de datos e investigo la metodología del análisis de datos”, pero la forma en que lo expresaría mejor es que “soy un científico de datos con una perspectiva y una formación en estadística”, otros científicos de datos tendrán perspectivas y formaciones diferentes.</p>
+<div class="callout callout-style-simple callout-tip">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>En una operación de corazón, se requiere un equipo multidisciplinario que incluye al cardiólogo para la evaluación y preparación del paciente, al cirujano cardiovascular que realiza la operación, al anestesiólogo que administra la anestesia y supervisa las funciones vitales, y al perfusionista que maneja la máquina de circulación extracorpórea. Además, enfermeras especializadas en cirugía cardiovascular brindan cuidado durante y después del procedimiento, mientras que el radiólogo interpreta imágenes diagnósticas y, en algunos casos, un especialista en medicina interna gestiona otras condiciones médicas del paciente. Todos estos profesionales colaboran para asegurar una cirugía exitosa y una recuperación óptima; ahora si nos damos cuenta cada quien está dentro de su especialidad, como dice el dicho “zapatero a sus zapatos”, por lo tanto, también debemos adoptar una perspectiva de equipo en materia de ciencia de datos, dado que es una fusión interdisciplinaria.</p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-plot1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="1.1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:8cm">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Ciencia de datos
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Ninguno estadístico, informático, matemático, etc., puede abarcar de manera realista todo el campo que se muestra en <a href="#fig-plot1" class="quarto-xref">Figura&nbsp;1</a>, por lo que siempre es bueno especializarse en determinados problemas y técnicas. Es una locura pensar que un médico debe saberlo todo, y es igual de loco pensar que un científico de datos debe ser un experto en estadística, matemáticas, informática, programación, disciplinas de aplicación, etc. En cambio, se necesita equipos de científicos de datos con diferentes habilidades, cada uno consciente de los límites de su experiencia y de a quién llamar para pedir ayuda cuando sea necesario, no seamos demasiado sectarios en nuestras disciplinas, pensando que todo aquel que no haya sido formado de la misma manera que nosotros es un hereje. En la actualidad diferentes Universidades del mundo ofrecen la carrera de científicos de datos, sin embargo revisando las distintas mallas curriculares se percibe siempre una diferencia, aunque la mayoría coincide de manera razonable que los cursos de estadística deben ser infaltables, siempre hay una que otra que se inclina mas en ciertos perfiles, por ejemplo una universidad A presenta la carrera con más énfasis en informática, donde enseñan a utilizar herramientas avanzadas, a programar, manejar volúmenes de datos, etc. Pero sin profundizar mucha o nada en estadística, por otro lado, la universidad B presenta la carrera con más énfasis en estadística, o quizá una universidad C, que presenta más énfasis en un perfil general, “de todo un poco”, ya que como lo mencionaba anteriormente, hay que ser realistas, no se puede abarcar todo un gran campo. Esta diversidad en los perfiles formativos lleva a que los profesionales se especialicen en áreas específicas, lo que a veces resulta en la aplicación de sus habilidades en contextos que no siempre se ajustan a su experiencia o capacidades. La ciencia de datos es un campo tan amplio que requiere una combinación de competencias diversas, de tal manera que pudiéramos decir que estudiar ciencia de datos es como si estuviéramos estudiando de manera metafórica “medicina general” y que siempre nos terminamos inclinado más hacia una disciplina dejando de lado y menospreciando las demás, sin embargo por eso es más eficaz trabajar en equipo para abordar problemas complejos en lugar de asumir roles que no se alinean con la formación o habilidades específicas, pero que de alguna una otra forma todo está sincronizado para un solo fin.</p>
+</section>
+<section id="confusión-en-los-roles" class="level2">
+<h2 class="anchored" data-anchor-id="confusión-en-los-roles">Confusión en los Roles</h2>
+<p>La ciencia de datos y la estadística han ganado una creciente popularidad debido a su capacidad para ofrecer resultados excepcionales y permitir mejoras significativas en diversas áreas. En este entorno, la cultura de datos se ha convertido en un elemento esencial para el éxito organizacional. Esta cultura se define por un conjunto de valores, creencias y prácticas que subrayan la importancia crítica de los datos en la toma de decisiones y la resolución de problemas. Representa cómo una organización percibe, valora, recopila y utiliza los datos a lo largo de sus procesos y funciones, integrando profundamente el análisis de datos en todas sus operaciones, desde la estrategia empresarial hasta el desarrollo de productos y la innovación tecnológica.</p>
+<p>Sin embargo, surge una confusión común cuando las empresas buscan contratar a un científico de datos. Muchas organizaciones tienen expectativas poco claras o mal definidas sobre el rol y las responsabilidades de este perfil profesional. Aunque el título de “científico de datos” sugiere un experto en algoritmos complejos y análisis avanzado, las tareas requeridas pueden exceder el alcance de lo que tradicionalmente abarca este cargo. Las empresas a menudo confunden las habilidades y responsabilidades de un científico de datos con las de un analista de datos o un ingeniero de datos, resultando en la exigencia de tareas que abarcan desde la limpieza y preparación de datos, el diseño e implementación de modelos predictivos, hasta la interpretación de resultados y la visualización de datos, todo bajo un mismo rol. Esta confusión no solo desvía la atención de las verdaderas competencias del científico de datos, sino que también puede sobrecargar al profesional con expectativas que abarcan múltiples disciplinas.</p>
+<p>Como resultado, las empresas pueden enfrentar desafíos significativos al no alinear sus expectativas con las habilidades específicas que aportan los científicos de datos. Para evitar malentendidos y asegurar un ajuste adecuado entre el perfil profesional y las necesidades organizacionales, es fundamental definir claramente los objetivos y las tareas asociadas al rol, reconociendo la importancia de la especialización dentro del amplio campo de la ciencia de datos.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/jaironkevin\.github\.io\/Jairon-Ojeda\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Website made with Quarto, 2024 by Jairon Ojeda</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jaironkevin">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="../www.linkedin.com/in/jairon-ojeda">
+      <i class="bi bi-linkedin" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

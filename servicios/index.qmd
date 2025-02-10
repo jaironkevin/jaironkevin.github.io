@@ -1,39 +1,91 @@
 ---
 title: "Tu Socio en Análisis Estadístico "
+css: styles.css
+lang: "es"
 ---
 
-## Servicios de Consultoría en Estadística y Análisis de Datos
+## 📊 Servicios de Consultoría en Estadística y Análisis de Datos
 
-En mi práctica, ofrezco servicios especializados en estadística y análisis de datos adaptados a tus necesidades específicas. Mi objetivo es proporcionarte soluciones precisas y efectivas para ayudarte a tomar decisiones informadas basadas en datos.
+¿Necesitas ayuda para analizar datos y tomar decisiones informadas? Como freelance en análisis estadístico y ciencia de datos, ofrezco soluciones personalizadas y precisas para tu investigación, tesis o negocio. Mi objetivo es transformar tus datos en conocimientos claros y acciones estratégicas.  
 
-### Servicios Ofrecidos
+## 🎯 **Áreas de Especialización estadística:**
 
-- **Análisis Estadístico Avanzado:** Realizo análisis detallados para ayudarte a comprender tus datos y extraer información valiosa.
-- **Modelado Predictivo:** Desarrollo modelos predictivos personalizados para anticipar tendencias y tomar decisiones estratégicas.
-- **Visualización de Datos:** Creo visualizaciones efectivas y claras para presentar tus datos de manera comprensible y atractiva.
-- **Consultoría en Investigación:** Asesoro en el diseño y ejecución de investigaciones estadísticas, garantizando la validez y relevancia de los resultados.
+### 1️⃣ **Estadística Descriptiva**
+- Resumen y análisis de datos mediante medidas de tendencia central, dispersión y gráficos estadísticos.
+- Análisis exploratorio de datos (EDA) para identificar patrones, anomalías y relaciones iniciales.
+
+### 2️⃣ **Estadística Inferencial**
+- Muestreo estadístico.
+- Pruebas de hipótesis mediante test paramétricas y no paramétricas.
+- Comparación de grupos mediante pruebas de t de Student, ANOVA, MANOVA, etc.
+
+### 3️⃣ **Modelado Estadístico y Predictivo**
+- Regresión lineal y no lineal, logística y modelos de regresión múltiple.
+- Modelos de series temporales (ARIMA, SARIMA, SARIMAX, ETS, LSTM) para pronósticos.
+- Modelos lineales generalizados (GLM) y análisis de supervivencia.
+
+### 4️⃣ **Análisis Multivariado**
+- Análisis de componentes principales (PCA) y análisis factorial exploratorio.
+- Análisis de clústeres para segmentación de datos.
+- Modelos de ecuaciones estructurales (SEM) para análisis de relaciones complejas.
+
+## 🎓 Metodologia de la investigación científica  
+
+- **Redacción de Proyectos de Tesis:** Asesoría en la estructuración que incluye la introducción, realidad problemática, objetivos, marco teórico, hipótesis, metodología (dependiendo del reglamento de tu universidad respecto a la estructura).
+- **Análisis de fiabilidad de cuestionarios:** se aplica Coeficiente alfa de Cronbach, Coeficiente Omega, KR-20 (Kuder-Richardson 20), etc, dependiendo la escala de medición. 
+- **Desarrollo de Tesis:** Apoyo para tesis desde el capitulo de resultados hasta recomendaciones. 
+- **Análisis Estadístico para Tesis:** Aplicación de técnicas estadísticas adecuadas para investigaciones de pregrado y posgrado.
+- **Preparación para Defensa de Tesis:** Orientación en la presentación de resultados y argumentación científica.
 
 
-### Software y Herramientas Utilizadas
+## 💻 Software y Herramientas Utilizadas
 
-Ofrezco servicios en una amplia variedad de software y herramientas para satisfacer tus necesidades específicas:
+**Análisis Avanzado:** R, Python, Stata  
+**Visualización:** Power BI, Excel  
+**Investigación Académica:** SPSS, EViews, Minitab, Jamovi 
 
-- **R y Python:** Análisis avanzado, modelado predictivo y visualización de datos.
-- **SPSS:** Análisis estadístico y consultoría en investigación académica.
-- **Stata:** Modelado estadístico y análisis de datos.
-- **Minitab:** Análisis estadístico y calidad de datos.
-- **EViews:** Análisis econométrico y modelado de series temporales.
-- **Jamovi:** Análisis estadístico y visualización de datos.
-- **Excel:** Análisis de datos y visualización básica.
-- **Power BI:** Creación de dashboards interactivos y visualizaciones avanzadas.
+## 🚀 **¿Listo para llevar tu análisis al siguiente nivel?**
 
-### Contacto 
+**Contáctame para una asesoría personalizada y transforma tus datos en decisiones inteligentes.**
 
-Si estás interesado en discutir cómo puedo ayudarte o deseas obtener más información sobre mis servicios, no dudes en ponerte en contacto.
 
-- **WhatsApp:** [942 507 330](tel:+34942507330)
-- **Correo Electrónico:** [jairokevinojedas@gmail.com](mailto:jairokevinojedas@gmail.com)
 
-Estoy a tu disposición para resolver cualquier duda y comenzar a trabajar en tu proyecto!.
+::: {.row style="background-color: #e0e0e0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); padding: 20px; display: flex; align-items: center; justify-content: flex-start;"}
+::: {.column width="3%" style="text-align: center;"}  
+![](foto.jpeg){width=155px height=168px style="border-radius: 50%;"}
+:::
+::: {.column width="50%"}  
+<span style="font-size: 240%; font-weight: bold; color: #003366;">JAIRON OJEDA</span>
+
+_"Bachiller en Ciencias con Mención en Estadística"_
+:::
+::: {.column width="80%"}  
+ ![Teléfono](llamar.png){ width=24px } [942 507 330](tel:942507330)
+ 
+ ![WhatsApp](whatsapp.png){ width=24px } [942 507 330](https://wa.me/942507330) 
+ 
+ ![Residencia](marcador-de-posicion.png){ width=24px } [Tambo Grande - Piura](https://maps.app.goo.gl/mpa9o5iRBD6VQNCP7)
+ 
+ ![Correo](correo.png){ width=24px } [jairokevinojedas1999@gmail.com](mailto:jairokevinojedas1999@gmail.com)
+ 
+ ![LinkedIn](linkedin.png){ width=24px } [LinkedIn](https://linkedin.com/in/jairon-ojeda)
+:::
+:::
+
+
+
+
+
+::: {.callout-note title="Grado academico" collapse="true"} 
+:::{.panel-tabset}
+
+## Grado 
+
+  <embed type="text/pdf" src="GradoBr.pdf" width="780" height="800">
+
+:::
+:::
+
+
 
 

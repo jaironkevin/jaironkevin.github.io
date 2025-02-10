@@ -1,8 +1,8 @@
 [
   {
-    "listing": "/portafolio/index.html",
+    "listing": "/publications/index.html",
     "items": [
-      "/portafolio/1_por_Pen.html"
+      "/publications/uranium.html"
     ]
   },
   {
@@ -12,9 +12,9 @@
     ]
   },
   {
-    "listing": "/publications/index.html",
+    "listing": "/portafolio/index.html",
     "items": [
-      "/publications/uranium.html"
+      "/portafolio/1_por_Pen.html"
     ]
   }
 ]

@@ -1,41 +1,66 @@
 ---
-title: "Tu Socio en Análisis Estadístico "
+title: "Transforma tus Datos en Decisiones Inteligentes"
 css: styles.css
 lang: "es"
 ---
 
+
+
+```{r echo=FALSE}
+#| out-width: "19cm"
+#| fig-align: "center" 
+knitr::include_graphics("LOGOfondo3.png")
+```
+
 ## 📊 Servicios de Consultoría en Estadística y Análisis de Datos
 
-¿Necesitas ayuda para analizar datos y tomar decisiones informadas? Como freelance en análisis estadístico y ciencia de datos, ofrezco soluciones personalizadas y precisas para tu investigación, tesis o negocio. Mi objetivo es transformar tus datos en conocimientos claros y acciones estratégicas.  
+Toma decisiones informadas con el respaldo de análisis estadísticos precisos y personalizados; convierto tus datos en estrategias accionables para tu tesis, investigación o empresa.
 
-## 🎯 **Áreas de Especialización estadística:**
+
+## 🎯 **Servicios Especializados de Análisis Estadístico:**
 
 ### 1️⃣ **Estadística Descriptiva**
-- Resumen y análisis de datos mediante medidas de tendencia central, dispersión y gráficos estadísticos.
-- Análisis exploratorio de datos (EDA) para identificar patrones, anomalías y relaciones iniciales.
+- Resumen y análisis mediante medidas de tendencia central, dispersión y gráficos.
+- Análisis exploratorio de datos (EDA) para descubrir patrones, anomalías y relaciones iniciales.
 
 ### 2️⃣ **Estadística Inferencial**
-- Muestreo estadístico.
-- Pruebas de hipótesis mediante test paramétricas y no paramétricas.
-- Comparación de grupos mediante pruebas de t de Student, ANOVA, MANOVA, etc.
+- Muestreo estadístico adecuado para garantizar la representatividad.
+- Pruebas de hipótesis con métodos paramétricos y no paramétricos.
+- Comparación de grupos mediante pruebas de t de Student, ANOVA, MANOVA, entre otros.
 
 ### 3️⃣ **Modelado Estadístico y Predictivo**
-- Regresión lineal y no lineal, logística y modelos de regresión múltiple.
-- Modelos de series temporales (ARIMA, SARIMA, SARIMAX, ETS, LSTM) para pronósticos.
+- Regresión lineal, logística y modelos de regresión múltiple.
+- Modelos de series temporales (ARIMA, SARIMA, SARIMAX, ETS, LSTM) para pronósticos precisos.
 - Modelos lineales generalizados (GLM) y análisis de supervivencia.
 
 ### 4️⃣ **Análisis Multivariado**
 - Análisis de componentes principales (PCA) y análisis factorial exploratorio.
-- Análisis de clústeres para segmentación de datos.
-- Modelos de ecuaciones estructurales (SEM) para análisis de relaciones complejas.
+- Segmentación de datos mediante análisis de clústeres.
+- Modelos de ecuaciones estructurales (SEM) para comprender interacciones complejas.
+
 
 ## 🎓 Metodologia de la investigación científica  
 
-- **Redacción de Proyectos de Tesis:** Asesoría en la estructuración que incluye la introducción, realidad problemática, objetivos, marco teórico, hipótesis, metodología (dependiendo del reglamento de tu universidad respecto a la estructura).
-- **Análisis de fiabilidad de cuestionarios:** se aplica Coeficiente alfa de Cronbach, Coeficiente Omega, KR-20 (Kuder-Richardson 20), etc, dependiendo la escala de medición. 
-- **Desarrollo de Tesis:** Apoyo para tesis desde el capitulo de resultados hasta recomendaciones. 
-- **Análisis Estadístico para Tesis:** Aplicación de técnicas estadísticas adecuadas para investigaciones de pregrado y posgrado.
-- **Preparación para Defensa de Tesis:** Orientación en la presentación de resultados y argumentación científica.
+
+🔍 **Te acompaño en cada etapa de tu investigación, desde la planificación hasta la defensa.**
+
+- 📝 **Redacción de Proyectos de Tesis:**  
+  Asesoría en la elaboración de la estructura académica: introducción, realidad problemática, objetivos, marco teórico, hipótesis y metodología.  
+  *(Adaptado al reglamento específico de tu universidad).*
+
+- 📑 **Análisis de Fiabilidad de Cuestionarios:**  
+  Aplicación de coeficientes como Alfa de Cronbach, Omega de McDonald, KR-20 (Kuder-Richardson 20), entre otros.  
+  *(La elección depende del tipo de escala de medición y los objetivos del estudio).*
+
+- 🧪 **Desarrollo de Tesis:**  
+  Asistencia en el análisis, interpretación y redacción del capítulo de resultados, así como en la formulación de conclusiones y recomendaciones.  
+
+- 📊 **Análisis Estadístico para Tesis:**  
+  Aplicación rigurosa de pruebas estadísticas paramétricas y no paramétricas para investigaciones de pregrado y posgrado.  
+  *(Incluye análisis descriptivo, inferencial, predictivo y multivariado, según los objetivos definidos).*
+
+- 🎤 **Preparación para la Defensa de Tesis:**  
+  Orientación para una presentación clara y profesional de resultados, con énfasis en la argumentación científica y el manejo de posibles preguntas del jurado.  
 
 
 ## 💻 Software y Herramientas Utilizadas
@@ -44,37 +69,28 @@ lang: "es"
 **Visualización:** Power BI, Excel  
 **Investigación Académica:** SPSS, EViews, Minitab, Jamovi 
 
-## 🚀 **¿Listo para llevar tu análisis al siguiente nivel?**
+## 🚀 ¿Listo para descubrir el potencial de tus datos?
 
-**Contáctame para una asesoría personalizada y transforma tus datos en decisiones inteligentes.**
+**¡Contáctame hoy mismo y transforma la incertidumbre en conocimiento útil para tu investigación, negocio o tesis académica!.**
 
 
-
-::: {.row style="background-color: #e0e0e0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); padding: 20px; display: flex; align-items: center; justify-content: flex-start;"}
-::: {.column width="3%" style="text-align: center;"}  
-![](foto.jpeg){width=155px height=168px style="border-radius: 50%;"}
-:::
-::: {.column width="50%"}  
-<span style="font-size: 240%; font-weight: bold; color: #003366;">JAIRON OJEDA</span>
-
-_"Bachiller en Ciencias con Mención en Estadística"_
-:::
-::: {.column width="80%"}  
- ![Teléfono](llamar.png){ width=24px } [942 507 330](tel:942507330)
- 
- ![WhatsApp](whatsapp.png){ width=24px } [942 507 330](https://wa.me/942507330) 
- 
- ![Residencia](marcador-de-posicion.png){ width=24px } [Tambo Grande - Piura](https://maps.app.goo.gl/mpa9o5iRBD6VQNCP7)
- 
- ![Correo](correo.png){ width=24px } [jairokevinojedas1999@gmail.com](mailto:jairokevinojedas1999@gmail.com)
- 
- ![LinkedIn](linkedin.png){ width=24px } [LinkedIn](https://linkedin.com/in/jairon-ojeda)
-:::
+::: {.row style="background-color: #e0e0e0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); padding: 20px; display: flex; align-items: center; justify-content: center;"}
+::: {.column width="50%" style="text-align: center; display: flex; justify-content: center; align-items: center;"}  
+![](logoredondo.png){width=230px height=230px style="border-radius: 0;"}
 :::
 
+::: {.column width="50%" style="display: flex; flex-direction: column; justify-content: center;"}
+![Teléfono](llamar.png){ width=24px } [942 507 330](tel:942507330)
 
+![WhatsApp](whatsapp.png){ width=24px } [942 507 330](https://wa.me/942507330) 
 
+![Residencia](marcador-de-posicion.png){ width=24px } [Tambo Grande - Piura](https://maps.app.goo.gl/mpa9o5iRBD6VQNCP7)
 
+![Correo](correo.png){ width=24px } [jaironojeda99@gmail.com](mailto:jaironojeda99@gmail.com)
+
+![LinkedIn](linkedin.png){ width=24px } [LinkedIn](https://linkedin.com/in/jairon-ojeda)
+:::
+:::
 
 ::: {.callout-note title="Grado academico" collapse="true"} 
 :::{.panel-tabset}

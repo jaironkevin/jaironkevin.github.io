@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, y otras distracciones.">
+<meta name="description" content="Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, compartir información y otras distracciones.">
 
-<title>My blog – Jairon Ojeda</title>
+<title>My blog – Jairon K. Ojeda S.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,17 +57,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 <script>
@@ -161,11 +161,11 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Jairon Ojeda</span>
+    <span class="navbar-title">Jairon K. Ojeda S.</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -203,7 +203,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="Data Science"><span class="quarto-category-count category-cloud-10">Data Science</span></div><div class="category" data-category="Estadística"><span class="quarto-category-count category-cloud-10">Estadística</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="Data Science"><span class="quarto-category-count category-cloud-5">Data Science</span></div><div class="category" data-category="Distribución normal"><span class="quarto-category-count category-cloud-5">Distribución normal</span></div><div class="category" data-category="Estadística"><span class="quarto-category-count category-cloud-10">Estadística</span></div><div class="category" data-category="TLC"><span class="quarto-category-count category-cloud-5">TLC</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
 
@@ -214,7 +214,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, y otras distracciones.
+    Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, compartir información y otras distracciones.
   </div>
 </div>
 
@@ -239,41 +239,80 @@ window.Quarto = {
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
+     <select id="listing-listing-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
+       <option value="index" data-direction="asc">Por defecto</option>
          <option value="listing-title" data-direction="asc">
-          Title
+          Título
         </option>
          <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
+          Fecha - Menos reciente
         </option>
          <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
+          Fecha - Más reciente
         </option>
          <option value="listing-author" data-direction="asc">
-          Author
+          Autor/a
         </option>
      </select>
   </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+      <input type="text" class="search form-control" placeholder="Filtro">
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Estadística,Data Science" data-listing-date-sort="1690779600000" data-listing-file-modified-sort="1739162972374" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4104">
+<div class="quarto-post image-right" data-index="0" data-categories="Estadística,Distribución normal,TLC" data-listing-date-sort="1659330000000" data-listing-file-modified-sort="1740891454880" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="591">
 <div class="thumbnail">
-<p><a href="../blog/1_Estadisticadatascience.html" class="no-external"></a></p><a href="../blog/1_Estadisticadatascience.html" class="no-external">
-<p><img loading="lazy" src="../blog/1_estaditica.jpg" class="thumbnail-image"></p>
-</a><p><a href="../blog/1_Estadisticadatascience.html" class="no-external"></a></p>
+<p><a href="../blog/2.html" class="no-external"></a></p><a href="../blog/2.html" class="no-external">
+<p><img loading="lazy" src="../blog/images_prev/2.png" class="thumbnail-image"></p>
+</a><p><a href="../blog/2.html" class="no-external"></a></p>
 </div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="../blog/1_Estadisticadatascience.html" class="no-external">El Rol Fundamental de los Estadísticos</a>
+<a href="../blog/2.html" class="no-external">El Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial</a>
 </h3>
 <div class="listing-subtitle">
-<a href="../blog/1_Estadisticadatascience.html" class="no-external"></a>
+<a href="../blog/2.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Estadística'); return false;">
+Estadística
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Distribución normal'); return false;">
+Distribución normal
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TLC'); return false;">
+TLC
+</div>
+</div>
+<div class="listing-description">
+<a href="../blog/2.html" class="no-external">En la estadística moderna, gran parte de las conclusiones que tomamos sobre poblaciones se basan en el análisis de muestras. Pero, ¿cómo podemos estar seguros de que los…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../blog/2.html" class="no-external">
+<div class="listing-date">
+1 agosto 2022
+</div>
+<div class="listing-author">
+Jairon Ojeda S.
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Estadística,Data Science" data-listing-date-sort="1657861200000" data-listing-file-modified-sort="1740891581456" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3426">
+<div class="thumbnail">
+<p><a href="../blog/1.html" class="no-external"></a></p><a href="../blog/1.html" class="no-external">
+<p><img loading="lazy" src="../blog/images_prev/1_estaditica.jpg" class="thumbnail-image"></p>
+</a><p><a href="../blog/1.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/1.html" class="no-external">La Estadística: Una ciencia detras de los datos</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../blog/1.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('Estadística'); return false;">
@@ -284,25 +323,25 @@ Data Science
 </div>
 </div>
 <div class="listing-description">
-<a href="../blog/1_Estadisticadatascience.html" class="no-external">En el vasto universo del conocimiento, pocas disciplinas tienen la capacidad de influir en nuestras vidas de manera tan profunda y diversa como la estadística. Este campo, a…</a>
+<a href="../blog/1.html" class="no-external">En el vasto universo del conocimiento, pocas disciplinas tienen la capacidad de influir en nuestras vidas de manera tan profunda y diversa como la estadística; este campo, a…</a>
 </div>
 </div>
 <div class="metadata">
-<a href="../blog/1_Estadisticadatascience.html" class="no-external">
+<a href="../blog/1.html" class="no-external">
 <div class="listing-date">
-31 July 2023
+15 julio 2022
 </div>
 <div class="listing-author">
-Jairon K Ojeda
+Jairon Ojeda S.
 </div>
 </a>
 </div>
 </div>
 </div>
 <div class="listing-no-matching d-none">
-No matching items
+No hay resultados
 </div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -346,12 +385,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -727,7 +766,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Website made with Quarto, 2024 by Jairon Ojeda</p>
+<p>© 2024 Jairon Ojeda. Website built with Quarto in RStudio</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

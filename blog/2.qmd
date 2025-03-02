@@ -1,0 +1,76 @@
+---
+date: "2022-8-01"
+author: "Jairon Ojeda S."
+title: "El Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial"
+categories:
+  - Estadística
+  - Distribución normal
+  - TLC
+image: images_prev/2.png
+lang: es
+citation: true
+bibliography: Bibliografia.bib
+csl: apa.csl
+---
+
+En la estadística moderna, gran parte de las conclusiones que tomamos sobre poblaciones se basan en el análisis de muestras. Pero, ¿cómo podemos estar seguros de que los resultados obtenidos en una muestra realmente representan a toda la población?
+
+Aquí es donde el Teorema Central del Límite (TCL) se convierte en una herramienta fundamental. según [@montgomery_applied_2010], este principio establece que, cuando se extraen muestras aleatorias de tamaño suficiente de cualquier población, la distribución de las medias muestrales tiende a una distribución normal, independientemente de la forma de la distribución original; es decir, incluso si la población tiene una distribución asimétrica, sesgada o multimodal, las medias de las muestras seguirán un patrón normal conforme aumenta el tamaño de la muestra.
+
+
+## El Umbral de $(n \geq 30)$: Regla Empírica para la Normalidad  
+Uno de los resultados más útiles del TCL es que **la normalidad en la distribución de las medias muestrales comienza a manifestarse con muestras de tamaño moderado**. Empíricamente, se ha establecido que:  
+
+- Si $(n \geq 30)$, la aproximación a la normalidad suele ser bastante precisa, salvo en distribuciones extremadamente sesgadas o con colas largas.  
+- Si \( n < 30 \), la normalidad de la media muestral **dependerá** de cuán parecida a la normal sea la distribución original de la población. En estos casos, se recomienda utilizar pruebas no paramétricas o métodos basados en bootstrap.  
+
+Matemáticamente, la desviación estándar de la distribución de las medias muestrales, conocida como **error estándar**, se define como:  
+
+$$SE = \frac{\sigma}{\sqrt{n}}$$
+
+Donde \( \sigma \) es la desviación estándar de la población y \( n \) es el tamaño de la muestra. **Esto implica que cuanto mayor sea \( n \), menor será la variabilidad de la media muestral y, por lo tanto, más precisa será la estimación de la media poblacional.**  
+
+## Simulando el teorema del limite central 
+
+Para ilustrar el TCL en acción, realizaremos una simulación en **R** mejorada en una app con ayuda de `library(shiny)`; supongamos que tenemos una población con distribuciónes diferentes incluso no normal, y tomamos múltiples muestras de distintos tamaños para observar cómo se comporta la distribución de las medias muestrales. En la aplicación puede probar con distintas distribuciones, y probar con distintos parámetros para hacer la simulación mas didáctica e interactiva y haga clic en simular.  
+
+::: {.callout-note title="Simulación TLC"}  
+  <embed type="text/html" src="https://9t0pdl-jaironkevin.shinyapps.io/Simulacion_TLC/" width="780" height="800">
+:::
+
+Si desea tener una vista más amplia de la app haga clic [aquí](https://9t0pdl-jaironkevin.shinyapps.io/Simulacion_TLC/)
+
+
+
+Gracias a este teorema, podemos realizar inferencias con confianza, incluso cuando la distribución de la población es desconocida. Esto demuestra que la estadística no solo es un conjunto de números, sino una herramienta esencial para la toma de decisiones fundamentadas en el mundo real.
+
+
+
+## ¿Por qué el TCL es el punto de partida en estadística?
+Antes del Teorema Central del Límite (TLC), los estadísticos enfrentaban un desafío clave: ¿cómo inferir propiedades de una población a partir de una muestra?
+
+Dado que la mayoría de las poblaciones reales tienen distribuciones desconocidas o no normales, cualquier inferencia sin un fundamento matemático sólido habría sido poco fiable. El TCL resolvió este problema al demostrar que, con muestras suficientemente grandes, la distribución de las medias muestrales tiende a la normalidad, sentando así las bases de la inferencia estadística.
+
+Más que un resultado teórico, el TCL es un pilar de las pruebas paramétricas y la inteligencia artificial. Sin él, muchas herramientas estadísticas no serían aplicables en contextos con datos limitados o poblaciones desconocidas.
+
+
+:::{.callout-tip appearance="simple"}
+## Tener en cueta
+Cada vez que calculamos un intervalo de confianza, realizamos un test de hipótesis, estamos aplicando, muchas veces sin notarlo, el poder del TLC.
+:::
+
+
+
+```{r echo=FALSE}
+#| out-width: "2cm"
+#| fig-align: "center" 
+knitr::include_graphics("logoredondo.png")
+```
+
+
+
+
+
+
+
+

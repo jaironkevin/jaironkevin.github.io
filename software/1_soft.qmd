@@ -1,0 +1,21 @@
+---
+date: "2024-7-24"
+title: "Simulación del Teorema del Limite Central"
+categories:
+  - Estadística
+  - TLC
+image: 1_soft.png
+---
+
+
+Aplicación interactiva que ilustra el **Teorema del Límite Central (TLC)** a través de simulaciones. Permite visualizar cómo la distribución de la media muestral se aproxima a una normal a medida que aumenta el tamaño de la muestra, utilizando diferentes distribuciones de origen.
+
+
+::: {.callout-note title="Simulación TLC"}  
+  <embed type="text/html" src="https://9t0pdl-jaironkevin.shinyapps.io/Simulacion_TLC/" width="780" height="800">
+:::
+
+Si desea tener una vista más amplia de la app haga clic [aquí](https://9t0pdl-jaironkevin.shinyapps.io/Simulacion_TLC/)
+
+
+

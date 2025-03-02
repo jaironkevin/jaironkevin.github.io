@@ -1,6 +1,6 @@
 ---
 title: "My blog"
-description: Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, y otras distracciones.
+description: Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, compartir información y otras distracciones.
 listing:
   contents: .
   sort: "date desc"
@@ -9,6 +9,7 @@ listing:
   sort-ui: true
   filter-ui: true
 page-layout: full
+lang: es
 ---
 
 

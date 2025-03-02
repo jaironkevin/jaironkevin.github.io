@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jairon Ojeda S.">
 
-<title>Jairon K. Ojeda S.</title>
+<title>El Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial – Jairon K. Ojeda S.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +21,46 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -53,17 +75,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather" rel="stylesheet">
@@ -73,45 +95,88 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Jairon K. Ojeda S.</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link" href="../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./publications/index.html"> 
+    <a class="nav-link" href="../publications/index.html"> 
 <span class="menu-text">Publicaciones</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./software/index.html"> 
+    <a class="nav-link" href="../software/index.html"> 
 <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./portafolio/index.html"> 
+    <a class="nav-link" href="../portafolio/index.html"> 
 <span class="menu-text">Portafolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./servicios/index.html"> 
+    <a class="nav-link" href="../servicios/index.html"> 
 <span class="menu-text">Servicios</span></a>
   </li>  
 </ul>
@@ -125,41 +190,137 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#el-umbral-de-n-geq-30-regla-empírica-para-la-normalidad" id="toc-el-umbral-de-n-geq-30-regla-empírica-para-la-normalidad" class="nav-link active" data-scroll-target="#el-umbral-de-n-geq-30-regla-empírica-para-la-normalidad">El Umbral de <span class="math inline">(n \geq 30)</span>: Regla Empírica para la Normalidad</a></li>
+  <li><a href="#simulando-el-teorema-del-limite-central" id="toc-simulando-el-teorema-del-limite-central" class="nav-link" data-scroll-target="#simulando-el-teorema-del-limite-central">Simulando el teorema del limite central</a></li>
+  <li><a href="#por-qué-el-tcl-es-el-punto-de-partida-en-estadística" id="toc-por-qué-el-tcl-es-el-punto-de-partida-en-estadística" class="nav-link" data-scroll-target="#por-qué-el-tcl-es-el-punto-de-partida-en-estadística">¿Por qué el TCL es el punto de partida en estadística?</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="Jairo.png" class="about-image
-  rounded " style="width: 20em;">
-    <div class="about-links">
-  <a href="https://github.com/jaironkevin" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">github</span>
-  </a>
-  <a href="mailto:jairokevinojedas1999@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">mail</span>
-  </a>
-  <a href="/www.linkedin.com/in/jairon-ojeda" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">linkedin</span>
-  </a>
-  <a href="D:/MI WEB SITE PERSONAL/CV/CV_OJEDA_SILUPU_2024.pdf" class="about-link" rel="" target="">
-     <span class="about-link-text">CV</span>
-  </a>
-</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">El Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Distribución normal</div>
+    <div class="quarto-category">TLC</div>
   </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p><strong>Jairon Ojeda</strong><br> Bachiller en estadísta<br> Por la Universidad Nacional de Piura<br> Piura, Perú</p>
-<p>Exploro y comparto conocimientos sobre estadística y análisis de datos. Aquí encontrarás insights en mi Blog, acceso a mis Publicaciones académicas, herramientas útiles en Software, oportunidades de Negociación en proyectos estadísticos, recursos para Enseñar estadística, y más.</p>
-<blockquote class="blockquote">
-<p><em>“Transformando datos en conocimientos, y conocimientos en decisiones.”</em></p>
-</blockquote>
+  </div>
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jairon Ojeda S. </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">1 agosto 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>En la estadística moderna, gran parte de las conclusiones que tomamos sobre poblaciones se basan en el análisis de muestras. Pero, ¿cómo podemos estar seguros de que los resultados obtenidos en una muestra realmente representan a toda la población?</p>
+<p>Aquí es donde el Teorema Central del Límite (TCL) se convierte en una herramienta fundamental. según <span class="citation" data-cites="montgomery_applied_2010">(<a href="#ref-montgomery_applied_2010" role="doc-biblioref">Montgomery &amp; Runger, 2010</a>)</span>, este principio establece que, cuando se extraen muestras aleatorias de tamaño suficiente de cualquier población, la distribución de las medias muestrales tiende a una distribución normal, independientemente de la forma de la distribución original; es decir, incluso si la población tiene una distribución asimétrica, sesgada o multimodal, las medias de las muestras seguirán un patrón normal conforme aumenta el tamaño de la muestra.</p>
+<section id="el-umbral-de-n-geq-30-regla-empírica-para-la-normalidad" class="level2">
+<h2 class="anchored" data-anchor-id="el-umbral-de-n-geq-30-regla-empírica-para-la-normalidad">El Umbral de <span class="math inline">(n \geq 30)</span>: Regla Empírica para la Normalidad</h2>
+<p>Uno de los resultados más útiles del TCL es que <strong>la normalidad en la distribución de las medias muestrales comienza a manifestarse con muestras de tamaño moderado</strong>. Empíricamente, se ha establecido que:</p>
+<ul>
+<li>Si <span class="math inline">(n \geq 30)</span>, la aproximación a la normalidad suele ser bastante precisa, salvo en distribuciones extremadamente sesgadas o con colas largas.<br>
+</li>
+<li>Si ( n &lt; 30 ), la normalidad de la media muestral <strong>dependerá</strong> de cuán parecida a la normal sea la distribución original de la población. En estos casos, se recomienda utilizar pruebas no paramétricas o métodos basados en bootstrap.</li>
+</ul>
+<p>Matemáticamente, la desviación estándar de la distribución de las medias muestrales, conocida como <strong>error estándar</strong>, se define como:</p>
+<p><span class="math display">SE = \frac{\sigma}{\sqrt{n}}</span></p>
+<p>Donde ( ) es la desviación estándar de la población y ( n ) es el tamaño de la muestra. <strong>Esto implica que cuanto mayor sea ( n ), menor será la variabilidad de la media muestral y, por lo tanto, más precisa será la estimación de la media poblacional.</strong></p>
+</section>
+<section id="simulando-el-teorema-del-limite-central" class="level2">
+<h2 class="anchored" data-anchor-id="simulando-el-teorema-del-limite-central">Simulando el teorema del limite central</h2>
+<p>Para ilustrar el TCL en acción, realizaremos una simulación en <strong>R</strong> mejorada en una app con ayuda de <code>library(shiny)</code>; supongamos que tenemos una población con distribuciónes diferentes incluso no normal, y tomamos múltiples muestras de distintos tamaños para observar cómo se comporta la distribución de las medias muestrales. En la aplicación puede probar con distintas distribuciones, y probar con distintos parámetros para hacer la simulación mas didáctica e interactiva y haga clic en simular.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Simulación TLC">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
- <!-- /main -->
+<div class="callout-title-container flex-fill">
+Simulación TLC
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><embed type="text/html" src="https://9t0pdl-jaironkevin.shinyapps.io/Simulacion_TLC/" width="780" height="800"></p>
+</div>
+</div>
+<p>Si desea tener una vista más amplia de la app haga clic <a href="https://9t0pdl-jaironkevin.shinyapps.io/Simulacion_TLC/">aquí</a></p>
+<p>Gracias a este teorema, podemos realizar inferencias con confianza, incluso cuando la distribución de la población es desconocida. Esto demuestra que la estadística no solo es un conjunto de números, sino una herramienta esencial para la toma de decisiones fundamentadas en el mundo real.</p>
+</section>
+<section id="por-qué-el-tcl-es-el-punto-de-partida-en-estadística" class="level2">
+<h2 class="anchored" data-anchor-id="por-qué-el-tcl-es-el-punto-de-partida-en-estadística">¿Por qué el TCL es el punto de partida en estadística?</h2>
+<p>Antes del Teorema Central del Límite (TLC), los estadísticos enfrentaban un desafío clave: ¿cómo inferir propiedades de una población a partir de una muestra?</p>
+<p>Dado que la mayoría de las poblaciones reales tienen distribuciones desconocidas o no normales, cualquier inferencia sin un fundamento matemático sólido habría sido poco fiable. El TCL resolvió este problema al demostrar que, con muestras suficientemente grandes, la distribución de las medias muestrales tiende a la normalidad, sentando así las bases de la inferencia estadística.</p>
+<p>Más que un resultado teórico, el TCL es un pilar de las pruebas paramétricas y la inteligencia artificial. Sin él, muchas herramientas estadísticas no serían aplicables en contextos con datos limitados o poblaciones desconocidas.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tener en cueta
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cada vez que calculamos un intervalo de confianza, realizamos un test de hipótesis, estamos aplicando, muchas veces sin notarlo, el poder del TLC.</p>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="logoredondo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:2cm"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-montgomery_applied_2010" class="csl-entry" role="listitem">
+Montgomery, D. C., &amp; Runger, G. C. (2010). <em>Applied <span>Statistics</span> and <span>Probability</span> for <span>Engineers</span></em>. John Wiley &amp; Sons.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ojeda_s.2022,
+  author = {Ojeda S., Jairon},
+  title = {El Teorema Central del Límite: El Pilar Oculto detrás de la
+    Estadística Inferencial},
+  date = {2022-08-01},
+  url = {https://jaironkevin.github.io/Jairon-Ojeda.github.io/blog/2.html},
+  langid = {es}
+}
+</code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-ojeda_s.2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+Ojeda S., J. (2022, August 1). <em>El Teorema Central del Límite: El
+Pilar Oculto detrás de la Estadística Inferencial</em>. <a href="https://jaironkevin.github.io/Jairon-Ojeda.github.io/blog/2.html">https://jaironkevin.github.io/Jairon-Ojeda.github.io/blog/2.html</a>
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -180,6 +341,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -196,12 +364,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -591,7 +759,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="./www.linkedin.com/in/jairon-ojeda">
+    <a class="nav-link" href="../www.linkedin.com/in/jairon-ojeda">
       <i class="bi bi-linkedin" role="img">
 </i> 
     </a>

@@ -1,3 +1,14 @@
-# Funciones de automatización
+---
+title: "Mis Software"
+description: Explora mis aplicaciones desarrolladas con librerias desde R y Python, incluyendo dashboards dinámicos y modelos en producción, cada software está diseñado para entender teorias, análisis de datos, visualización interactiva y toma de decisiones basada en datos.
+listing:
+  contents: .
+  sort: "date desc"
+  type: grid
+  categories: numbered
+  sort-ui: true
+  filter-ui: true
+page-layout: full
+lang: es
+---
 
-Aquí presentare funciones personalizadas en R o Python o posibles librerías que se puedan ir creando.

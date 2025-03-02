@@ -1,20 +1,27 @@
 [
   {
+    "listing": "/portafolio/index.html",
+    "items": [
+      "/portafolio/1_por_Pen.html"
+    ]
+  },
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/2.html",
+      "/blog/1.html"
+    ]
+  },
+  {
     "listing": "/publications/index.html",
     "items": [
       "/publications/uranium.html"
     ]
   },
   {
-    "listing": "/blog/index.html",
+    "listing": "/software/index.html",
     "items": [
-      "/blog/1_Estadisticadatascience.html"
-    ]
-  },
-  {
-    "listing": "/portafolio/index.html",
-    "items": [
-      "/portafolio/1_por_Pen.html"
+      "/software/1_soft.html"
     ]
   }
 ]

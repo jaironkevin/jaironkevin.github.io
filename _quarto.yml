@@ -7,7 +7,7 @@ project:
 website:
   back-to-top-navigation: true
   favicon: favicon.png
-  title: "Jairon Ojeda"
+  title: "Jairon K. Ojeda S."
   site-url: "https://jaironkevin.github.io/Jairon-Ojeda.github.io/"
   navbar:
     background: "#536878"
@@ -23,7 +23,7 @@ website:
       - href: servicios/index.qmd
         text: Servicios
   page-footer:
-    left: "Website made with Quarto, 2024 by Jairon Ojeda"
+    left: "© 2024 Jairon Ojeda. Website built with Quarto in RStudio"
     right:
       - icon: github
         href: https://github.com/jaironkevin

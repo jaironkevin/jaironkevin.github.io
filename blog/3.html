@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, compartir información y otras distracciones.">
+<meta name="author" content="Jairon Kevin Ojeda Silupu">
 
-<title>My blog – Jairon K. Ojeda S.</title>
+<title>Correlación y Regresión Lineal Simple – Jairon K. Ojeda S.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +32,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../favicon.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,35 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather" rel="stylesheet">
 
 <script src="https://kit.fontawesome.com/0fba9333d8.js" crossorigin="anonymous"></script>
@@ -106,49 +75,6 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -171,7 +97,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -198,30 +124,40 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="Data Science"><span class="quarto-category-count category-cloud-4">Data Science</span></div><div class="category" data-category="Distribución normal"><span class="quarto-category-count category-cloud-4">Distribución normal</span></div><div class="category" data-category="Estadística"><span class="quarto-category-count category-cloud-7">Estadística</span></div><div class="category" data-category="TLC"><span class="quarto-category-count category-cloud-4">TLC</span></div><div class="category" data-category="Tendencia central"><span class="quarto-category-count category-cloud-4">Tendencia central</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My blog</h1>
-</div>
-
-<div>
-  <div class="description">
-    Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, compartir información y otras distracciones.
+<h1 class="title">Correlación y Regresión Lineal Simple</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Tendencia central</div>
   </div>
-</div>
+  </div>
 
 
-<div class="quarto-title-meta column-page-left">
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jairon Kevin Ojeda Silupu </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">15 septiembre 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -231,150 +167,36 @@ window.Quarto = {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Introducción
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>La correlación y la regresión lineal simple son técnicas distintas dentro del análisis estadístico. La correlación cuantifica el grado de relación lineal entre dos variables sin establecer direcciones funcionales, por otro lado la regresión lineal simple, en cambio, especifica una relación funcional entre una variable dependiente y una sola variable independiente con el fin de estimar su valor esperado. <em>Próximamente se publicarán más detalles sobre cada una de estas metodologías en este apartado.</em></p>
+</div>
+</div>
+</div>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
-       <option value="index" data-direction="asc">Por defecto</option>
-         <option value="listing-title" data-direction="asc">
-          Título
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Fecha - Menos reciente
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Fecha - Más reciente
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Autor/a
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filtro">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Tendencia central" data-listing-date-sort="1757912400000" data-listing-file-modified-sort="1763188671310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="74">
-<div class="thumbnail">
-<p><a href="../blog/3.html" class="no-external"></a></p><a href="../blog/3.html" class="no-external">
-<p><img loading="lazy" src="../blog/images_prev/3.png" class="thumbnail-image"></p>
-</a><p><a href="../blog/3.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/3.html" class="no-external">Correlación y Regresión Lineal Simple</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/3.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Tendencia central'); return false;">
-Tendencia central
-</div>
-</div>
-<div class="listing-description">
-<a href="../blog/3.html" class="no-external">La correlación y la regresión lineal simple son técnicas distintas dentro del análisis estadístico. La correlación cuantifica el grado de relación lineal entre dos variables…<em></em></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/3.html" class="no-external">
-<div class="listing-date">
-15 septiembre 2025
-</div>
-<div class="listing-author">
-Jairon Kevin Ojeda Silupu
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Estadística,Distribución normal,TLC" data-listing-date-sort="1722488400000" data-listing-file-modified-sort="1745427249837" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="591">
-<div class="thumbnail">
-<p><a href="../blog/2.html" class="no-external"></a></p><a href="../blog/2.html" class="no-external">
-<p><img loading="lazy" src="../blog/images_prev/2.png" class="thumbnail-image"></p>
-</a><p><a href="../blog/2.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2.html" class="no-external">El Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Estadística'); return false;">
-Estadística
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Distribución normal'); return false;">
-Distribución normal
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TLC'); return false;">
-TLC
-</div>
-</div>
-<div class="listing-description">
-<a href="../blog/2.html" class="no-external">En la estadística moderna, gran parte de las conclusiones que tomamos sobre poblaciones se basan en el análisis de muestras. Pero, ¿cómo podemos estar seguros de que los…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2.html" class="no-external">
-<div class="listing-date">
-1 agosto 2024
-</div>
-<div class="listing-author">
-Jairon Ojeda S.
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Estadística,Data Science" data-listing-date-sort="1721019600000" data-listing-file-modified-sort="1745427134557" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3426">
-<div class="thumbnail">
-<p><a href="../blog/1.html" class="no-external"></a></p><a href="../blog/1.html" class="no-external">
-<p><img loading="lazy" src="../blog/images_prev/1_estaditica.jpg" class="thumbnail-image"></p>
-</a><p><a href="../blog/1.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/1.html" class="no-external">La Estadística: Una ciencia detras de los datos</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/1.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Estadística'); return false;">
-Estadística
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Science'); return false;">
-Data Science
-</div>
-</div>
-<div class="listing-description">
-<a href="../blog/1.html" class="no-external">En el vasto universo del conocimiento, pocas disciplinas tienen la capacidad de influir en nuestras vidas de manera tan profunda y diversa como la estadística; este campo, a…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/1.html" class="no-external">
-<div class="listing-date">
-15 julio 2024
-</div>
-<div class="listing-author">
-Jairon Ojeda S.
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No hay resultados
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kevin_ojeda_silupu2025,
+  author = {Kevin Ojeda Silupu, Jairon},
+  title = {Correlación y Regresión Lineal Simple},
+  date = {2025-09-15},
+  url = {https://jaironkevin.github.io/blog/3.html},
+  langid = {es}
+}
+</code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-kevin_ojeda_silupu2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Kevin Ojeda Silupu, J. (2025, September 15). <em>Correlación y Regresión
+Lineal Simple</em>. <a href="https://jaironkevin.github.io/blog/3.html">https://jaironkevin.github.io/blog/3.html</a>
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

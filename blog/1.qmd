@@ -1,5 +1,5 @@
 ---
-date: "2022-07-15"
+date: "2024-07-15"
 author: "Jairon Ojeda S."
 title: "La Estadística: Una ciencia detras de los datos"
 categories:

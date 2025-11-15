@@ -39,7 +39,7 @@ Toma decisiones informadas con el respaldo de análisis estadísticos precisos y
 - Modelos de ecuaciones estructurales (SEM) para comprender interacciones complejas.
 
 
-## 🎓 Metodologia de la investigación científica  
+## 🎓 Metodología de la investigación científica  
 
 
 🔍 **Te acompaño en cada etapa de tu investigación, desde la planificación hasta la defensa.**
@@ -76,13 +76,13 @@ Toma decisiones informadas con el respaldo de análisis estadísticos precisos y
 
 ::: {.row style="background-color: #e0e0e0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); padding: 20px; display: flex; align-items: center; justify-content: center;"}
 ::: {.column width="50%" style="text-align: center; display: flex; justify-content: center; align-items: center;"}  
-![](logoredondo.png){width=230px height=230px style="border-radius: 0;"}
+![](logoredondo.png){width=190px height=190px style="border-radius: 0;"}
 :::
 
 ::: {.column width="50%" style="display: flex; flex-direction: column; justify-content: center;"}
-![Teléfono](llamar.png){ width=24px } [942 507 330](tel:942507330)
+![Teléfono](llamar.png){ width=24px } [929 519 964](tel:929 519 964)
 
-![WhatsApp](whatsapp.png){ width=24px } [942 507 330](https://wa.me/942507330) 
+![WhatsApp](whatsapp.png){ width=24px } [929 519 964](https://wa.me/929 519 964) 
 
 ![Residencia](marcador-de-posicion.png){ width=24px } [Tambo Grande - Piura](https://maps.app.goo.gl/mpa9o5iRBD6VQNCP7)
 
@@ -92,12 +92,12 @@ Toma decisiones informadas con el respaldo de análisis estadísticos precisos y
 :::
 :::
 
-::: {.callout-note title="Grado academico" collapse="true"} 
+::: {.callout-note title="Constancia de registro SUNEDU" collapse="true"} 
 :::{.panel-tabset}
 
 ## Grado 
 
-  <embed type="text/pdf" src="GradoBr.pdf" width="780" height="800">
+  <embed type="text/pdf" src="constancia_2025-11-11.pdf" width="780" height="800">
 
 :::
 :::

@@ -1,5 +1,5 @@
 ---
-date: "2022-8-01"
+date: "2024-8-01"
 author: "Jairon Ojeda S."
 title: "El Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial"
 categories:

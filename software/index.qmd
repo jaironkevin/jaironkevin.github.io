@@ -1,6 +1,6 @@
 ---
-title: "Mis Software"
-description: Explora mis aplicaciones desarrolladas con librerias desde R y Python, incluyendo dashboards dinámicos y modelos en producción, cada software está diseñado para entender teorias, análisis de datos, visualización interactiva y toma de decisiones basada en datos.
+title: "Mis Aplicaciones"
+description: Explora una colección de aplicaciones desarrolladas con librerías de R y Python. Cada una ha sido diseñada para facilitar la comprensión de teorías estadísticas, el análisis de datos, la visualización interactiva, y a la vez la aplicación en casos reales.
 listing:
   contents: .
   sort: "date desc"
@@ -11,4 +11,6 @@ listing:
 page-layout: full
 lang: es
 ---
+
+
 

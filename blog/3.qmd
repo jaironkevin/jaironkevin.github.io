@@ -1,0 +1,21 @@
+---
+date: "2025-09-015"
+author: "Jairon Kevin Ojeda Silupu"
+title: "Correlación y Regresión Lineal Simple"
+categories:
+  - Tendencia central
+image: images_prev/3.png
+lang: es
+citation: true
+bibliography: Bibliografia.bib
+csl: apa.csl
+---
+
+
+:::{.callout-note collapse="false"}
+## Introducción 
+La correlación y la regresión lineal simple son técnicas distintas dentro del análisis estadístico. La correlación cuantifica el grado de relación lineal entre dos variables sin establecer direcciones funcionales, por otro lado la regresión lineal simple, en cambio, especifica una relación funcional entre una variable dependiente y una sola variable independiente con el fin de estimar su valor esperado. *Próximamente se publicarán más detalles sobre cada una de estas metodologías en este apartado.*
+:::
+
+
+

@@ -8,7 +8,7 @@ website:
   back-to-top-navigation: true
   favicon: favicon.png
   title: "Jairon K. Ojeda S."
-  site-url: "https://jaironkevin.github.io/Jairon-Ojeda.github.io/"
+  site-url: "https://jaironkevin.github.io/"
   navbar:
     background: "#536878"
     left:
@@ -17,13 +17,13 @@ website:
       - href: publications/index.qmd
         text: Publicaciones
       - href: software/index.qmd
-        text: Software
+        text: Shiny apps
       - href: portafolio/index.qmd
         text: Portafolio
       - href: servicios/index.qmd
         text: Servicios
   page-footer:
-    left: "© 2024 Jairon Ojeda. Website built with Quarto in RStudio"
+    left: "© 2025 Jairon Ojeda. Website built with Quarto in RStudio"
     right:
       - icon: github
         href: https://github.com/jaironkevin

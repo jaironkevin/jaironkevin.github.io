@@ -124,7 +124,7 @@ kbd,
 samp,
 var,
 output {
-  font-size: 90%;
+  font-size: 80%;
   font-style: normal;
   font-family: 'Source Code Pro', "Lucida Console", "Courier New", monospace;
 }
@@ -133,7 +133,23 @@ nav,
 .footer {
   font-family: 'Fira Sans', 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 115%;
+  margin-bottom: 0;
 }
+
+
+.footer {
+  background-color: #f2f2f2; /* Gris claro, cámbialo si quieres */
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+  font-size: 100%;
+  color: #333;
+  margin-top: 0px; /* Añade espacio arriba si está muy pegado */
+}
+.footer p {
+  margin: 0;
+}
+
 
 a.nav-link,a.navbar-brand {
   border-bottom: 0;
@@ -315,5 +331,19 @@ div.quarto-about-trestles .about-entity .about-link:hover {
 p {
   text-align: justify;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -1,0 +1,25 @@
+---
+date: "2025-02-15"
+title: "Seguimiento del Modelo SARIMA – Pronóstico de la Producción de Mango en el Valle de San Lorenzo (2000–2026)"
+categories:
+  - SARIMA
+  - Producción
+  - Mango
+image: 2_soft.png
+lang: es
+---
+
+
+Esta aplicación ha sido desarrollada en el marco de la tesis titulada “Modelo SARIMA y Red Neuronal Recurrente para el Pronóstico de la Producción de Mango en el Valle de San Lorenzo, 2024–2026”, elaborada por los bachilleres Jairon Kevin Ojeda Silupu y Jahayra Sheriden Rodríguez Rodríguez.
+
+El objetivo de esta herramienta es realizar el seguimiento y pronóstico de la producción de mango en el Valle de San Lorenzo durante el periodo 2000–2026, con base en el modelo SARIMA.
+
+Se recomienda interpretar los resultados con precaución, ya que la presencia de una cantidad considerable de datos con valor cero, asociada a la estacionalidad del cultivo, podría afectar la precisión de las estimaciones en ciertos periodos. 
+
+
+::: {.callout-note title="Modelo SARIMA"}  
+  <embed type="text/html" src="https://9t0pdl-jaironkevin.shinyapps.io/APP_SARIMA/" width="780" height="800">
+:::
+
+Si desea tener una vista más amplia de la app haga clic [aquí](https://9t0pdl-jaironkevin.shinyapps.io/APP_SARIMA/)
+

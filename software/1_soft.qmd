@@ -5,6 +5,7 @@ categories:
   - Estadística
   - TLC
 image: 1_soft.png
+lang: es
 ---
 
 

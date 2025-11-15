@@ -49,11 +49,18 @@
     "text": "¿Por qué el TCL es el punto de partida en estadística?\nAntes del Teorema Central del Límite (TLC), los estadísticos enfrentaban un desafío clave: ¿cómo inferir propiedades de una población a partir de una muestra?\nDado que la mayoría de las poblaciones reales tienen distribuciones desconocidas o no normales, cualquier inferencia sin un fundamento matemático sólido habría sido poco fiable. El TCL resolvió este problema al demostrar que, con muestras suficientemente grandes, la distribución de las medias muestrales tiende a la normalidad, sentando así las bases de la inferencia estadística.\nMás que un resultado teórico, el TCL es un pilar de las pruebas paramétricas y la inteligencia artificial. Sin él, muchas herramientas estadísticas no serían aplicables en contextos con datos limitados o poblaciones desconocidas.\n\n\n\n\n\n\nTener en cueta\n\n\n\nCada vez que calculamos un intervalo de confianza, realizamos un test de hipótesis, estamos aplicando, muchas veces sin notarlo, el poder del TLC."
   },
   {
-    "objectID": "software/1_soft.html",
-    "href": "software/1_soft.html",
-    "title": "Simulación del Teorema del Limite Central",
+    "objectID": "software/2_soft.html",
+    "href": "software/2_soft.html",
+    "title": "Seguimiento del Modelo SARIMA – Pronóstico de la Producción de Mango en el Valle de San Lorenzo (2000–2026)",
     "section": "",
-    "text": "Aplicación interactiva que ilustra el Teorema del Límite Central (TLC) a través de simulaciones. Permite visualizar cómo la distribución de la media muestral se aproxima a una normal a medida que aumenta el tamaño de la muestra, utilizando diferentes distribuciones de origen.\n\n\n\n\n\n\nSimulación TLC\n\n\n\n\n\n\nSi desea tener una vista más amplia de la app haga clic aquí\n\n\n\n Back to top"
+    "text": "Esta aplicación ha sido desarrollada en el marco de la tesis titulada “Modelo SARIMA y Red Neuronal Recurrente para el Pronóstico de la Producción de Mango en el Valle de San Lorenzo, 2024–2026”, elaborada por los bachilleres Jairon Kevin Ojeda Silupu y Jahayra Sheriden Rodríguez Rodríguez.\nEl objetivo de esta herramienta es realizar el seguimiento y pronóstico de la producción de mango en el Valle de San Lorenzo durante el periodo 2000–2026, con base en el modelo SARIMA.\nSe recomienda interpretar los resultados con precaución, ya que la presencia de una cantidad considerable de datos con valor cero, asociada a la estacionalidad del cultivo, podría afectar la precisión de las estimaciones en ciertos periodos.\n\n\n\n\n\n\nModelo SARIMA\n\n\n\n\n\n\nSi desea tener una vista más amplia de la app haga clic aquí\n\n\n\n Volver arriba"
+  },
+  {
+    "objectID": "publications/uranium.html",
+    "href": "publications/uranium.html",
+    "title": "Modelo SARIMA y red neuronal recurrente para el pronóstico de la producción de mango en el valle de San Lorenzo, 2024-2026",
+    "section": "",
+    "text": "RESUMEN\nEl presente estudio, titulado “Modelo SARIMA y red neuronal recurrente para el pronóstico de la producción de mango en el valle de San Lorenzo, 2024-2026”, tuvo como objetivo general determinar la eficiencia de los modelos SARIMA y redes neuronales LSTM en el pronóstico mensual de la producción de mango. La investigación adoptó un enfoque cuantitativo, con diseño no experimental, de tipo aplicada y nivel predictivo, por otro lado la población comprendió todos los meses con registros de producción desde el inicio de la actividad hasta la actualidad, extrayéndose como muestra el periodo comprendido entre enero de 2000 y agosto de 2024. La información fue obtenida mediante búsqueda electrónica, solicitada a MIDAGRI y descargada en hojas de cálculo de Excel. En el análisis descriptivo, la serie de producción mensual de mango mostró alta variabilidad, con presencia de valores extremos que elevaron la media (15,148 t) frente a una mediana considerablemente menor (235 t), lo que evidencia una distribución sesgada. Se identificó una clara estacionalidad, con picos en diciembre y enero, y baja producción entre abril y julio debido a las temporadas. Siguiendo la metodología Box-Jenkins, se evaluaron siete modelos SARIMA, destacando el modelo SARIMA(1,0,0)(2,1,0)[12] como el más eficiente (MAE = 8,217; MASE = 0.833). Paralelamente, se entrenaron 4 modelos LSTM utilizando Keras3, destacando el modelo A con una arquitectura de dos capas ocultas (256 y 128 unidades), 24 entradas y 17 salidas. Posteriormente al comparar ambos modelos sobre un conjunto de prueba de 21 meses, el modelo SARIMA presentó un mejor desempeño en métricas clave (MAE y RMSE), especialmente en la predicción de valores extremos. Se concluye que el modelo SARIMA(1,0,0)(2,1,0)[12] es el más eficiente para ajustar y predecir la serie de tiempo de producción de mango en el valle de San Lorenzo. La proyección muestra un crecimiento progresivo desde agosto (1,472.69 t) hasta noviembre (10,520.33 t), seguido de una ligera caída en diciembre (8,214.21 t) y un repunte estimado en enero de 2026 (9,547.92 t).\n\n\n\n\n Back to top"
   },
   {
     "objectID": "portafolio/index.html",
@@ -67,21 +74,21 @@
     "href": "index.html",
     "title": "Jairon K. Ojeda S.",
     "section": "",
-    "text": "Jairon Ojeda Bachiller en estadísta Por la Universidad Nacional de Piura Piura, Perú\nExploro y comparto conocimientos sobre estadística y análisis de datos. Aquí encontrarás insights en mi Blog, acceso a mis Publicaciones académicas, herramientas útiles en Software, oportunidades de Negociación en proyectos estadísticos, recursos para Enseñar estadística, y más.\n\n“Transformando datos en conocimientos, y conocimientos en decisiones.”\n\n\n\n Back to top"
+    "text": "Jairon Ojeda Licenciado en estadísta Por la Universidad Nacional de Piura Piura, Perú\nExploro y comparto conocimientos sobre estadística y análisis de datos. Aquí encontrarás insights en mi Blog, acceso a mis Publicaciones académicas, herramientas útiles en Software, oportunidades de Negociación en proyectos estadísticos, recursos para Enseñar estadística, y más.\n\n“Transformando datos en conocimientos, y conocimientos en buenas decisiones.”\n\n\n\n Back to top"
   },
   {
-    "objectID": "publications/uranium.html",
-    "href": "publications/uranium.html",
-    "title": "Por ahora no hay publicaciones que mostrar",
+    "objectID": "blog/3.html",
+    "href": "blog/3.html",
+    "title": "Correlación y Regresión Lineal Simple",
     "section": "",
-    "text": "Abstract goes here\nPlus any other information such as supplementary materials.\n\n\n\n Back to top"
+    "text": "Introducción\n\n\n\n\n\nLa correlación y la regresión lineal simple son técnicas distintas dentro del análisis estadístico. La correlación cuantifica el grado de relación lineal entre dos variables sin establecer direcciones funcionales, por otro lado la regresión lineal simple, en cambio, especifica una relación funcional entre una variable dependiente y una sola variable independiente con el fin de estimar su valor esperado. Próximamente se publicarán más detalles sobre cada una de estas metodologías en este apartado.\n\n\n\n\n\n\n Volver arribaCómo citarBibTeX@online{kevin_ojeda_silupu2025,\n  author = {Kevin Ojeda Silupu, Jairon},\n  title = {Correlación y Regresión Lineal Simple},\n  date = {2025-09-15},\n  url = {https://jaironkevin.github.io/blog/3.html},\n  langid = {es}\n}\nPor favor, cita este trabajo como:\nKevin Ojeda Silupu, J. (2025, September 15). Correlación y Regresión\nLineal Simple. https://jaironkevin.github.io/blog/3.html"
   },
   {
     "objectID": "blog/index.html",
     "href": "blog/index.html",
     "title": "My blog",
     "section": "",
-    "text": "Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nEl Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial\n\n\n\n\n\n\nEstadística\n\n\nDistribución normal\n\n\nTLC\n\n\n\n\n\n\n\n\n\n1 agosto 2022\n\n\nJairon Ojeda S.\n\n\n\n\n\n\n\n\n\n\n\n\nLa Estadística: Una ciencia detras de los datos\n\n\n\n\n\n\nEstadística\n\n\nData Science\n\n\n\n\n\n\n\n\n\n15 julio 2022\n\n\nJairon Ojeda S.\n\n\n\n\n\n\nNo hay resultados\n\n Volver arriba"
+    "text": "Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCorrelación y Regresión Lineal Simple\n\n\n\n\n\n\nTendencia central\n\n\n\n\n\n\n\n\n\n15 septiembre 2025\n\n\nJairon Kevin Ojeda Silupu\n\n\n\n\n\n\n\n\n\n\n\n\nEl Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial\n\n\n\n\n\n\nEstadística\n\n\nDistribución normal\n\n\nTLC\n\n\n\n\n\n\n\n\n\n1 agosto 2024\n\n\nJairon Ojeda S.\n\n\n\n\n\n\n\n\n\n\n\n\nLa Estadística: Una ciencia detras de los datos\n\n\n\n\n\n\nEstadística\n\n\nData Science\n\n\n\n\n\n\n\n\n\n15 julio 2024\n\n\nJairon Ojeda S.\n\n\n\n\n\n\nNo hay resultados\n\n Volver arriba"
   },
   {
     "objectID": "portafolio/1_por_Pen.html",
@@ -95,14 +102,21 @@
     "href": "publications/index.html",
     "title": "Publicaciones",
     "section": "",
-    "text": "Publicaciones\nAquí se podrán observar publicaciones como tesis, artículos, entre otros, que posiblemente se vayan publicando con el tiempo. Por ahora queda pendiente….\n\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n    Jairon Ojeda (2024) Por ahora no hay publicaciones que mostrar. CR Acad Sci, 130, 76-79..\n  \n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Publicaciones\nAquí encontrarás mis trabajos académicos, como tesis, artículos y otros aportes personales en PDF.\n\n🔍 Puedes usar los filtros y el ordenamiento para buscar por título, autor o año de publicación.\n\n\n\n\n\n\n\n\n   \n     \n     \n       Ordenar por\n       Por defecto\n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Título\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n    Jairon Ojeda (2024) Modelo SARIMA y red neuronal recurrente para el pronóstico de la producción de mango en el valle de San Lorenzo, 2024-2026. Tesis, Universidad Nacional de Piura.\n  \n\n\n\n\nNo hay resultados\n\n Volver arriba"
+  },
+  {
+    "objectID": "software/1_soft.html",
+    "href": "software/1_soft.html",
+    "title": "Simulación del Teorema del Limite Central",
+    "section": "",
+    "text": "Aplicación interactiva que ilustra el Teorema del Límite Central (TLC) a través de simulaciones. Permite visualizar cómo la distribución de la media muestral se aproxima a una normal a medida que aumenta el tamaño de la muestra, utilizando diferentes distribuciones de origen.\n\n\n\n\n\n\nSimulación TLC\n\n\n\n\n\n\nSi desea tener una vista más amplia de la app haga clic aquí\n\n\n\n Volver arriba"
   },
   {
     "objectID": "software/index.html",
     "href": "software/index.html",
-    "title": "Mis Software",
+    "title": "Mis Aplicaciones",
     "section": "",
-    "text": "Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSimulación del Teorema del Limite Central\n\n\n\nEstadística\n\n\nTLC\n\n\n\n\n\n\n\n\n\n\n24 julio 2024\n\n\n\n\n\n\n\n\nNo hay resultados\n\n Volver arriba"
+    "text": "Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nSeguimiento del Modelo SARIMA – Pronóstico de la Producción de Mango en el Valle de San Lorenzo (2000–2026)\n\n\n\nSARIMA\n\n\nProducción\n\n\nMango\n\n\n\n\n\n\n\n\n\n\n15 febrero 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulación del Teorema del Limite Central\n\n\n\nEstadística\n\n\nTLC\n\n\n\n\n\n\n\n\n\n\n24 julio 2024\n\n\n\n\n\n\n\n\nNo hay resultados\n\n Volver arriba"
   },
   {
     "objectID": "servicios/index.html#servicios-de-consultoría-en-estadística-y-análisis-de-datos",
@@ -119,11 +133,11 @@
     "text": "🎯 Servicios Especializados de Análisis Estadístico:\n\n1️⃣ Estadística Descriptiva\n\nResumen y análisis mediante medidas de tendencia central, dispersión y gráficos.\nAnálisis exploratorio de datos (EDA) para descubrir patrones, anomalías y relaciones iniciales.\n\n\n\n2️⃣ Estadística Inferencial\n\nMuestreo estadístico adecuado para garantizar la representatividad.\nPruebas de hipótesis con métodos paramétricos y no paramétricos.\nComparación de grupos mediante pruebas de t de Student, ANOVA, MANOVA, entre otros.\n\n\n\n3️⃣ Modelado Estadístico y Predictivo\n\nRegresión lineal, logística y modelos de regresión múltiple.\nModelos de series temporales (ARIMA, SARIMA, SARIMAX, ETS, LSTM) para pronósticos precisos.\nModelos lineales generalizados (GLM) y análisis de supervivencia.\n\n\n\n4️⃣ Análisis Multivariado\n\nAnálisis de componentes principales (PCA) y análisis factorial exploratorio.\nSegmentación de datos mediante análisis de clústeres.\nModelos de ecuaciones estructurales (SEM) para comprender interacciones complejas."
   },
   {
-    "objectID": "servicios/index.html#metodologia-de-la-investigación-científica",
-    "href": "servicios/index.html#metodologia-de-la-investigación-científica",
+    "objectID": "servicios/index.html#metodología-de-la-investigación-científica",
+    "href": "servicios/index.html#metodología-de-la-investigación-científica",
     "title": "Transforma tus Datos en Decisiones Inteligentes",
-    "section": "🎓 Metodologia de la investigación científica",
-    "text": "🎓 Metodologia de la investigación científica\n🔍 Te acompaño en cada etapa de tu investigación, desde la planificación hasta la defensa.\n\n📝 Redacción de Proyectos de Tesis:\nAsesoría en la elaboración de la estructura académica: introducción, realidad problemática, objetivos, marco teórico, hipótesis y metodología.\n(Adaptado al reglamento específico de tu universidad).\n📑 Análisis de Fiabilidad de Cuestionarios:\nAplicación de coeficientes como Alfa de Cronbach, Omega de McDonald, KR-20 (Kuder-Richardson 20), entre otros.\n(La elección depende del tipo de escala de medición y los objetivos del estudio).\n🧪 Desarrollo de Tesis:\nAsistencia en el análisis, interpretación y redacción del capítulo de resultados, así como en la formulación de conclusiones y recomendaciones.\n📊 Análisis Estadístico para Tesis:\nAplicación rigurosa de pruebas estadísticas paramétricas y no paramétricas para investigaciones de pregrado y posgrado.\n(Incluye análisis descriptivo, inferencial, predictivo y multivariado, según los objetivos definidos).\n🎤 Preparación para la Defensa de Tesis:\nOrientación para una presentación clara y profesional de resultados, con énfasis en la argumentación científica y el manejo de posibles preguntas del jurado."
+    "section": "🎓 Metodología de la investigación científica",
+    "text": "🎓 Metodología de la investigación científica\n🔍 Te acompaño en cada etapa de tu investigación, desde la planificación hasta la defensa.\n\n📝 Redacción de Proyectos de Tesis:\nAsesoría en la elaboración de la estructura académica: introducción, realidad problemática, objetivos, marco teórico, hipótesis y metodología.\n(Adaptado al reglamento específico de tu universidad).\n📑 Análisis de Fiabilidad de Cuestionarios:\nAplicación de coeficientes como Alfa de Cronbach, Omega de McDonald, KR-20 (Kuder-Richardson 20), entre otros.\n(La elección depende del tipo de escala de medición y los objetivos del estudio).\n🧪 Desarrollo de Tesis:\nAsistencia en el análisis, interpretación y redacción del capítulo de resultados, así como en la formulación de conclusiones y recomendaciones.\n📊 Análisis Estadístico para Tesis:\nAplicación rigurosa de pruebas estadísticas paramétricas y no paramétricas para investigaciones de pregrado y posgrado.\n(Incluye análisis descriptivo, inferencial, predictivo y multivariado, según los objetivos definidos).\n🎤 Preparación para la Defensa de Tesis:\nOrientación para una presentación clara y profesional de resultados, con énfasis en la argumentación científica y el manejo de posibles preguntas del jurado."
   },
   {
     "objectID": "servicios/index.html#software-y-herramientas-utilizadas",
@@ -137,6 +151,6 @@
     "href": "servicios/index.html#listo-para-descubrir-el-potencial-de-tus-datos",
     "title": "Transforma tus Datos en Decisiones Inteligentes",
     "section": "🚀 ¿Listo para descubrir el potencial de tus datos?",
-    "text": "🚀 ¿Listo para descubrir el potencial de tus datos?\n¡Contáctame hoy mismo y transforma la incertidumbre en conocimiento útil para tu investigación, negocio o tesis académica!.\n\n\n\n\n\n 942 507 330\n 942 507 330\n Tambo Grande - Piura\n jaironojeda99@gmail.com\n LinkedIn\n\n\n\n\n\n\n\n\nGrado academico\n\n\n\n\n\n\nGrado"
+    "text": "🚀 ¿Listo para descubrir el potencial de tus datos?\n¡Contáctame hoy mismo y transforma la incertidumbre en conocimiento útil para tu investigación, negocio o tesis académica!.\n\n\n\n\n\n 929 519 964\n 929 519 964\n Tambo Grande - Piura\n jaironojeda99@gmail.com\n LinkedIn\n\n\n\n\n\n\n\n\nConstancia de registro SUNEDU\n\n\n\n\n\n\nGrado"
   }
 ]

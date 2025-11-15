@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.56">
@@ -56,17 +56,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 <script>
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-project','listing-website','listing-date-format','listing-format','listing-execute','listing-language','listing-sidebar','listing-author-title','listing-author','listing-date','listing-title','listing-details','listing-link','listing-github','listing-doi','listing-path','listing-outputHref','listing-date-modified','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-date-format','listing-format','listing-execute','listing-language','listing-sidebar','listing-author-title','listing-author','listing-date','listing-title','listing-details','listing-link','listing-github','listing-orcid','listing-path','listing-outputHref','listing-date-modified','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author","listing-details"],
     };
@@ -136,8 +136,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Jairon K. Ojeda S.</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../software/index.html"> 
-<span class="menu-text">Software</span></a>
+<span class="menu-text">Shiny apps</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../portafolio/index.html"> 
@@ -175,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">En esta página</h2>
    
   <ul>
   <li><a href="#publicaciones" id="toc-publicaciones" class="nav-link active" data-scroll-target="#publicaciones">Publicaciones</a></li>
@@ -190,7 +190,10 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="publicaciones" class="level1">
 <h1>Publicaciones</h1>
-<p>Aquí se podrán observar publicaciones como tesis, artículos, entre otros, que posiblemente se vayan publicando con el tiempo. Por ahora queda pendiente….</p>
+<p>Aquí encontrarás mis trabajos académicos, como tesis, artículos y otros aportes personales en PDF.</p>
+<blockquote class="blockquote">
+<p>🔍 Puedes usar los filtros y el ordenamiento para buscar por título, autor o año de publicación.</p>
+</blockquote>
 
 
 
@@ -200,26 +203,26 @@ ul.task-list li input[type="checkbox"] {
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
      <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
+     <select id="listing-listing-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
+       <option value="index" data-direction="asc">Por defecto</option>
          <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
+          Fecha - Menos reciente
         </option>
          <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
+          Fecha - Más reciente
         </option>
          <option value="listing-title" data-direction="asc">
-          Title
+          Título
         </option>
          <option value="listing-author" data-direction="asc">
-          Author
+          Autor/a
         </option>
      </select>
   </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+      <input type="text" class="search form-control" placeholder="Filtro">
     </div>
 </div>
 <style>
@@ -229,16 +232,16 @@ ul.task-list li input[type="checkbox"] {
 </style>
 <ul class="list">
 
-  <li data-index="0" data-listing-date-sort="1722402000000" data-listing-file-modified-sort="1726458053700" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="10">
-    <a href="../publications/uranium.html" class="listing-author">Jairon Ojeda (<span class="listing-date">2024</span>) <span class="listing-title">Por ahora no hay publicaciones que mostrar</span>. <span class="listing-details"><em>CR Acad Sci</em>, 130, 76-79.</span>.</a>
+  <li data-index="0" data-listing-date-sort="1722402000000" data-listing-file-modified-sort="1757737499459" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="325">
+    <a href="../publications/uranium.html" class="listing-author">Jairon Ojeda (<span class="listing-date">2024</span>) <span class="listing-title">Modelo SARIMA y red neuronal recurrente para el pronóstico de la producción de mango en el valle de San Lorenzo, 2024-2026</span>. <span class="listing-details">Tesis, Universidad Nacional de Piura</span>.</a>
   </li>
 
 </ul>
 
 <div class="listing-no-matching d-none">
-No matching items
+No hay resultados
 </div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -282,12 +285,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -331,7 +334,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jaironkevin\.github\.io\/Jairon-Ojeda\.github\.io\/");
+      var filterRegex = new RegExp("https:\/\/jaironkevin\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -663,7 +666,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2024 Jairon Ojeda. Website built with Quarto in RStudio</p>
+<p>© 2025 Jairon Ojeda. Website built with Quarto in RStudio</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

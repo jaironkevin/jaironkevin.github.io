@@ -11,8 +11,12 @@ listing:
 sidebar: false
 page-layout: full
 title-block-banner: false
+lang: es
 ---
 
 # Publicaciones
 
-Aquí se podrán observar publicaciones como tesis, artículos, entre otros, que posiblemente se vayan publicando con el tiempo. Por ahora queda pendiente.... 
+Aquí encontrarás mis trabajos académicos, como tesis, artículos y otros aportes personales en PDF.
+
+> 🔍 Puedes usar los filtros y el ordenamiento para buscar por título, autor o año de publicación.
+

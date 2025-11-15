@@ -9,7 +9,7 @@
 <meta name="author" content="Jairon Ojeda">
 <meta name="dcterms.date" content="2024-07-31">
 
-<title>Por ahora no hay publicaciones que mostrar – Jairon K. Ojeda S.</title>
+<title>Modelo SARIMA y red neuronal recurrente para el pronóstico de la producción de mango en el valle de San Lorenzo, 2024-2026 – Jairon K. Ojeda S.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../software/index.html"> 
-<span class="menu-text">Software</span></a>
+<span class="menu-text">Shiny apps</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../portafolio/index.html"> 
@@ -128,15 +128,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link active" data-scroll-target="#resumen">RESUMEN</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Por ahora no hay publicaciones que mostrar</h1>
+<h1 class="title">Modelo SARIMA y red neuronal recurrente para el pronóstico de la producción de mango en el valle de San Lorenzo, 2024-2026</h1>
 </div>
 
 
@@ -162,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-title-meta-heading">Publication details</div>
     <div class="quarto-title-meta-contents">
       <p class="date">
-        <em>CR Acad Sci</em>, 130, 76-79.
+        Tesis, Universidad Nacional de Piura
       </p>
     </div>
   </div>
@@ -171,11 +177,10 @@ ul.task-list li input[type="checkbox"] {
     <div class="quarto-title-meta-heading">Links</div>
     <div class="quarto-title-meta-contents">
       <p class="date" style="color: #fff !important;">
-            <a href="https://doi.org/10.1111/cras.304950" class="badge badge badge-blue">DOI</a>
-                                    <a href="https://github.com/jaironkevin" class="badge badge badge-red"><i class="fa fa-file-pdf-o"></i>&nbsp;pdf</a>
+                                    <a href="https://github.com/jaironkevin/SARIMA_LSTM/blob/main/Tesis.pdf" class="badge badge badge-red"><i class="fa fa-file-pdf-o"></i>&nbsp;pdf</a>
                   
       
-      <a href="http://github.com/Jairon ojeda" class="badge badge badge-green"><i class="fa fa-github"></i>&nbsp;code</a>
+      <a href="http://github.com/jaironkevin/SARIMA_LSTM" class="badge badge badge-green"><i class="fa fa-github"></i>&nbsp;code</a>
       
       
       </p>
@@ -194,10 +199,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Abstract goes here</p>
-<p>Plus any other information such as supplementary materials.</p>
+<section id="resumen" class="level1">
+<h1>RESUMEN</h1>
+<p>El presente estudio, titulado “Modelo SARIMA y red neuronal recurrente para el pronóstico de la producción de mango en el valle de San Lorenzo, 2024-2026”, tuvo como objetivo general determinar la eficiencia de los modelos SARIMA y redes neuronales LSTM en el pronóstico mensual de la producción de mango. La investigación adoptó un enfoque cuantitativo, con diseño no experimental, de tipo aplicada y nivel predictivo, por otro lado la población comprendió todos los meses con registros de producción desde el inicio de la actividad hasta la actualidad, extrayéndose como muestra el periodo comprendido entre enero de 2000 y agosto de 2024. La información fue obtenida mediante búsqueda electrónica, solicitada a MIDAGRI y descargada en hojas de cálculo de Excel. En el análisis descriptivo, la serie de producción mensual de mango mostró alta variabilidad, con presencia de valores extremos que elevaron la media (15,148 t) frente a una mediana considerablemente menor (235 t), lo que evidencia una distribución sesgada. Se identificó una clara estacionalidad, con picos en diciembre y enero, y baja producción entre abril y julio debido a las temporadas. Siguiendo la metodología Box-Jenkins, se evaluaron siete modelos SARIMA, destacando el modelo SARIMA(1,0,0)(2,1,0)[12] como el más eficiente (MAE = 8,217; MASE = 0.833). Paralelamente, se entrenaron 4 modelos LSTM utilizando Keras3, destacando el modelo A con una arquitectura de dos capas ocultas (256 y 128 unidades), 24 entradas y 17 salidas. Posteriormente al comparar ambos modelos sobre un conjunto de prueba de 21 meses, el modelo SARIMA presentó un mejor desempeño en métricas clave (MAE y RMSE), especialmente en la predicción de valores extremos. Se concluye que el modelo SARIMA(1,0,0)(2,1,0)[12] es el más eficiente para ajustar y predecir la serie de tiempo de producción de mango en el valle de San Lorenzo. La proyección muestra un crecimiento progresivo desde agosto (1,472.69 t) hasta noviembre (10,520.33 t), seguido de una ligera caída en diciembre (8,214.21 t) y un repunte estimado en enero de 2026 (9,547.92 t).</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -292,7 +299,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jaironkevin\.github\.io\/Jairon-Ojeda\.github\.io\/");
+      var filterRegex = new RegExp("https:\/\/jaironkevin\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -624,7 +631,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2024 Jairon Ojeda. Website built with Quarto in RStudio</p>
+<p>© 2025 Jairon Ojeda. Website built with Quarto in RStudio</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

@@ -1,8 +1,15 @@
 [
   {
-    "listing": "/portafolio/index.html",
+    "listing": "/software/index.html",
     "items": [
-      "/portafolio/1_por_Pen.html"
+      "/software/2_soft.html",
+      "/software/1_soft.html"
+    ]
+  },
+  {
+    "listing": "/publications/index.html",
+    "items": [
+      "/publications/uranium.html"
     ]
   },
   {
@@ -14,16 +21,9 @@
     ]
   },
   {
-    "listing": "/publications/index.html",
+    "listing": "/portafolio/index.html",
     "items": [
-      "/publications/uranium.html"
-    ]
-  },
-  {
-    "listing": "/software/index.html",
-    "items": [
-      "/software/2_soft.html",
-      "/software/1_soft.html"
+      "/portafolio/1_por_Pen.html"
     ]
   }
 ]

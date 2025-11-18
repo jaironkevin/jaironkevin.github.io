@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jairon Kevin Ojeda Silupu">
 
-<title>Correlación y Regresión Lineal Simple – Jairon K. Ojeda S.</title>
+<title>Coeficiente de Correlación de los Rangos de Spearman – Jairon K. Ojeda S.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,7 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -75,6 +129,49 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -127,17 +224,42 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#qué-es-la-correlación-de-spearman" id="toc-qué-es-la-correlación-de-spearman" class="nav-link active" data-scroll-target="#qué-es-la-correlación-de-spearman">¿Qué es la correlación de Spearman?</a></li>
+  <li><a href="#expresión-matemática" id="toc-expresión-matemática" class="nav-link" data-scroll-target="#expresión-matemática">Expresión Matemática</a></li>
+  <li><a href="#comprobando-en-r" id="toc-comprobando-en-r" class="nav-link" data-scroll-target="#comprobando-en-r">Comprobando en R</a>
+  <ul class="collapse">
+  <li><a href="#ejemplo-sin-empates" id="toc-ejemplo-sin-empates" class="nav-link" data-scroll-target="#ejemplo-sin-empates">1. Ejemplo sin empates</a></li>
+  <li><a href="#ejemplo-con-empates-rangos-promediados" id="toc-ejemplo-con-empates-rangos-promediados" class="nav-link" data-scroll-target="#ejemplo-con-empates-rangos-promediados">2. Ejemplo con empates (Rangos promediados)</a></li>
+  </ul></li>
+  <li><a href="#que-es-una-relación-monotónica-o-tambien-llamado-asociación-monotónica" id="toc-que-es-una-relación-monotónica-o-tambien-llamado-asociación-monotónica" class="nav-link" data-scroll-target="#que-es-una-relación-monotónica-o-tambien-llamado-asociación-monotónica">¿Que es una relación monotónica o tambien llamado asociación monotónica?</a>
+  <ul class="collapse">
+  <li><a href="#asociación-monótona-spearman-alto-pearson" id="toc-asociación-monótona-spearman-alto-pearson" class="nav-link" data-scroll-target="#asociación-monótona-spearman-alto-pearson">Asociación monótona (Spearman ≈ alto, Pearson ↓)</a></li>
+  </ul></li>
+  <li><a href="#supuestos-del-coeficiente-de-spearman-rho" id="toc-supuestos-del-coeficiente-de-spearman-rho" class="nav-link" data-scroll-target="#supuestos-del-coeficiente-de-spearman-rho">Supuestos del coeficiente de Spearman (<span class="math inline">\rho</span>)</a></li>
+  <li><a href="#interpretación-de-rho-de-spearman" id="toc-interpretación-de-rho-de-spearman" class="nav-link" data-scroll-target="#interpretación-de-rho-de-spearman">Interpretación de <span class="math inline">\rho</span> de Spearman</a>
+  <ul class="collapse">
+  <li><a href="#rango-de-valores" id="toc-rango-de-valores" class="nav-link" data-scroll-target="#rango-de-valores">Rango de valores</a></li>
+  <li><a href="#fuerza-de-la-relación" id="toc-fuerza-de-la-relación" class="nav-link" data-scroll-target="#fuerza-de-la-relación">Fuerza de la relación</a></li>
+  </ul></li>
+  <li><a href="#ejemplos-practicos-usando-r" id="toc-ejemplos-practicos-usando-r" class="nav-link" data-scroll-target="#ejemplos-practicos-usando-r">Ejemplos practicos usando R</a></li>
+  <li><a href="#bibliografia-recomendada" id="toc-bibliografia-recomendada" class="nav-link" data-scroll-target="#bibliografia-recomendada">Bibliografia Recomendada</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Correlación y Regresión Lineal Simple</h1>
+<h1 class="title">Coeficiente de Correlación de los Rangos de Spearman</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Tendencia central</div>
+    <div class="quarto-category">Relación monotónica</div>
+    <div class="quarto-category">Correlación</div>
   </div>
   </div>
 
@@ -167,35 +289,707 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="qué-es-la-correlación-de-spearman" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-la-correlación-de-spearman">¿Qué es la correlación de Spearman?</h2>
+<p>En muchos análisis estadísticos se suele comenzar evaluando la asociación entre dos variables mediante el coeficiente de correlación de Pearson, el cual es apropiado cuando la relación entre ellas es esencialmente lineal. Sin embargo, en la práctica no siempre las variables se comportan siguiendo un patrón estrictamente lineal, pues es común encontrar conjuntos de datos en los que existe algún tipo de asociación, pero cuya forma no obedece a una tendencia lineal definida; en tales casos, el coeficiente de Pearson puede ofrecer resultados poco representativos o incluso engañosos.</p>
+<p>Para atender adecuadamente estas situaciones, se recurre al <strong>coeficiente de correlación de rangos de Spearman,</strong> también llamado simplemente correlación de Spearman. Este es un método no paramétrico que evalúa la asociación transformando los valores originales en rangos, de modo que el análisis se centra en el orden relativo de los datos y no en su magnitud absoluta. El coeficiente se representa como <span class="math inline">\rho</span> (rho) y cuantifica la fuerza y dirección de una <strong>relación monotónica</strong> entre las variables, diferenciándose así de Pearson, cuyo enfoque se limita a relaciones lineales.</p>
+<p>Esta característica convierte a Spearman en una alternativa más robusta cuando los datos presentan relaciones no lineales, distribuciones no normales o valores atípicos (no asume homocedasticidad) que pueden distorsionar sustancialmente la correlación de Pearson. En términos conceptuales, puede entenderse a Spearman como una aplicación del coeficiente de Pearson, pero calculado sobre valores ordenados o jerarquizados, razón por la cual comparte varios de sus principios matemáticos, aunque con ventajas claras en contextos no paramétricos.</p>
+</section>
+<section id="expresión-matemática" class="level2">
+<h2 class="anchored" data-anchor-id="expresión-matemática">Expresión Matemática</h2>
+<p>Cuando los datos no contienen empates, <span class="math inline">\rho</span> se puede hallar calculando la diferencia de los valores ordenados mediante la siguiente ecuación:</p>
+<p><span id="eq-cor1"><span class="math display">
+r_s = 1-\frac{6 \sum d_i^2}{n(n^2 - 1)}
+\tag{1}</span></span></p>
+<p>Donde <span class="math inline">d_i</span> es la diferencia de las variables ordenadas y <span class="math inline">n</span> es el número de muestras. Cuando el conjunto de datos contiene empates, la fórmula anterior arrojará valores incorrectos o sesgados. Cuando los datos contienen empates, el coeficiente de Spearman, se calculan <strong>sobre los rangos</strong> de las variables. Así, la correlación se expresa como:</p>
+<p><span class="math display">
+r_s = \frac{\sum_{i} (rg_{x_i} - \overline{rg_x})(rg_{y_i} - \overline{rg_y})}
+           {\sqrt{\sum_{i} (rg_{x_i} - \overline{rg_x})^2 \; \sum_{i} (rg_{y_i} - \overline{rg_y})^2}}
+</span></p>
+<p>Lo cual es equivalente a su forma basada en covarianza entre rangos:</p>
+<p><span id="eq-cor2"><span class="math display">
+r_s = \rho_{rg_x, rg_y} = \frac{cov(rg_x, rg_y)}{\sigma_{rg_x} \sigma_{rg_y}}
+\tag{2}</span></span></p>
+<p>donde:</p>
+<p><span class="math display">
+\text{cov}(rg_x, rg_y) = \frac{1}{n} \sum_{i} (rg_{x_i} - \overline{rg_x})(rg_{y_i} - \overline{rg_y})
+</span></p>
+<p>y las desviaciones estándar también corresponden a los <strong>rangos</strong>:</p>
+<p><span class="math display">
+\sigma_{rg_x} = \sqrt{\frac{1}{n} \sum_{i} (rg_{x_i} - \overline{rg_x})^2}
+</span></p>
+<p>donde <span class="math inline">\rho</span> denota el coeficiente de Pearson usual, pero sobre las variables ordenadas.<span class="math inline">cov(rg_x, rg_y)</span> es la covarianza y <span class="math inline">\sigma_{rg_x}, \sigma_{rg_y}</span> son las desviaciones estándar de las variables ordenadas.</p>
+<blockquote class="blockquote">
+<p>A groso modo cuando no hay empates en las observaciones, se usa la formula corta (<a href="#eq-cor1" class="quarto-xref">Ecuación&nbsp;1</a>) o tambien Pearson pero sobre los rangos, <span class="math inline">rg_x, rg_y</span>, pero cuando hay empates, ahi ya no se usa la formula corta, solo pearson sobre los rangos (<a href="#eq-cor2" class="quarto-xref">Ecuación&nbsp;2</a>).En general el coeficiente de Spearman es exactamente la correlación de Pearson pero aplicada a los rangos (ranks) de los datos.</p>
+</blockquote>
+<p>La hipótesis nula para este coeficiente es:</p>
+<p><span class="math inline">H_0 : \rho = 0</span></p>
+<p>que se puede comprobar mediante el estadístico <em>t</em> con la siguiente fórmula:</p>
+<p><span class="math display">
+t = \frac{r_s}{\sqrt{\frac{1-r_s^2}{n-2}}}
+</span> Esta prueba se basa en la aproximación de Pearson aplicada a rangos donde:</p>
+<ul>
+<li><span class="math inline">t</span> es el valor calculado para la prueba de significancia del coeficiente de correlación de Spearman.<br>
+</li>
+<li><span class="math inline">r_s</span> es el coeficiente de correlación de Spearman.<br>
+</li>
+<li><span class="math inline">n</span> es el tamaño de la muestra.</li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Introducción
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La asociación monótona indica que las variables tienden a moverse en la misma dirección relativa, pero no necesariamente a un ritmo constante. Es importante destacar que todas las correlaciones lineales son monótonas, pero no todas las asociaciones monótonas son lineales, ya que también puede haber asociaciones monótonas no lineales.</p>
+<p>Por otro lado Un valor alto o bajo de <span class="math inline">\rho</span> indica <strong>asociación entre variables</strong>, pero no implica que una variable cause cambios en la otra (<strong>correlación no implica causalidad</strong>). La inferencia causal requiere diseño experimental o métodos adicionales de análisis.</p>
+</div>
+</div>
+</section>
+<section id="comprobando-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="comprobando-en-r">Comprobando en R</h2>
+<p>Para fines académicos se presentan ejemplos sintéticos para corroborar como funcionan ambas formulas usando la función <code>cor()</code> aplicando Spearman directamente y Pearson sobre los rangos, con el objetivo de corroborar lo mencionado anteriormente tanto para empates y sin empates.</p>
+<section id="ejemplo-sin-empates" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-sin-empates">1. Ejemplo sin empates</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">12</span>, <span class="dv">15</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Rangos</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>rg_x <span class="ot">&lt;-</span> <span class="fu">rank</span>(x)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>rg_y <span class="ot">&lt;-</span> <span class="fu">rank</span>(y)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>rg_x; rg_y</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+</div>
+<p>Se obtienen los rangos a los cuales se les aplicara el coeficiente de pearson.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spearman manual (Pearson sobre rangos)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>rs_manual <span class="ot">&lt;-</span> <span class="fu">cor</span>(rg_x, rg_y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>rs_manual</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>se observa que al aplicar pearson a los rangos se tiene un valor de <strong>1</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spearman automático</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>rs_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>rs_cor</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>Ahora al aplicarse la función de Spearman directamente, se obtiene el mismo valor <strong>1</strong></p>
+<p>Al no existir empates y al ser la relación perfectamente monótona creciente, el coeficiente de Spearman es exactamente 1, tanto al aplicar la fórmula manual en R (Pearson sobre los rangos) como al usar la función directa de R. Ambos métodos son equivalentes en ausencia de empates.</p>
+</section>
+<section id="ejemplo-con-empates-rangos-promediados" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-con-empates-rangos-promediados">2. Ejemplo con empates (Rangos promediados)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">30</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">9</span>, <span class="dv">9</span>, <span class="dv">12</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Rangos con empates</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>rg_x <span class="ot">&lt;-</span> <span class="fu">rank</span>(x, <span class="at">ties.method =</span> <span class="st">"average"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>rg_y <span class="ot">&lt;-</span> <span class="fu">rank</span>(y, <span class="at">ties.method =</span> <span class="st">"average"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>rg_x; rg_y</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5 1.5 3.0 5.0 5.0 5.0</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.0 2.5 2.5 4.5 4.5 6.0</code></pre>
+</div>
+</div>
+<p>Se obtienen los rangos para el caso de empates promediando con <code>ties.method = "average"</code> a los cuales se les aplicara el coeficiente de pearson.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spearman manual con Pearson sobre rangos</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>rs_manual <span class="ot">&lt;-</span> <span class="fu">cor</span>(rg_x, rg_y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>rs_manual</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9057895</code></pre>
+</div>
+</div>
+<p>se observa que al aplicar pearson a los rangos se tiene un valor de <strong>0.906</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spearman automático</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>rs_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(x, y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>rs_cor</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9057895</code></pre>
+</div>
+</div>
+<p>Ahora al aplicarse la función de Spearman directamente, se obtiene el mismo valor <strong>0.906</strong></p>
+<p>En presencia de empates, Spearman ajusta los rangos asignando promedios. El valor calculado manualmente coincide exactamente con el obtenido mediante <code>cor(..., method="spearman")</code>, dado que el algoritmo interno también trabaja aplicando Pearson sobre los rangos ajustados.</p>
+</section>
+</section>
+<section id="que-es-una-relación-monotónica-o-tambien-llamado-asociación-monotónica" class="level2">
+<h2 class="anchored" data-anchor-id="que-es-una-relación-monotónica-o-tambien-llamado-asociación-monotónica">¿Que es una relación monotónica o tambien llamado asociación monotónica?</h2>
+<p>Una función o relación <span class="math inline">f(x)</span> entre <span class="math inline">x</span> e <span class="math inline">y</span> es <strong>monótona</strong> si mantiene <strong>un único sentido</strong> en todo su recorrido: siempre <strong>sube</strong> o siempre <strong>baja</strong>. Puede tener tramos planos, pero <strong>no puede cambiar de dirección</strong>, ademas no exige rectas; solo exige <strong>consistencia en el orden</strong> de los valores.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/fig14.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:20cm"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Las relaciones monotónicas describen cómo varía una variable respecto a otra sin requerir linealidad estricta. En una relación monotónica creciente (<span class="math inline">\rho \approx +1</span>), Y aumenta conforme X aumenta, incluso si la forma es lineal, cuadrática o exponencial; Spearman detecta perfectamente esta tendencia. En una relación monotónica decreciente (<span class="math inline">\rho \approx -1</span>), X incrementa mientras Y disminuye de manera consistente, y Spearman identifica claramente esta correlación negativa. Finalmente, en una relación no monotónica (<span class="math inline">\rho \approx 0</span>), la asociación cambia de dirección sube, baja y vuelve a subir, por lo que no existe un orden estable entre X e Y y Spearman indica ausencia de monotonicidad.</p>
+<section id="asociación-monótona-spearman-alto-pearson" class="level3">
+<h3 class="anchored" data-anchor-id="asociación-monótona-spearman-alto-pearson">Asociación monótona (Spearman ≈ alto, Pearson ↓)</h3>
+<p>Se generó un conjunto de datos sintético compuesto por 200 observaciones para dos variables continuas <span class="math inline">x</span> e <span class="math inline">y</span>. Antes de comparar los coeficientes de correlación de Pearson (paramétrico) y Spearman (no paramétrico), es necesario verificar si los supuestos asociados al uso de Pearson se cumplen, especialmente normalidad.</p>
+<p>Aunque Spearman también puede aplicarse a variables cuantitativas, sin embargo se debe aplica a este tipo cuando la relación no es lineal pero sí monótona, no se cumple normalidad, o existen valores atípicos,</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># creación de la data</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">999</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">runif</span>(<span class="dv">200</span>, <span class="dv">1</span>, <span class="dv">100</span>)) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">200</span>, <span class="dv">0</span>, <span class="dv">2</span>)   </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> scales<span class="sc">::</span><span class="fu">rescale</span>(x, <span class="at">to =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">100</span>))           <span class="co"># reescala para mantener rango</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>y_true <span class="ot">&lt;-</span> <span class="dv">15</span> <span class="sc">*</span> <span class="fu">log</span>(x)                             <span class="co"># relación monótona no lineal</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> y_true <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">200</span>, <span class="dv">0</span>, <span class="dv">3</span>)                    </span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(x, y)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Aplico el test de normalidad para validar el uso</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nortest)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Test Anderson-Darling</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>ad_x  <span class="ot">&lt;-</span> <span class="fu">ad.test</span>(data<span class="sc">$</span>x)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>ad_y  <span class="ot">&lt;-</span> <span class="fu">ad.test</span>(data<span class="sc">$</span>y)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>ad_x</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  Anderson-Darling normality test</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="do">## data:  data$x</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="do">## A = 2.4259, p-value = 3.734e-06</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>ad_y</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  Anderson-Darling normality test</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="do">## data:  data$y</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="do">## A = 5.9481, p-value = 1.112e-14</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ambas variables muestran una fuerte desviación de la normalidad según la prueba de Anderson–Darling, por lo que se recomienda usar métodos no paramétricos, como Spearman para correlación.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlaciones</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>cor_pearson <span class="ot">&lt;-</span> <span class="fu">cor</span>(data<span class="sc">$</span>x, data<span class="sc">$</span>y, <span class="at">method =</span> <span class="st">"pearson"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>cor_spearman <span class="ot">&lt;-</span> <span class="fu">cor</span>(data<span class="sc">$</span>x, data<span class="sc">$</span>y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>cor_pearson</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.8867464</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>cor_spearman</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.9469692</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>La correlación de Pearson es: <strong>0.887</strong><br>
+</li>
+<li>La correlación de Spearman es: <strong>0.947</strong></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstatsplot)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico usando Spearman</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>spearman <span class="ot">&lt;-</span> <span class="fu">ggscatterstats</span>(</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> x,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> y,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"nonparametric"</span>,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Spearman"</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Variable X"</span>,</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Variable Y"</span>,</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">point.args =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>),</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">smooth.line.args =</span> <span class="fu">list</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>),</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggplot.component =</span> <span class="fu">list</span>(</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>))  </span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>pearson <span class="ot">&lt;-</span> <span class="fu">ggscatterstats</span>(</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> x,</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> y,</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"parametric"</span>,</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Pearson"</span>,</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Variable X"</span>,</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Variable Y"</span>,</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">point.args =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>),</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">smooth.line.args =</span> <span class="fu">list</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>),</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">ggplot.component =</span> <span class="fu">list</span>(</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>))   </span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>spearman <span class="sc">+</span> pearson</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:20cm"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>Pearson baja porque evalúa linealidad.</p></li>
+<li><p>Spearman se mantiene elevada porque evalúa asociación monotómica.</p></li>
+<li><p>Este caso demuestra claramente la diferencia conceptual entre ambos coeficientes.</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>Es importante saber que la no normalidad no invalida calcular Pearson, solo afecta la inferencia (p-value, IC).</p>
+</blockquote>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Monotonía vs Linealidad
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>La correlación y la regresión lineal simple son técnicas distintas dentro del análisis estadístico. La correlación cuantifica el grado de relación lineal entre dos variables sin establecer direcciones funcionales, por otro lado la regresión lineal simple, en cambio, especifica una relación funcional entre una variable dependiente y una sola variable independiente con el fin de estimar su valor esperado. <em>Próximamente se publicarán más detalles sobre cada una de estas metodologías en este apartado.</em></p>
+<ul>
+<li><strong>Linealidad</strong> implica que la relación tiene forma de recta:<br>
+<span class="math display">
+y = a + bx
+</span></li>
+<li><strong>Monotonía</strong> solo requiere que Y mantenga un orden estable cuando aumenta X.</li>
+</ul>
+<blockquote class="blockquote">
+<p>Si <span class="math inline">X</span> aumenta, <span class="math inline">Y</span> siempre aumenta (o siempre disminuye), el orden se mantiene, es decir Spearman mide <strong>monotonicidad</strong> (no linealidad necesariamente), en cambio <strong>Pearson</strong> mide <strong>linealidad</strong>.</p>
+</blockquote>
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="supuestos-del-coeficiente-de-spearman-rho" class="level2">
+<h2 class="anchored" data-anchor-id="supuestos-del-coeficiente-de-spearman-rho">Supuestos del coeficiente de Spearman (<span class="math inline">\rho</span>)</h2>
+<p>Aunque Spearman es no paramétrico, sí tiene supuestos mínimos. Puedes explicar</p>
+<p>l coeficiente de correlación de Spearman (<span class="math inline">\rho</span>) es una medida no paramétrica que evalúa la fuerza y dirección de la relación monótona entre dos variables. Sus supuestos son:</p>
+<ol type="1">
+<li><p><strong>Variables ordinales, de intervalo o de razón:</strong><br>
+Las variables analizadas deben ser al menos ordinales, ya que Spearman se basa en los rangos de los datos.</p></li>
+<li><p><strong>Relación monótona:</strong><br>
+Se asume que la relación entre las variables es monótona (creciente o decreciente) en la población. No es necesario que sea lineal.</p></li>
+<li><p><strong>Ausencia de valores extremos influyentes:</strong><br>
+Spearman es menos sensible a outliers que Pearson, pero valores extremadamente atípicos pueden afectar los rangos y la magnitud de <span class="math inline">\rho</span>.</p></li>
+<li><p><strong>Muestreo aleatorio:</strong><br>
+Los datos deben provenir de una muestra representativa de la población, Spearman asume muestreo aleatorio para que sus propiedades de estimador y el test asociado sean válidos..</p></li>
+<li><p><strong>No requiere normalidad ni homocedasticidad:</strong><br>
+A diferencia de Pearson, Spearman no asume que las variables sigan distribución normal ni que presenten varianzas homogéneas, por lo que es adecuado para datos con distribuciones sesgadas o heterocedásticas.</p></li>
+</ol>
+</section>
+<section id="interpretación-de-rho-de-spearman" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-de-rho-de-spearman">Interpretación de <span class="math inline">\rho</span> de Spearman</h2>
+<p>El coeficiente de correlación de Spearman (<span class="math inline">\rho</span>) mide la <strong>fuerza y dirección de la relación monótona</strong> entre dos variables, utilizando los rangos de los datos.</p>
+<section id="rango-de-valores" class="level3">
+<h3 class="anchored" data-anchor-id="rango-de-valores">Rango de valores</h3>
+<ul>
+<li>El valor de <span class="math inline">\rho</span> se encuentra en el intervalo <strong>[-1, +1]</strong>:
+<ul>
+<li><span class="math inline">\rho = +1</span>: relación <strong>monótona creciente perfecta</strong>, todos los rangos de una variable aumentan cuando los de la otra también aumentan.</li>
+<li><span class="math inline">\rho = -1</span>: relación <strong>monótona decreciente perfecta</strong>, los rangos de una variable disminuyen cuando los de la otra aumentan.</li>
+<li><span class="math inline">\rho = 0</span>: <strong>ausencia de relación monótona</strong>, los rangos de las variables no presentan un patrón consistente.</li>
+</ul></li>
+</ul>
+</section>
+<section id="fuerza-de-la-relación" class="level3">
+<h3 class="anchored" data-anchor-id="fuerza-de-la-relación">Fuerza de la relación</h3>
+<p>Aunque los límites exactos dependen del contexto y la disciplina, una guía generalmente aceptada es:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Rango de <span class="math inline">\rho</span></th>
+<th>Interpretación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-1.00 a -0.91</td>
+<td>Correlación negativa perfecta</td>
+</tr>
+<tr class="even">
+<td>-0.90 a -0.76</td>
+<td>Correlación negativa muy fuerte</td>
+</tr>
+<tr class="odd">
+<td>-0.75 a -0.51</td>
+<td>Correlación negativa considerable</td>
+</tr>
+<tr class="even">
+<td>-0.50 a -0.11</td>
+<td>Correlación negativa media</td>
+</tr>
+<tr class="odd">
+<td>-0.10 a -0.01</td>
+<td>Correlación negativa débil</td>
+</tr>
+<tr class="even">
+<td>0.00</td>
+<td>No existe correlación</td>
+</tr>
+<tr class="odd">
+<td>+0.01 a +0.10</td>
+<td>Correlación positiva débil</td>
+</tr>
+<tr class="even">
+<td>+0.11 a +0.50</td>
+<td>Correlación positiva media</td>
+</tr>
+<tr class="odd">
+<td>+0.51 a +0.75</td>
+<td>Correlación positiva considerable</td>
+</tr>
+<tr class="even">
+<td>+0.76 a +0.90</td>
+<td>Correlación positiva muy fuerte</td>
+</tr>
+<tr class="odd">
+<td>+0.91 a +1.00</td>
+<td>Correlación positiva perfecta</td>
+</tr>
+</tbody>
+</table>
+<p>Los criterios para interpretar la magnitud de <span class="math inline">\rho</span> no son universales; la tabla se presenta como una guía orientativa, sujeta al contexto de estudio.</p>
+</section>
+</section>
+<section id="ejemplos-practicos-usando-r" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplos-practicos-usando-r">Ejemplos practicos usando R</h2>
+<p>El coeficiente de Spearman presenta ventajas importantes, ya que:</p>
+<ul>
+<li><p>NO exige normalidad</p></li>
+<li><p>NO exige homocedasticidad</p></li>
+<li><p>NO exige linealidad</p></li>
+</ul>
+<p>Sin embargo, sí es necesario asegurarse de que se cumplen sus criterios conceptuales básicos, entre ellos:</p>
+<ul>
+<li><p>Que las variables sean ordinales, de intervalo o de razón, lo cual se determina por la naturaleza de las variables y no mediante pruebas estadísticas;</p></li>
+<li><p>Que la relación entre las variables sea potencialmente monótona, lo que se evalúa de manera exploratoria mediante gráficos de dispersión.</p></li>
+</ul>
+<p>Por ello, se utilizará el coeficiente de Spearman, adecuado para datos no normales, presencia de outliers moderados y para analizar relaciones monótonas</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo con datos ordinales
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Spearman trabaja sobre rangos, por lo tanto las variables ordinales ya son rangos naturales, por consiguiente, Spearman es teóricamente adecuado sin necesidad de tests previos, a continuación tenemos el siguiente caso:</p>
+<p>Una empresa que ofrece software de gestión comercial quiere entender mejor el comportamiento de sus clientes. En particular, sospechan que existe una relación entre:</p>
+<ul>
+<li><p>Satisfacción del cliente (medida en una escala ordinal del 1 al 5), y</p></li>
+<li><p>Frecuencia de uso del software (también en escala ordinal del 1 al 5).</p></li>
+</ul>
+<p>La lógica empresarial detrás de esta hipótesis es simple: <em>Si los clientes están más satisfechos, deberían usar el sistema con mayor frecuencia.</em></p>
+<p>La dirección quiere comprobar si esta asociación realmente existe para justificar futuras inversiones en 120 clientes.Sin embargo, antes de tomar decisiones, el equipo de análisis debe verificar estadísticamente si la relación es real o solo una percepción.</p>
+</div>
+</div>
+<p>Presentamos la data con observaciones de respuesta en escala de likert, pero solo mostramos las 10 primera observaciones:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(satisfaccion, frecuencia)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data, <span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   satisfaccion frecuencia
+1             4          4
+2             2          2
+3             3          3
+4             2          1
+5             1          1
+6             4          4
+7             3          3
+8             2          2
+9             5          5
+10            3          4</code></pre>
+</div>
+</div>
+<p>Verificamos la frecuencia de los niveles para cada variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(summarytools)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>summarytools<span class="sc">::</span><span class="fu">freq</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Frequencies  
+data$satisfaccion  
+Type: Integer  
+
+              Freq   % Valid   % Valid Cum.   % Total   % Total Cum.
+----------- ------ --------- -------------- --------- --------------
+          1     12     10.00          10.00     10.00          10.00
+          2     21     17.50          27.50     17.50          27.50
+          3     33     27.50          55.00     27.50          55.00
+          4     33     27.50          82.50     27.50          82.50
+          5     21     17.50         100.00     17.50         100.00
+       &lt;NA&gt;      0                               0.00         100.00
+      Total    120    100.00         100.00    100.00         100.00
+
+data$frecuencia  
+Type: Numeric  
+
+              Freq   % Valid   % Valid Cum.   % Total   % Total Cum.
+----------- ------ --------- -------------- --------- --------------
+          1     13     10.83          10.83     10.83          10.83
+          2     22     18.33          29.17     18.33          29.17
+          3     34     28.33          57.50     28.33          57.50
+          4     27     22.50          80.00     22.50          80.00
+          5     24     20.00         100.00     20.00         100.00
+       &lt;NA&gt;      0                               0.00         100.00
+      Total    120    100.00         100.00    100.00         100.00</code></pre>
+</div>
+</div>
+<p>Dado que solo existen 5 niveles (likert), por lógica habrán muchos empates entre las respuestas obtenidas, sin embargo esto sigue siendo valido teóricamente.</p>
+<p><strong>Hipótesis estadística</strong></p>
+<p>Se plantea la siguiente hipótesis para evaluar la relación entre satisfacción del cliente y frecuencia de uso del software:</p>
+<ul>
+<li>Hipótesis nula <span class="math inline">H_0</span>: No existe relación monotónica significativa entre la satisfacción y la frecuencia de uso del software.</li>
+<li>Hipótesis alternativa <span class="math inline">H_1</span>: Existe una relación monotónica significativa entre la satisfacción y la frecuencia de uso del software.</li>
+</ul>
+<p><strong>Criterio de evaluación</strong> Nivel de significancia: <span class="math inline">\alpha</span> = 0.05</p>
+<ul>
+<li>Si el p-valor ≤ 0.05, se rechaza <span class="math inline">H_0</span>.</li>
+<li>Si el p-valor &gt; 0.05, no se rechaza <span class="math inline">H_0</span>.</li>
+</ul>
+<p>Para calcular la correlación de Spearman se utilizó la función <code>cor.test()</code> de R, la cual permite estimar tanto el coeficiente de correlación como el p-valor asociado a la prueba de hipótesis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spearman</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>cor_spearman <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(data<span class="sc">$</span>satisfaccion,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                          data<span class="sc">$</span>frecuencia,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">method =</span> <span class="st">"spearman"</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>cor_spearman</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Spearman's rank correlation rho
+
+data:  data$satisfaccion and data$frecuencia
+S = 26516, p-value &lt; 2.2e-16
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+     rho 
+0.907925 </code></pre>
+</div>
+</div>
+<p><strong>INTERPRETACIÓN</strong></p>
+<p>El coeficiente de correlación de Spearman obtenido es rho = 0.908, indicando una fuerte relación positiva entre satisfacción y frecuencia de uso del software.</p>
+<p>El p-valor asociado es 2.21^{-46}, mucho menor que 0.05, por lo que rechazamos la hipótesis nula.</p>
+<p>Esto significa que, estadísticamente, existe evidencia suficiente para afirmar que a mayor satisfacción del cliente, mayor es la frecuencia de uso del software.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo con variables compuestas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Se aplicó un cuestionario a un grupo de alumnos para explorar la relación entre <strong>motivación académica</strong> y <strong>desempeño percibido</strong>, dos variables que, según la literatura, están teóricamente relacionadas: a mayor motivación, se espera mayor desempeño.</p>
+<p>Cada constructo se midió mediante <strong>6 ítems en escala de Likert</strong> (1 = Muy en desacuerdo, 5 = Muy de acuerdo).</p>
+<p>Para cada constructo, se sumaron los 6 ítems individuales para generar <strong>una variable compuesta</strong> que refleje el nivel general del alumno en ese aspecto. Esto es una práctica común en investigación social, ya que <strong>la suma de escalas de Likert captura mejor el constructo global</strong> que un solo ítem y permite análisis estadísticos más robustos.</p>
+</div>
+</div>
+<p>En este caso, la suma de ítems tiende a aproximarse a una distribución normal según el Teorema del Límite Central, especialmente si los ítems son independientes y la muestra es moderada o grande. Por ello, muchos estudios en ciencias sociales, que utilizan cuestionarios con escala Likert, suelen aplicar test de normalidad a las variables compuestas. Sin embargo, existen ciertas opiniones divididas al respecto, dado que estas variables provienen de la suma de puntajes ordinales y presentan un número limitado de categorías, los tests de normalidad pueden resultar sensibles y no necesariamente reflejar el ajuste real. Por esta razón, es común y estadísticamente riguroso utilizar directamente pruebas de correlación no paramétricas, como Spearman, que son consistentes con la naturaleza ordinal de los datos y permiten evaluar relaciones monotónicas entre variables compuestas.</p>
+<p>A continuación tenemos la siguiente data sobre el problema planteado:</p>
+<p>Mostramos las 5 primeras filas donde se aprecian los 6 ítems para cada variable y al final la suma de estos, formando asi una variable compuesta</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(motivacion_df, <span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  mot_1 mot_2 mot_3 mot_4 mot_5 mot_6 motivacion_total
+1     3     5     2     3     5     2               20
+2     3     3     1     2     3     1               13
+3     2     1     5     5     4     5               22
+4     2     2     5     4     2     3               18
+5     3     1     1     2     3     4               14</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(desempeno_df, <span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  des_1 des_2 des_3 des_4 des_5 des_6 desempeno_total
+1     4     4     4     4     3     4              23
+2     2     2     2     2     3     2              13
+3     3     4     3     4     4     4              22
+4     2     2     4     3     3     3              17
+5     2     2     2     3     2     3              14</code></pre>
+</div>
+</div>
+<p>Obtenemos las 2 variables compuestas a patir de los ítems</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear data.frame final</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">motivacion =</span> motivacion_df<span class="sc">$</span>motivacion_total,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">desempeno  =</span> desempeno_df<span class="sc">$</span>desempeno_total</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data, <span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  motivacion desempeno
+1         20        23
+2         13        13
+3         22        22
+4         18        17
+5         14        14</code></pre>
+</div>
+</div>
+<ul>
+<li><strong><span class="math inline">H_0</span>:</strong> No existe relación monotónica entre motivación y desempeño académico.<br>
+</li>
+<li><strong><span class="math inline">H_1</span>:</strong> Existe una relación monotónica entre motivación y desempeño académico.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlación de Spearman</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>cor_spearman <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(data<span class="sc">$</span>motivacion, data<span class="sc">$</span>desempeno, <span class="at">method =</span> <span class="st">"spearman"</span>, <span class="at">exact =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>cor_spearman</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Spearman's rank correlation rho
+
+data:  data$motivacion and data$desempeno
+S = 14095, p-value &lt; 2.2e-16
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+      rho 
+0.9154199 </code></pre>
+</div>
+</div>
+<p>El coeficiente de correlación de Spearman obtenido es rho = 0.915, indicando una fuerte relación positiva entre motivación y desempeño académico.</p>
+<p>El p-valor asociado es 1.62^{-40}, mucho menor que 0.05, por lo que rechazamos la hipótesis nula.</p>
+<p>Esto significa que, estadísticamente, existe evidencia suficiente para afirmar que a mayor motivación, mayor es el desempeño académico en esta muestra.</p>
+<p><strong>Visualización usando la función <code>ggscatterstats()</code> de <code>library(ggstatsplot)</code> en R creado por <span class="citation" data-cites="Patil2021">(<a href="#ref-Patil2021" role="doc-biblioref">Patil, 2021</a>)</span></strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico usando Spearman</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggscatterstats</span>(</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> data,</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> motivacion,</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> desempeno,</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">"nonparametric"</span>,      <span class="co"># Para Spearman</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Spearman"</span>,</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Variable X"</span>,</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Variable Y"</span>,</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">point.args =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>),</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">smooth.line.args =</span> <span class="fu">list</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>)</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="3_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Para explorar gráficamente relaciones entre varias variables y complementar el análisis de correlación, se pueden usar funciones como <code>pairs.panels()</code> del paquete <code>psych</code> o <code>ggpairs()</code> del paquete <code>GGally</code>. Ambas permiten generar gráficos de pares de variables de forma rápida y visual, facilitando la interpretación de tendencias y correlaciones en conjuntos de datos con más de dos variables.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+En Resumen
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Pearson</strong> → mide <em>asociación lineal</em>.</li>
+<li><strong>Spearman</strong> → mide <em>asociación monotónica</em> (aumenta o disminuye de forma consistente, aunque no sea recto).</li>
+<li><strong>Spearman usa rangos</strong>, por lo que:
+<ul>
+<li>No necesita normalidad.</li>
+<li>No exige homocedasticidad.</li>
+<li>Es robusto ante valores atípicos.</li>
+</ul></li>
+<li><strong>Variables aplicables</strong>:
+<ul>
+<li>Ordinales.</li>
+<li>Cuantitativas no normales.</li>
+<li>Cuantitativas con outliers.</li>
+<li>Datos con relación monotónica no lineal.</li>
+</ul></li>
+<li><strong>Cuando la relación NO es lineal</strong>, Pearson puede fallar.</li>
+<li><strong>Pero ojo:</strong> <em>Spearman no detecta cualquier relación no lineal</em>. Solo funciona si la relación es monotónica.<br>
+Si la relación cambia de dirección (sube-baja-sube), Spearman puede dar ρ ≈ 0 aunque exista relación.</li>
+</ul>
+<section id="coeficiente-de-correlación" class="level3">
+<h3 class="anchored" data-anchor-id="coeficiente-de-correlación"><strong>Coeficiente de correlación</strong></h3>
+<p>El coeficiente de correlación es un estadístico que cuantifica el <strong>grado de asociación</strong> entre dos variables. Sus valores se encuentran en el intervalo <strong>[-1, 1]</strong>, donde:</p>
+<ul>
+<li><span class="math inline">+1</span> indica correlación positiva perfecta,<br>
+</li>
+<li><span class="math inline">-1</span> indica correlación negativa perfecta,<br>
+</li>
+<li><span class="math inline">0</span> indica ausencia de correlación lineal (en Pearson) o de correlación monotónica (en Spearman).</li>
+</ul>
+</section>
+<section id="coeficiente-de-determinación-r²" class="level3">
+<h3 class="anchored" data-anchor-id="coeficiente-de-determinación-r²"><strong>Coeficiente de determinación (R²)</strong></h3>
+<p>El coeficiente de determinación, denotado como <span class="math inline">R^2</span>, se define como el <strong>cuadrado del coeficiente de correlación</strong>:</p>
+<p><span class="math inline">R^2 = r^2</span></p>
+<p>En el contexto del coeficiente de Pearson, <span class="math inline">R^2</span> representa la <strong>proporción de la variabilidad de la variable dependiente que es explicada por la variable independiente</strong> bajo un modelo lineal.<br>
+Cuando el coeficiente corresponde a Spearman, su cuadrado no tiene interpretación como varianza explicada; solo refleja la fuerza relativa de la asociación monotónica.</p>
+</section>
+<section id="rho-de-spearman-ρ" class="level3">
+<h3 class="anchored" data-anchor-id="rho-de-spearman-ρ"><strong>Rho de Spearman (ρ)</strong></h3>
+<p>El coeficiente de correlación de rangos de Spearman se denota por la letra griega <span class="math inline">ρ</span> (rho).<br>
+Es un estadístico no paramétrico que evalúa la <strong>fuerza y dirección de la relación monotónica</strong> entre dos variables, trabajando sobre los <strong>rangos</strong> en lugar de los valores originales.</p>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section id="bibliografia-recomendada" class="level2">
+<h2 class="anchored" data-anchor-id="bibliografia-recomendada">Bibliografia Recomendada</h2>
+<p>1️⃣ Montgomery, D. C., &amp; Runger, G. C. (2021). Applied statistics and probability for engineers (7th ed.). Wiley.</p>
+<p>2️⃣ Moore, D. S., McCabe, G. P., &amp; Craig, B. A. (2020). Introduction to the practice of statistics (10th ed.). W.H. Freeman.</p>
+<p>3️⃣ Hollander, M., Wolfe, D. A., &amp; Chicken, E. (2014). Nonparametric statistical methods (3rd ed.). Wiley.</p>
+<p>4️⃣ Wasserman, L. (2006). All of nonparametric statistics. Springer.</p>
+<p>5️⃣ Lehmann, E. L. (2006). Nonparametrics: Statistical methods based on ranks. Springer.</p>
+<p>6️⃣ Gibbons, J. D., &amp; Chakraborti, S. (2010). Nonparametric statistical inference (5th ed.). CRC Press.</p>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kevin_ojeda_silupu2025,
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Patil2021" class="csl-entry" role="listitem">
+Patil, I. (2021). Visualizations with statistical details: The ’ggstatsplot’ approach. <em>Journal of Open Source Software</em>, <em>6</em>(61), 3167. <a href="https://doi.org/10.21105/joss.03167">https://doi.org/10.21105/joss.03167</a>
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{kevin_ojeda_silupu2025,
   author = {Kevin Ojeda Silupu, Jairon},
-  title = {Correlación y Regresión Lineal Simple},
+  title = {Coeficiente de Correlación de los Rangos de Spearman},
   date = {2025-09-15},
   url = {https://jaironkevin.github.io/blog/3.html},
   langid = {es}
 }
 </code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-kevin_ojeda_silupu2025" class="csl-entry quarto-appendix-citeas" role="listitem">
-Kevin Ojeda Silupu, J. (2025, September 15). <em>Correlación y Regresión
-Lineal Simple</em>. <a href="https://jaironkevin.github.io/blog/3.html">https://jaironkevin.github.io/blog/3.html</a>
+Kevin Ojeda Silupu, J. (2025, September 15). <em>Coeficiente de
+Correlación de los Rangos de Spearman</em>. <a href="https://jaironkevin.github.io/blog/3.html">https://jaironkevin.github.io/blog/3.html</a>
 </div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

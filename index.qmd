@@ -1,7 +1,7 @@
 ---
 about:
   template: trestles
-  image: fotoj.png
+  image: LOGONUEVO2.png
   links:
     - icon: github
       text: github
@@ -22,7 +22,7 @@ Licenciado en estadísta<br>
 Por la Universidad Nacional de Piura<br>
 Piura, Perú
 
-Exploro y comparto conocimientos sobre estadística y análisis de datos. Aquí encontrarás insights en mi Blog, acceso a mis Publicaciones académicas, herramientas útiles en Software, oportunidades de Negociación en proyectos estadísticos, recursos para Enseñar estadística, y más.
+Exploro y comparto conocimientos sobre estadística y análisis de datos. Aquí encontrarás insights en mi blog, acceso a mis publicaciones académicas, herramientas útiles en software, oportunidades de negociación en proyectos estadísticos, recursos para Enseñar estadística, y más.
 
 > *"Transformando datos en conocimientos, y conocimientos en buenas decisiones."*
 

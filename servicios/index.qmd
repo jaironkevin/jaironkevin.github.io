@@ -76,7 +76,7 @@ Toma decisiones informadas con el respaldo de análisis estadísticos precisos y
 
 ::: {.row style="background-color: #e0e0e0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); padding: 20px; display: flex; align-items: center; justify-content: center;"}
 ::: {.column width="50%" style="text-align: center; display: flex; justify-content: center; align-items: center;"}  
-![](logoredondo.png){width=190px height=190px style="border-radius: 0;"}
+![](LOGONUEVO2.png){width=190px height=190px style="border-radius: 0;"}
 :::
 
 ::: {.column width="50%" style="display: flex; flex-direction: column; justify-content: center;"}
@@ -95,7 +95,7 @@ Toma decisiones informadas con el respaldo de análisis estadísticos precisos y
 ::: {.callout-note title="Constancia de registro SUNEDU" collapse="true"} 
 :::{.panel-tabset}
 
-## Grado 
+## Constancia 
 
   <embed type="text/pdf" src="constancia_2025-11-11.pdf" width="780" height="800">
 

@@ -1,287 +1,650 @@
+/* =========================================================
+   1. ESTILOS GLOBALES
+   ========================================================= */
+
+a {
+    color: #000080;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #0000CD;
+    text-decoration: underline;
+}
+
+h2 {
+    border-bottom: 3px solid #4a4a4a;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+hr {
+    border: none;
+    border-top: 3px solid #4a4a4a;
+    margin: 15px 0;
+}
+
+
+/* =========================================================
+   2. BLOQUE DE CONTACTO (fila gris inferior)
+   ========================================================= */
+
 .row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #e0e0e0;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    padding: 10px 20px;       /* Reducir el padding para ajustar el tamaño de la tarjeta */
-    margin-bottom: 20px;      /* Añadir un margen inferior para separar del siguiente elemento */
+    padding: 10px 20px;
+    margin-bottom: 20px;
     width: 100%;
 }
-
-.justify-text {
-    text-align: justify; /* Justifica el texto de cualquier elemento que tenga esta clase */
-    margin-bottom: 10px; /* (Opcional) Añadir margen inferior para separar párrafos */
-}
-
-.reduced-margin {
-    margin-top: 10px;      /* Reducir margen superior a 10px */
-    margin-bottom: 10px;   /* Reducir margen inferior a 10px */
-}
-
-
 
 .column {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Alinea el contenido a la izquierda */
+    align-items: flex-start;
     padding: 10px;
     flex-grow: 1;
 }
 
-.profile-img {
-    width: 155px;
-    height: 155px;
-    border-radius: 50%;
-    display: block;
-    margin-bottom: 10px; /* Espacio debajo de la imagen */
-}
-
-.column.center-text {
-    align-items: center; /* Centra el texto solo en columnas específicas */
-}
-
-h1, .tagline {
-    margin: 5px 0;
-    text-align: center; /* Centrado aplicado solo a la cabecera y la etiqueta */
-}
-
-.info p, .info a {
-    font-size: 16px;
-    color: #555;
-    margin: 5px 0;
-    text-align: left; /* Alineación a la izquierda para info */
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Estilo para los enlaces */
-a {
-    color: #000080; /* Color azul marino */
-    text-decoration: none; /* Esto elimina el subrayado si es necesario */
-}
-
-/* Si deseas un estilo específico solo para los enlaces dentro de cierta sección (por ejemplo, una tarjeta de contacto), puedes usar una clase o un selector más específico */
-
-.contact-card a {
-    color: #000080; /* Cambiar color de los enlaces a azul marino */
-    text-decoration: none; /* Opcionalmente, quita el subrayado */
-}
-
-/* Puedes añadir un efecto "hover" para cuando el usuario pasa el mouse sobre el enlace */
-a:hover {
-    color: #0000CD; /* Puedes usar un tono ligeramente diferente para el hover */
-    text-decoration: underline; /* También puedes optar por subrayar el enlace al pasar el ratón */
-}
-
-
-
-
-
-
-
-
-
-
-/* Estilo para el título, que debe estar centrado y subrayado */
-h3.centered-title {
-    text-align: center;             /* Centrar solo el título */
-    text-decoration: underline;     /* Subrayar solo el título */
-    margin-top: -2px;               /* Ajustar margen superior del título */
-    margin-bottom: 5px;             /* Ajustar margen inferior del título */
-}
-
-/* Asegurar que el contenido de la columna esté alineado a la izquierda y sin subrayado */
-.column {
-    text-align: left;               /* Alinear a la izquierda todo el contenido dentro de la columna */
-}
-
-.column p,
-.column ul,
-.column li,
-.column div,
-.column span,
-.column a {
-    text-align: left;               /* Asegurar que el contenido específico esté alineado a la izquierda */
-    text-decoration: none;          /* Asegurarse de quitar cualquier subrayado del contenido */
-}
-
-/* Si aún persiste el subrayado debido a estilos predeterminados, asegurémonos de eliminarlo de todos los elementos dentro de la columna */
-.column * {
-    text-decoration: none !important;  /* Forzar la eliminación de cualquier subrayado en los elementos dentro de la columna */
-}
-
-.custom-margin {
-    margin-top: -205px;              /* Ajustar margen superior (puedes ajustar este valor según sea necesario) */
-    margin-bottom: 15px;           /* Ajustar margen inferior (puedes ajustar este valor según sea necesario) */
-}
-
-
-
-
-
-
-
-
-
-.education {
+/* Ítems de contacto */
+.contact-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px; /* Ajuste para reducir espacio entre bloques de educación */
-    padding: 5px; /* Reduce el relleno para evitar demasiado espacio adicional */
+    gap: 8px;
+    padding: 4px 4px;
+    border-radius: 6px;
+    transition: all 0.20s ease-in-out;
 }
 
-.details {
+.contact-item:hover {
+    background: rgba(212, 175, 55, 0.10);
+    transform: translateX(2px);
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.9;
+    filter: brightness(0) saturate(100%) invert(18%) sepia(10%) saturate(900%) hue-rotate(180deg) brightness(92%) contrast(88%);
+}
+
+.contact-item a {
+    color: #1a2e4a !important;
+}
+
+.contact-item a:hover {
+    color: #2c4d78 !important;
+}
+
+
+/* =========================================================
+   3. SECCIÓN DE SERVICIOS PROFESIONALES
+   ========================================================= */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border: 1px solid rgba(212,175,55,0.35);
+    transition: all .3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+    border-color: #d4af37;
+}
+
+.service-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+    color: #d4af37;
+}
+
+.service-card h3 {
+    margin-top: 0;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.service-card p {
+    color: #555;
+    line-height: 1.55;
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   4. SECCIÓN SOBRE MÍ
+   ========================================================= */
+
+.about-box {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 35px;
+    margin: 40px 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border-left: 5px solid #d4af37;
+}
+
+.about-text h2 {
+    margin-top: 0;
+    color: #2e2e2e;
+    font-weight: 800;
+    font-size: 26px;
+}
+
+.about-text p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.about-tagline {
+    margin-top: 18px;
+    background: #fff8e0;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border-left: 4px solid #d4af37;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   5. SECCIÓN CTA (LLAMADO A LA ACCIÓN)
+   ========================================================= */
+
+.cta-box {
+    text-align: center;
+    padding: 45px 20px;
+    margin: 50px 0;
+    background: linear-gradient(90deg, #000, #1a1a1a);
+    border-radius: 12px;
+    color: white;
+}
+
+.cta-box h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: #d4af37;
+}
+
+.cta-box p {
+    font-size: 17px;
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+.cta-btn {
+    background-color: #d4af37;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(212,175,55,0.4);
+    transition: all 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #f1cf63;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   6. TESTIMONIOS
+   ========================================================= */
+
+.test-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.test-card {
+    background: #ffffff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(200,170,80,0.35);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.test-text {
+    color: #444;
+    font-style: italic;
+    line-height: 1.55;
+}
+
+.test-author {
+    margin-top: 10px;
+    color: #d4af37;
+    font-weight: bold;
     text-align: right;
-    margin: 0; /* Elimina espacio innecesario alrededor de fechas y lugar */
-    line-height: 0.5;
-}
-
-.education strong {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 2px; /* Reduce el espacio entre el título de la carrera y la universidad */
-}
-
-.education p, .details p {
-    margin: 2px 0; /* Espacio pequeño para mejorar la apariencia */
-}
-
-.details p {
-    font-weight: bold;
-    color: #9B9898;;
 }
 
 
+/* =========================================================
+   7. RESPONSIVIDAD
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Contacto */
+    .row {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .column {
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .contact-item {
+        justify-content: center !important;
+    }
+}
 
 
 
 
 
 
-.capacitacion {
+/* =========================================================
+   PANEL-TABSET — TECH-LUXURY PREMIUM EDITION
+   ========================================================= */
+
+/* Pestañas en 2 columnas centradas */
+.panel-tabset > ul {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(220px, 350px));
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 28px !important;
+    padding-left: 0 !important;
+    border-bottom: none !important;
+}
+
+/* Cada pestaña (chip) */
+.panel-tabset > ul > li {
+    list-style: none;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* BOTÓN BASE (estado inactivo) */
+.panel-tabset > ul > li > a {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline; /* Alineación en la misma línea de base para cursos y fechas */
-    margin-bottom: 5px; /* Espacio reducido entre bloques de capacitación */
-    padding: 5px;
-    max-width: 800px; /* Ancho máximo para el bloque completo */
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 14px 18px;
+    background: #f5f5f5;
+    color: #333;
+    font-weight: 600;
+    border-radius: 14px;
+    border: 1px solid #d0d0d0;
+
+    transition: all .35s ease-in-out;
+    letter-spacing: 0.3px;
 }
 
-.capacitacion .capacitacion-text {
-    flex: 3;
-    max-width: 70%; /* Limita el ancho para evitar colisiones con la sección de fechas */
-    line-height: 1; /* Reducir la altura de línea para juntar el nombre del curso y la institución */
-    margin-bottom: 1px; /* Reducir el espacio entre el curso y la institución */
+/* Íconos iniciales */
+.panel-tabset > ul > li > a i {
+    font-size: 20px;
+    color: #C4A656; /* Dorado apagado elegante */
+    transition: all .35s ease-in-out;
 }
 
-.capacitaciones-details {
-    flex: 1;
-    text-align: right;
+/* HOVER — Estilo Tech-Luxury */
+.panel-tabset > ul > li > a:hover {
+    background: #455A70;
+    color: #EFEFEF;
+    border-color: #2F3D4A;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+}
+
+.panel-tabset > ul > li > a:hover i {
+    color: #F3DFA2; /* Dorado brillante */
+}
+
+/* SLIDER ANIMADO (barra metálica dorada) */
+.panel-tabset > ul > li.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 75%;
+    background: linear-gradient(90deg, #B99729, #D4AF37, #F3DFA2);
+    border-radius: 6px;
+    animation: sliderReveal .4s ease-out forwards;
+}
+
+@keyframes sliderReveal {
+    0% { width: 0; opacity: 0; }
+    100% { width: 75%; opacity: 1; }
+}
+
+/* CONTENIDO */
+.panel-tabset > .tab-content {
+    padding-top: 10px;
+    animation: fadeInContent .45s ease-out;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================================
+   === ACTIVE DEFINITIVO — CORREGIDO Y FINAL ===
+   ========================================================= */
+
+.panel-tabset > ul > li.active > a {
+    background: #455A70 !important;
+    color: #EFEFEF !important;
+    border: 1px solid #2F3D4A !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
+}
+
+.panel-tabset > ul > li.active > a i {
+    color: #FFD974 !important; /* Dorado vibrante */
+}
+
+/* =========================================================
+   RESPONSIVE — 1 columna en móviles
+   ========================================================= */
+@media (max-width: 680px) {
+    .panel-tabset > ul {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =========================================================
+   SECCIÓN TESIS – TECH LUXURY PREMIUM
+   ========================================================= */
+
+/* Intro */
+.tesis-intro {
+    background: #f7f7f7;
+    padding: 18px 22px;
+    border-left: 4px solid #D4AF37;
+    border-radius: 10px;
+    color: #444;
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+/* Grid */
+.tesis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    margin-top: 20px;
+}
+
+/* Tarjetas */
+.tesis-card {
+    background: #ffffff;
+    padding: 22px 25px;
+    border-radius: 14px;
+    border: 1px solid rgba(212,175,55,0.30);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    transition: all .28s ease;
+}
+
+.tesis-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+    border-color: #D4AF37;
+}
+
+/* Iconos */
+.tesis-icon {
+    font-size: 28px;
+    color: #D4AF37;
+    margin-bottom: 10px;
+}
+
+/* Títulos */
+.tesis-card h4 {
+    margin-top: 0;
+    font-weight: 700;
+    color: #2f3d4a;
+    margin-bottom: 12px;
+}
+
+/* Listas */
+.tesis-card ul {
+    padding-left: 18px;
     margin: 0;
-    line-height: 1; /* Reducir la altura de línea para juntar la fecha y el lugar */
-    max-width: 30%; /* Limitar el ancho para evitar problemas de alineación */
 }
 
-.capacitacion strong {
-    display: block;
-    font-weight: bold;
-    margin-bottom: -15px; /* Reducir el margen entre el título del curso y la institución */
+.tesis-card ul li {
+    margin-bottom: 6px;
+    color: #555;
 }
 
-.capacitacion p {
-    margin: 1px 0; /* Márgenes mínimos para mantener los elementos internos cercanos */
-}
-
-.institucion {
-    font-size: 0.7em; /* Reducir el tamaño de la fuente para la institución */
-    color: #4a4a4a; /* Un gris más oscuro para diferenciar la institución */
-}
-
-.capacitaciones-details p {
-    font-weight: bold;
-    color: #9B9898; /* Cambiado a un gris fuerte */
-    margin: 1px 0; /* Márgenes reducidos para juntar fecha y lugar lo más posible */
-    line-height: 1; /* Mantener compacto el espaciado interno de los párrafos */
-}
-
-
-h2 {
-    border-bottom: 3px solid #4a4a4a; /* Línea más gruesa y de un color más oscuro */
-    padding-bottom: 10px; /* Espacio entre el título y la línea */
-    margin-bottom: 15px; /* Espacio entre la línea y el contenido siguiente */
-}
-
-hr {
-    border: none; /* Quitar el borde predeterminado */
-    border-top: 3px solid #4a4a4a; /* Línea superior más gruesa y con un gris oscuro */
-    margin: 15px 0; /* Espacio superior e inferior a la línea */
-}
-
-
-
-
-
-
-.experiencia {
+/* CTA final */
+.tesis-cta {
+    margin-top: 30px;
+    background: #F9F4DA;
+    border-left: 5px solid #D4AF37;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #4A4A4A;
     display: flex;
-    justify-content: space-between;
-    align-items: baseline; /* Alineación en la misma línea de base para empresa y fechas */
-    margin-bottom: 5px; /* Espacio reducido entre bloques de experiencia */
-    padding: 5px;
-    max-width: 800px; /* Ancho máximo para el bloque completo */
+    align-items: center;
+    gap: 10px;
 }
 
-.experiencia .experiencia-text {
-    flex: 3;
-    max-width: 70%; /* Limita el ancho para evitar colisiones con la sección de fechas */
-    line-height: 1; /* Reducir la altura de línea para juntar el nombre del puesto y la institución */
-    margin-bottom: 1px; /* Reducir el espacio entre el puesto y las funciones */
+.tesis-cta i {
+    color: #D4AF37;
 }
 
-.experiencia-details {
-    flex: 1;
-    text-align: right;
-    margin: 0;
-    line-height: 1; /* Reducir la altura de línea para juntar la fecha y el lugar */
-    max-width: 30%; /* Limitar el ancho para evitar problemas de alineación */
+/* Botón final elegante */
+.tesis-contact {
+    text-align: center;
+    margin-top: 25px;
 }
 
-.experiencia strong {
-    display: block;
-    font-weight: bold;
-    margin-bottom: -15px; /* Reducir el margen entre el título de la empresa y el puesto */
+.tesis-btn {
+    background: #455A70;
+    color: white;
+    padding: 12px 26px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all .3s;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
 }
 
-.puesto {
-    font-size: 1em;
-    font-weight: bold; /* Puesto se muestra con letra un poco más destacada */
-    color: #4a4a4a; /* Gris oscuro para diferenciar el puesto */
-    margin-bottom: 2px; /* Reducir el espacio entre el puesto y las funciones */
+.tesis-btn:hover {
+    background: #2F3D4A;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.30);
 }
 
-.funciones {
-    font-size: 0.9em; /* Reducir el tamaño de letra para las funciones */
-    font-style: italic; /* Se usa cursiva para diferenciar las funciones */
-    color: #6a6a6a; /* Un gris más claro para diferenciar las funciones del resto del texto */
-    margin: 1px 0; /* Márgenes mínimos para mantener los elementos internos cercanos */
+
+
+
+
+/* ==== Bloque de herramientas (horizontal + responsivo) ==== */
+.soft-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-top: 12px;
 }
 
-.experiencia-details p {
-    font-weight: bold;
-    color: #9B9898; /* Cambiado a un gris fuerte */
-    margin: 1px 0; /* Márgenes reducidos para juntar fecha y lugar lo más posible */
-    line-height: 1; /* Mantener compacto el espaciado interno de los párrafos */
+/* Cada elemento (icono + texto) */
+.soft-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;                 /* Tamaño del texto */
+    color: #333;
+    font-weight: 600;
 }
+
+/* Íconos más grandes y armónicos */
+.soft-item i {
+    font-size: 26px;                 /* Tamaño del ícono */
+    color: #C4A656;                  /* Dorado elegante */
+    transition: transform .2s ease;
+}
+
+/* Hover sutil */
+.soft-item:hover i {
+    transform: scale(1.15);
+    color: #E0C477;
+}
+
+/* Modo celular: columnas en grid */
+@media (max-width: 600px) {
+    .soft-tools {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+}
+
+
+
+/* AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+/* =========================================================
+   SECCIÓN DE HERRAMIENTAS / LOGOS PREMIUM (COLORES ORIGINALES)
+   ========================================================= */
+
+/* Título */
+.tool-section-title {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #2e2e2e;
+  font-size: 17px;
+}
+
+/* Grid flexible horizontal */
+.tool-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+/* Cada ítem (logo + texto) */
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Iconos tamaño uniforme (colores reales) */
+.tool-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+
+  /* Solo sombra, sin dorado */
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+
+  transition: transform .25s ease, filter .25s ease;
+}
+
+/* Hover elegante manteniendo colores originales */
+.tool-item:hover .tool-icon {
+  transform: scale(1.12);
+  filter: drop-shadow(0 3px 7px rgba(0,0,0,0.30));
+}
+
+/* Hover textual suave (sin dorado) */
+.tool-item:hover span {
+  color: #444;
+}
+
+/* Responsive: 2 columnas para móvil */
+@media (max-width: 700px) {
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 16px;
+  }
+
+  .tool-item {
+    justify-content: flex-start;
+  }
+}
+
+
+
+
+
+/* TARJEYTA DE LENGUAJE FAVORITO
+.fav-lang-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px 26px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  border-left: 4px solid #d4af37;
+  margin-top: 25px;
+}
+
+.fav-lang-card h3 {
+  margin-top: 0;
+  font-weight: 800;
+  color: #2e2e2e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fav-lang-card i.fa-code {
+  color: #d4af37;
+}
+
+.lang-desc {
+  margin-top: 12px;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+
+
+
 
 
 

@@ -400,6 +400,35 @@ div.quarto-about-trestles .about-contents {
 
 
 
+/* LOGO PERSONAL EN NAVBAR */
+/* Ajusta tamaño del logo */
+.logo-navbar {
+    height: 38px;       /* Cambia aquí el tamaño */
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+/* Responsivo para móvil */
+@media (max-width: 600px) {
+    .logo-navbar {
+        height: 30px;
+    }
+}
+/* Ajuste general del logo */
+.logo-navbar {
+    height: 38px;
+    width: auto;
+    margin-left: 12px;
+    vertical-align: middle;
+}
+
+
+
+
+
 
 
 

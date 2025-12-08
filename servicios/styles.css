@@ -645,8 +645,26 @@ hr {
 
 
 
+/* === PDF responsivo sin barras laterales === */
+.pdf-responsive-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 140%; /* Altura relativa; puedes ajustar */
+  overflow: hidden;
+}
 
+.pdf-responsive-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
+  border: none;
 
+  /* Fuerza escalado interno */
+  transform-origin: top left;
+  transform: scale(1);
+}
 
 

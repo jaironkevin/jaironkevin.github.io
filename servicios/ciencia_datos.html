@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, compartir información y otras distracciones.">
 
-<title>My blog – Jairon K. Ojeda S.</title>
+<title>ciencia_datos – Jairon K. Ojeda S.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../favicon.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,90 +67,20 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather" rel="stylesheet">
 
 <script src="https://kit.fontawesome.com/0fba9333d8.js" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -171,7 +98,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -217,183 +144,156 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categorías</h5><div class="quarto-listing-category category-cloud"><div class="category" data-category="Correlación"><span class="quarto-category-count category-cloud-4">Correlación</span></div><div class="category" data-category="Data Science"><span class="quarto-category-count category-cloud-4">Data Science</span></div><div class="category" data-category="Distribución normal"><span class="quarto-category-count category-cloud-4">Distribución normal</span></div><div class="category" data-category="Estadística"><span class="quarto-category-count category-cloud-7">Estadística</span></div><div class="category" data-category="TLC"><span class="quarto-category-count category-cloud-4">TLC</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">My blog</h1>
+
+
+
+<section id="ciencia-de-datos-y-automatización" class="level2">
+<h2 class="anchored" data-anchor-id="ciencia-de-datos-y-automatización"><i class="fa-solid fa-database"></i> Ciencia de Datos y Automatización</h2>
+<div class="tesis-intro">
+  Implemento soluciones basadas en datos: automatización, pipelines, dashboards y modelos que generan información accionable para tu negocio o investigación.
 </div>
 
-<div>
-  <div class="description">
-    Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, compartir información y otras distracciones.
+<hr>
+
+<div class="tesis-grid">
+
+  <div class="tesis-card">
+    <i class="fa-solid fa-database tesis-icon"></i>
+    <h4 class="anchored">Procesamiento de datos</h4>
+    <ul>
+      <li>Limpieza, transformación y enriquecimiento</li>
+      <li>Pipelines reproducibles</li>
+      <li>Integración de múltiples fuentes</li>
+    </ul>
+  </div>
+
+  <div class="tesis-card">
+    <i class="fa-solid fa-robot tesis-icon"></i>
+    <h4 class="anchored">Automatización</h4>
+    <ul>
+      <li>Scripts y reportes automáticos</li>
+      <li>Generación de informes diarios/mensuales</li>
+      <li>RMarkdown, Quarto y programación aplicada</li>
+    </ul>
+  </div>
+
+  <div class="tesis-card">
+    <i class="fa-solid fa-gauge-high tesis-icon"></i>
+    <h4 class="anchored">Dashboards y visualización</h4>
+    <ul>
+      <li>Power BI, Shiny y visualizaciones personalizadas</li>
+      <li>KPIs claros y accionables</li>
+      <li>Paneles interactivos</li>
+    </ul>
+  </div>
+
+  <div class="tesis-card">
+    <i class="fa-solid fa-brain tesis-icon"></i>
+    <h4 class="anchored">Machine Learning</h4>
+    <ul>
+      <li>Modelos supervisados y no supervisados</li>
+      <li>Optimización y validación cruzada</li>
+      <li>Implementación práctica</li>
+    </ul>
+  </div>
+
+</div>
+
+<hr>
+
+
+<div class="tool-section-title">
+  Herramientas y lenguajes que utilizo
+</div>
+
+<div class="tool-grid">
+  <div class="tool-item">
+    <img src="img/logo-r.svg" alt="R" class="tool-icon">
+    <span>R</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/RStudio.svg" alt="Rstudio" class="tool-icon">
+    <span>Rstudio</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/logo-python.svg" alt="Python" class="tool-icon">
+    <span>Python</span>
+  </div>
+    <div class="tool-item">
+    <img src="img/jupyter.svg" alt="jupiterlab" class="tool-icon">
+    <span>jupiterlab</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/SPSS.png" alt="SPSS" class="tool-icon">
+    <span>SPSS</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/Jamovi_logo.png" alt="Jamovi" class="tool-icon">
+    <span>Jamovi</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/stata.png" alt="Stata" class="tool-icon">
+    <span>Stata</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/logo-minitab.svg" alt="Minitab" class="tool-icon">
+    <span>Minitab</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/eviews.jpeg" alt="EViews" class="tool-icon">
+    <span>EViews</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/logo-powerbi.svg" alt="Power BI" class="tool-icon">
+    <span>Power BI</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/logo-excel.svg" alt="Excel" class="tool-icon">
+    <span>Excel</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/logo-sql.svg" alt="MiSQL" class="tool-icon">
+    <span>SQL</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/logo-github.svg" alt="GitHub" class="tool-icon">
+    <span>GitHub</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/logo-latex.svg" alt="LaTeX" class="tool-icon">
+    <span>LaTeX</span>
+  </div>
+  <div class="tool-item">
+    <img src="img/logo-quarto.svg" alt="Quarto" class="tool-icon">
+    <span>Quarto</span>
+  </div>
+    <div class="tool-item">
+    <img src="img/rmarkdown.png" alt="Rmarkdown" class="tool-icon">
+    <span>Rmarkdown</span>
   </div>
 </div>
 
 
-<div class="quarto-title-meta column-page-left">
 
-    
-  
-    
-  </div>
-  
+<div class="cta-box cta-animated">
+  <h2 class="anchored">¿Listo para llevar tus datos al siguiente nivel?</h2>
+  <p>Agenda una consultoría personalizada y obtén resultados claros, precisos y accionables.</p>
 
-
-</header>
+  <a href="https://wa.me/929519964" class="cta-btn cta-btn-glow">Agendar Asesoría</a>
+</div>
 
 
 
+</section>
 
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
-       <option value="index" data-direction="asc">Por defecto</option>
-         <option value="listing-title" data-direction="asc">
-          Título
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Fecha - Menos reciente
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Fecha - Más reciente
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Autor/a
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filtro">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Correlación" data-listing-date-sort="1757912400000" data-listing-file-modified-sort="1765171828734" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4177">
-<div class="thumbnail">
-<p><a href="../blog/3.html" class="no-external"></a></p><a href="../blog/3.html" class="no-external">
-<p><img loading="lazy" src="../blog/images_prev/3.png" class="thumbnail-image"></p>
-</a><p><a href="../blog/3.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/3.html" class="no-external">Coeficiente de Correlación de los Rangos de Spearman</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/3.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Correlación'); return false;">
-Correlación
-</div>
-</div>
-<div class="listing-description">
-<a href="../blog/3.html" class="no-external">En muchos análisis estadísticos se suele comenzar evaluando la asociación entre dos variables mediante el coeficiente de correlación de Pearson, el cual es apropiado cuando…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/3.html" class="no-external">
-<div class="listing-date">
-15 septiembre 2025
-</div>
-<div class="listing-author">
-Jairon Ojeda S.
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Estadística,Distribución normal,TLC" data-listing-date-sort="1722488400000" data-listing-file-modified-sort="1763189040902" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="591">
-<div class="thumbnail">
-<p><a href="../blog/2.html" class="no-external"></a></p><a href="../blog/2.html" class="no-external">
-<p><img loading="lazy" src="../blog/images_prev/2.png" class="thumbnail-image"></p>
-</a><p><a href="../blog/2.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/2.html" class="no-external">El Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/2.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Estadística'); return false;">
-Estadística
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Distribución normal'); return false;">
-Distribución normal
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('TLC'); return false;">
-TLC
-</div>
-</div>
-<div class="listing-description">
-<a href="../blog/2.html" class="no-external">En la estadística moderna, gran parte de las conclusiones que tomamos sobre poblaciones se basan en el análisis de muestras. Pero, ¿cómo podemos estar seguros de que los…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/2.html" class="no-external">
-<div class="listing-date">
-1 agosto 2024
-</div>
-<div class="listing-author">
-Jairon Ojeda S.
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Estadística,Data Science" data-listing-date-sort="1721019600000" data-listing-file-modified-sort="1763189040895" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18" data-listing-word-count-sort="3426">
-<div class="thumbnail">
-<p><a href="../blog/1.html" class="no-external"></a></p><a href="../blog/1.html" class="no-external">
-<p><img loading="lazy" src="../blog/images_prev/1_estaditica.jpg" class="thumbnail-image"></p>
-</a><p><a href="../blog/1.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../blog/1.html" class="no-external">La Estadística: Una ciencia detras de los datos</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../blog/1.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Estadística'); return false;">
-Estadística
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Science'); return false;">
-Data Science
-</div>
-</div>
-<div class="listing-description">
-<a href="../blog/1.html" class="no-external">En el vasto universo del conocimiento, pocas disciplinas tienen la capacidad de influir en nuestras vidas de manera tan profunda y diversa como la estadística; este campo, a…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../blog/1.html" class="no-external">
-<div class="listing-date">
-15 julio 2024
-</div>
-<div class="listing-author">
-Jairon Ojeda S.
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No hay resultados
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

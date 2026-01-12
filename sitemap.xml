@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jaironkevin.github.io/blog/1.html</loc>
-    <lastmod>2025-11-15T06:44:00.895Z</lastmod>
+    <loc>https://jaironkevin.github.io/blog/3.html</loc>
+    <lastmod>2025-12-08T05:30:28.734Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jaironkevin.github.io/servicios/tesis.html</loc>
+    <lastmod>2025-12-08T03:36:56.623Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jaironkevin.github.io/servicios/ciencia_datos.html</loc>
+    <lastmod>2025-12-08T03:39:56.176Z</lastmod>
   </url>
   <url>
     <loc>https://jaironkevin.github.io/servicios/index.html</loc>
-    <lastmod>2025-11-18T07:40:00.551Z</lastmod>
+    <lastmod>2026-01-12T17:55:39.818Z</lastmod>
   </url>
   <url>
     <loc>https://jaironkevin.github.io/software/index.html</loc>
-    <lastmod>2025-11-15T06:44:00.969Z</lastmod>
+    <lastmod>2026-01-11T02:30:12.563Z</lastmod>
   </url>
   <url>
     <loc>https://jaironkevin.github.io/software/1_soft.html</loc>
@@ -22,34 +30,38 @@
   </url>
   <url>
     <loc>https://jaironkevin.github.io/portafolio/1_por_Pen.html</loc>
-    <lastmod>2024-09-16T03:40:53.700Z</lastmod>
+    <lastmod>2026-01-11T19:28:07.909Z</lastmod>
   </url>
   <url>
     <loc>https://jaironkevin.github.io/blog/index.html</loc>
-    <lastmod>2025-03-02T05:14:04.555Z</lastmod>
-  </url>
-  <url>
-    <loc>https://jaironkevin.github.io/index.html</loc>
-    <lastmod>2025-11-18T07:24:11.673Z</lastmod>
+    <lastmod>2025-12-07T04:14:36.031Z</lastmod>
   </url>
   <url>
     <loc>https://jaironkevin.github.io/portafolio/index.html</loc>
-    <lastmod>2025-03-02T05:14:04.567Z</lastmod>
+    <lastmod>2026-01-11T17:53:45.271Z</lastmod>
   </url>
   <url>
     <loc>https://jaironkevin.github.io/publications/uranium.html</loc>
-    <lastmod>2025-11-15T06:44:00.936Z</lastmod>
+    <lastmod>2025-12-08T05:38:15.480Z</lastmod>
   </url>
   <url>
     <loc>https://jaironkevin.github.io/software/2_soft.html</loc>
     <lastmod>2025-11-15T06:44:00.967Z</lastmod>
   </url>
   <url>
+    <loc>https://jaironkevin.github.io/index.html</loc>
+    <lastmod>2026-01-12T17:22:45.342Z</lastmod>
+  </url>
+  <url>
     <loc>https://jaironkevin.github.io/blog/2.html</loc>
     <lastmod>2025-11-15T06:44:00.902Z</lastmod>
   </url>
   <url>
-    <loc>https://jaironkevin.github.io/blog/3.html</loc>
-    <lastmod>2025-11-18T07:11:38.473Z</lastmod>
+    <loc>https://jaironkevin.github.io/servicios/modelado.html</loc>
+    <lastmod>2025-12-08T03:39:04.003Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jaironkevin.github.io/blog/1.html</loc>
+    <lastmod>2025-11-15T06:44:00.895Z</lastmod>
   </url>
 </urlset>

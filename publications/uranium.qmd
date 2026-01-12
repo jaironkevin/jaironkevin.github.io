@@ -1,11 +1,12 @@
 ---
-author: Jairon Ojeda
+author: Jairon K. Ojeda S., Jahayra S. Rodriguez R.
 date: 2024-07-31
 title: "Modelo SARIMA y red neuronal recurrente para el pronóstico de la producción de mango en el valle de San Lorenzo, 2024-2026"
 details: Tesis, Universidad Nacional de Piura
 link: https://github.com/jaironkevin/SARIMA_LSTM/blob/main/Tesis.pdf # ejemplo: pdf subido a GitHub
 github: jaironkevin/SARIMA_LSTM
 orcid: 0009-0003-8484-8681
+lang: es
 ---
 
 # RESUMEN

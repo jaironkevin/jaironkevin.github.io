@@ -9,6 +9,7 @@ website:
   favicon: favicon.png
   title: "Jairon K. Ojeda S."
   site-url: "https://jaironkevin.github.io/"
+
   navbar:
     background: "#536878"
     left:
@@ -17,11 +18,23 @@ website:
       - href: publications/index.qmd
         text: Publicaciones
       - href: software/index.qmd
-        text: Shiny apps
+        text: Apps
       - href: portafolio/index.qmd
         text: Portafolio
-      - href: servicios/index.qmd
-        text: Servicios
+
+      - text: Servicios
+        menu:
+          - text: Presentación
+            href: servicios/index.qmd
+          - text: Asesoría para Tesis e Investigación
+            href: servicios/tesis.qmd
+          - text: Análisis y Modelado Estadístico
+            href: servicios/modelado.qmd
+          - text: Ciencia de Datos y Automatización
+            href: servicios/ciencia_datos.qmd
+
+
+
   page-footer:
     left: "© 2025 Jairon Ojeda. Website built with Quarto in RStudio"
     right:

@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-project','listing-website','listing-date-format','listing-format','listing-execute','listing-language','listing-sidebar','listing-author-title','listing-author','listing-date','listing-title','listing-details','listing-link','listing-github','listing-orcid','listing-path','listing-outputHref','listing-date-modified','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      valueNames: ['listing-project','listing-website','listing-date-format','listing-format','listing-execute','listing-language','listing-sidebar','listing-author-title','listing-author','listing-date','listing-title','listing-details','listing-link','listing-github','listing-orcid','listing-lang','listing-path','listing-outputHref','listing-date-modified','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author","listing-details"],
     };
@@ -98,12 +98,21 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather" rel="stylesheet">
+<!-- Fuentes Modernas -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;1,400&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet">
+
+
+
+<!-- Tus Iconos Existentes -->
 
 <script src="https://kit.fontawesome.com/0fba9333d8.js" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -152,16 +161,35 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../software/index.html"> 
-<span class="menu-text">Shiny apps</span></a>
+<span class="menu-text">Apps</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../portafolio/index.html"> 
 <span class="menu-text">Portafolio</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../servicios/index.html"> 
-<span class="menu-text">Servicios</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-servicios" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Servicios</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-servicios">    
+        <li>
+    <a class="dropdown-item" href="../servicios/index.html">
+ <span class="dropdown-text">Presentación</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../servicios/tesis.html">
+ <span class="dropdown-text">Asesoría para Tesis e Investigación</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../servicios/modelado.html">
+ <span class="dropdown-text">Análisis y Modelado Estadístico</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../servicios/ciencia_datos.html">
+ <span class="dropdown-text">Ciencia de Datos y Automatización</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -232,8 +260,8 @@ ul.task-list li input[type="checkbox"] {
 </style>
 <ul class="list">
 
-  <li data-index="0" data-listing-date-sort="1722402000000" data-listing-file-modified-sort="1763189040936" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="325">
-    <a href="../publications/uranium.html" class="listing-author">Jairon Ojeda (<span class="listing-date">2024</span>) <span class="listing-title">Modelo SARIMA y red neuronal recurrente para el pronóstico de la producción de mango en el valle de San Lorenzo, 2024-2026</span>. <span class="listing-details">Tesis, Universidad Nacional de Piura</span>.</a>
+  <li data-index="0" data-listing-date-sort="1722402000000" data-listing-file-modified-sort="1765172295480" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="325">
+    <a href="../publications/uranium.html" class="listing-author">Jairon K. Ojeda S., Jahayra S. Rodriguez R. (<span class="listing-date">2024</span>) <span class="listing-title">Modelo SARIMA y red neuronal recurrente para el pronóstico de la producción de mango en el valle de San Lorenzo, 2024-2026</span>. <span class="listing-details">Tesis, Universidad Nacional de Piura</span>.</a>
   </li>
 
 </ul>

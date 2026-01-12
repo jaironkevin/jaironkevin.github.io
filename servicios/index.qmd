@@ -1,107 +1,38 @@
 ---
-title: "Transforma tus Datos en Decisiones Inteligentes"
-css: styles.css
+title: ""
 lang: "es"
+css: styles.css
+format:
+  html:
+    toc: false
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+project:
+  resources:
+    - servicios/foto-perfil.png
+    - servicios/LOGONUEVO2.png
 ---
 
+::: {.presentacion-page}
+```{r echo=FALSE, results="asis"}
+htmltools::HTML('
+<iframe
+  id="presentacion-frame"
+  src="presentacion.html"
+  style="width:100%; border:none; overflow:hidden; display:block;"
+></iframe>
 
+<script>
+  window.addEventListener("message", function(event) {
+    if (event.data && event.data.type === "iframe-height") {
+      const iframe = document.getElementById("presentacion-frame");
+      if (iframe) iframe.style.height = event.data.height + "px";
+    }
+  });
+</script>
+')
 
-```{r echo=FALSE}
-#| out-width: "19cm"
-#| fig-align: "center" 
-knitr::include_graphics("LOGOfondo3.png")
 ```
-
-## 📊 Servicios de Consultoría en Estadística y Análisis de Datos
-
-Toma decisiones informadas con el respaldo de análisis estadísticos precisos y personalizados; convierto tus datos en estrategias accionables para tu tesis, investigación o empresa.
-
-
-## 🎯 **Servicios Especializados de Análisis Estadístico:**
-
-### 1️⃣ **Estadística Descriptiva**
-- Resumen y análisis mediante medidas de tendencia central, dispersión y gráficos.
-- Análisis exploratorio de datos (EDA) para descubrir patrones, anomalías y relaciones iniciales.
-
-### 2️⃣ **Estadística Inferencial**
-- Muestreo estadístico adecuado para garantizar la representatividad.
-- Pruebas de hipótesis con métodos paramétricos y no paramétricos.
-- Comparación de grupos mediante pruebas de t de Student, ANOVA, MANOVA, entre otros.
-
-### 3️⃣ **Modelado Estadístico y Predictivo**
-- Regresión lineal, logística y modelos de regresión múltiple.
-- Modelos de series temporales (ARIMA, SARIMA, SARIMAX, ETS, LSTM) para pronósticos precisos.
-- Modelos lineales generalizados (GLM) y análisis de supervivencia.
-
-### 4️⃣ **Análisis Multivariado**
-- Análisis de componentes principales (PCA) y análisis factorial exploratorio.
-- Segmentación de datos mediante análisis de clústeres.
-- Modelos de ecuaciones estructurales (SEM) para comprender interacciones complejas.
-
-
-## 🎓 Metodología de la investigación científica  
-
-
-🔍 **Te acompaño en cada etapa de tu investigación, desde la planificación hasta la defensa.**
-
-- 📝 **Redacción de Proyectos de Tesis:**  
-  Asesoría en la elaboración de la estructura académica: introducción, realidad problemática, objetivos, marco teórico, hipótesis y metodología.  
-  *(Adaptado al reglamento específico de tu universidad).*
-
-- 📑 **Análisis de Fiabilidad de Cuestionarios:**  
-  Aplicación de coeficientes como Alfa de Cronbach, Omega de McDonald, KR-20 (Kuder-Richardson 20), entre otros.  
-  *(La elección depende del tipo de escala de medición y los objetivos del estudio).*
-
-- 🧪 **Desarrollo de Tesis:**  
-  Asistencia en el análisis, interpretación y redacción del capítulo de resultados, así como en la formulación de conclusiones y recomendaciones.  
-
-- 📊 **Análisis Estadístico para Tesis:**  
-  Aplicación rigurosa de pruebas estadísticas paramétricas y no paramétricas para investigaciones de pregrado y posgrado.  
-  *(Incluye análisis descriptivo, inferencial, predictivo y multivariado, según los objetivos definidos).*
-
-- 🎤 **Preparación para la Defensa de Tesis:**  
-  Orientación para una presentación clara y profesional de resultados, con énfasis en la argumentación científica y el manejo de posibles preguntas del jurado.  
-
-
-## 💻 Software y Herramientas Utilizadas
-
-**Análisis Avanzado:** R, Python, Stata  
-**Visualización:** Power BI, Excel  
-**Investigación Académica:** SPSS, EViews, Minitab, Jamovi 
-
-## 🚀 ¿Listo para descubrir el potencial de tus datos?
-
-**¡Contáctame hoy mismo y transforma la incertidumbre en conocimiento útil para tu investigación, negocio o tesis académica!.**
-
-
-::: {.row style="background-color: #e0e0e0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); padding: 20px; display: flex; align-items: center; justify-content: center;"}
-::: {.column width="50%" style="text-align: center; display: flex; justify-content: center; align-items: center;"}  
-![](LOGONUEVO2.png){width=190px height=190px style="border-radius: 0;"}
 :::
-
-::: {.column width="50%" style="display: flex; flex-direction: column; justify-content: center;"}
-![Teléfono](llamar.png){ width=24px } [929 519 964](tel:929 519 964)
-
-![WhatsApp](whatsapp.png){ width=24px } [929 519 964](https://wa.me/929 519 964) 
-
-![Residencia](marcador-de-posicion.png){ width=24px } [Tambo Grande - Piura](https://maps.app.goo.gl/mpa9o5iRBD6VQNCP7)
-
-![Correo](correo.png){ width=24px } [jaironojeda99@gmail.com](mailto:jaironojeda99@gmail.com)
-
-![LinkedIn](linkedin.png){ width=24px } [LinkedIn](https://linkedin.com/in/jairon-ojeda)
-:::
-:::
-
-::: {.callout-note title="Constancia de registro SUNEDU" collapse="true"} 
-:::{.panel-tabset}
-
-## Constancia 
-
-  <embed type="text/pdf" src="constancia_2025-11-11.pdf" width="780" height="800">
-
-:::
-:::
-
-
-
-

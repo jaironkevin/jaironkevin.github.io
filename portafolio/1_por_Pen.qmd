@@ -1,13 +1,40 @@
 ---
 date: "2024-07-31"
-title: "Mis prácticas..."
+title: "Sistema de registro usando BVA en Excel"
 categories:
-  - Estadística
-  - Machine learnig
-  - Data Science
-  - Deep Learnig
+  - Data Analitics
 image: 1_por_pen.jpg
+lang: es
 ---
 
-Pendientes...
+## Problema 
+
+La asociación de productores tenia problemas para organizar y analizar sus datos, por lo que no contaban con la herramienta optima y capaz de hacer todo ello, en consecuencia tradaban mucho en analizar ...
+
+
+## Objetivo
+
+Optimizar y automatizar la entrada de registros, para un conteo rápido de cajas cosechadas en campo de mango, y registros de pagos, y realizar un dasboard interactivo para optimizar reportes a los socios, y tomar mejores decisiones
+
+## Solución
+
+Debido a que la asociación de productores de mangos tiene al menos 54 socios, lo cual no genera demasiados datos, se opto por usar como base de datos el mismo excel, optimizando los registros y ediciones con Vba en excel para ... sin embargo se recomendó migrar a sql y power bi cuando existan mas socios o los registros se vuelvan masivos. 
+
+## Producto
+
+Se elaboro un Sistema de registro con VBA para optimizar la entrada de estos, y generación de reporte en tiempo real.
+
+
+Debido a que fue un servicio particular solo se demuestra el trabajo en vídeo, con el respectivo permiso a continuación:
+
+![](portafolio/demo/vbamango.mp4){width=100% controls autoplay muted loop}
+
+
+
+
+
+
+
+
+
 

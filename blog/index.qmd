@@ -2,7 +2,7 @@
 title: "My blog"
 description: Este espacio está dedicado a explorar algunos conceptos teóricos, reflexiones sobre investigación, compartir información y otras distracciones.
 listing:
-  contents: .
+  contents: "."
   sort: "date desc"
   type: default
   categories: cloud

@@ -1,9 +1,8 @@
 ---
 date: "2025-09-015"
-author: "Jairon Kevin Ojeda Silupu"
+author: "Jairon Ojeda S."
 title: "Coeficiente de Correlación de los Rangos de Spearman"
 categories:
-  - Relación monotónica
   - Correlación
 image: images_prev/3.png
 lang: es
@@ -12,8 +11,18 @@ bibliography: Bibliografia.bib
 csl: apa.csl
 ---
 
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(dplyr)
+library(knitr)
+if (!requireNamespace("kableExtra", quietly = TRUE)) {
+  install.packages("kableExtra")
+}
+library(kableExtra)
 
-## ¿Qué es la correlación de Spearman?
+```
+
+
+## ¿Qué es la correlación de Spearman? 
 
 
 En muchos análisis estadísticos se suele comenzar evaluando la asociación entre dos variables mediante el coeficiente de correlación de Pearson, el cual es apropiado cuando la relación entre ellas es esencialmente lineal. Sin embargo, en la práctica no siempre las variables se comportan siguiendo un patrón estrictamente lineal, pues es común encontrar conjuntos de datos en los que existe algún tipo de asociación, pero cuya forma no obedece a una tendencia lineal definida; en tales casos, el coeficiente de Pearson puede ofrecer resultados poco representativos o incluso engañosos.
@@ -85,12 +94,12 @@ La asociación monótona indica que las variables tienden a moverse en la misma 
 Por otro lado Un valor alto o bajo de $\rho$ indica **asociación entre variables**, pero no implica que una variable cause cambios en la otra (**correlación no implica causalidad**). La inferencia causal requiere diseño experimental o métodos adicionales de análisis.
 :::
 
-## Comprobando en R
+## Comprobaciones en R 
 
 Para fines académicos se presentan ejemplos sintéticos para corroborar como funcionan ambas formulas usando la función `cor()` aplicando Spearman directamente y Pearson sobre los rangos, con el objetivo de corroborar lo mencionado anteriormente tanto para empates y sin empates.
 
 
-### 1. Ejemplo sin empates 
+### 1. Ejemplo sin empates
 
 ```{r}
 x <- c(10, 20, 30, 40, 50)
@@ -105,7 +114,7 @@ rg_x; rg_y
 
 Se obtienen los rangos a los cuales se les aplicara el coeficiente de pearson. 
 
-```{r}
+```{r warning=FALSE, message=FALSE}
 # Spearman manual (Pearson sobre rangos)
 rs_manual <- cor(rg_x, rg_y, method = "pearson")
 rs_manual
@@ -113,7 +122,7 @@ rs_manual
 
 se observa que al aplicar pearson a los rangos se tiene un valor de **`r round(rs_manual, 3)`**
 
-```{r}
+```{r warning=FALSE, message=FALSE}
 # Spearman automático
 rs_cor <- cor(x, y, method = "spearman")
 rs_cor
@@ -152,8 +161,6 @@ rs_manual
 se observa que al aplicar pearson a los rangos se tiene un valor de **`r round(rs_manual, 3)`**
 
 ```{r}
-# Spearman automático
-
 rs_cor <- cor(x, y, method = "spearman")
 rs_cor
 
@@ -203,7 +210,7 @@ data <- data.frame(x, y)
 
 **Aplico el test de normalidad para validar el uso**
 
-```{r message=FALSE, warning=FALSE, collapse=TRUE}
+```{r message=FALSE, warning=FALSE, collapse=FALSE}
 library(nortest)
 
 # Test Anderson-Darling
@@ -212,8 +219,6 @@ ad_y  <- ad.test(data$y)
 
 ad_x
 ad_y
-
-
 
 ```
 
@@ -234,7 +239,7 @@ cor_spearman
 * La correlación de Spearman es: **`r round(cor_spearman, 3)`**
 
 
-```{r message=FALSE, warning=FALSE, collapse=TRUE}
+```{r message=FALSE, warning=FALSE, collapse=TRUE, eval=FALSE}
 #| out-width: "20cm"
 #| fig-align: "center" 
 #| code-fold: true
@@ -280,6 +285,14 @@ spearman + pearson
 
 ```
 
+
+```{r echo=FALSE}
+#| out-width: "20cm"
+#| fig-align: "center" 
+knitr::include_graphics("images/fig15.png")
+```
+
+
 * Pearson baja porque evalúa linealidad.
 
 * Spearman se mantiene elevada porque evalúa asociación monotómica.
@@ -299,8 +312,6 @@ spearman + pearson
   y = a + bx
   $$
 - **Monotonía** solo requiere que Y mantenga un orden estable cuando aumenta X.
-
-> Si $X$ aumenta, $Y$ siempre aumenta (o siempre disminuye), el orden se mantiene, es decir Spearman mide **monotonicidad** (no linealidad necesariamente), en cambio **Pearson** mide **linealidad**.
 :::
 
 
@@ -405,7 +416,6 @@ La dirección quiere comprobar si esta asociación realmente existe para justifi
 
 ```{r echo=FALSE}
 set.seed(123)
-
 n <- 120
 
 # Generar satisfacción ordinal (1 a 5)
@@ -417,22 +427,28 @@ frecuencia <- satisfaccion + rnorm(n, mean = 0, sd = 0.5)
 
 # Ajustar al rango 1 a 5 y redondear
 frecuencia <- pmin(pmax(round(frecuencia), 1), 5)
+
+data <- data.frame(
+  satisfaccion = satisfaccion,
+  frecuencia   = frecuencia
+)
 ```
 
 Presentamos la data con observaciones de respuesta en escala de likert, pero solo mostramos las 10 primera observaciones: 
 
-```{r}
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-data <- data.frame(satisfaccion, frecuencia)
-head(data, 10)
-```
-
-Verificamos la frecuencia de los niveles para cada variable.
-
-```{r}
-library(summarytools)
-summarytools::freq(data)
-
+data |>
+  head(10) |>
+  knitr::kable(
+    format = "html",
+    caption = "Primeros 10 registros de satisfacción y frecuencia"
+  ) |>
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    full_width = FALSE,
+    position = "center"
+  )
 ```
 
 
@@ -443,8 +459,8 @@ Dado que solo existen 5 niveles (likert), por lógica habrán muchos empates ent
 
 Se plantea la siguiente hipótesis para evaluar la relación entre satisfacción del cliente y frecuencia de uso del software:
 
-- Hipótesis nula $H_0$: No existe relación monotónica significativa entre la satisfacción y la frecuencia de uso del software.
-- Hipótesis alternativa $H_1$: Existe una relación monotónica significativa entre la satisfacción y la frecuencia de uso del software.
+- **Hipótesis nula $H_0$:** No existe relación monotónica significativa entre la satisfacción y la frecuencia de uso del software.
+- **Hipótesis alternativa $H_1$:** Existe una relación monotónica significativa entre la satisfacción y la frecuencia de uso del software.
 
 **Criterio de evaluación**
 Nivel de significancia: $\alpha$ = 0.05
@@ -460,9 +476,39 @@ Para calcular la correlación de Spearman se utilizó la función `cor.test()` d
 cor_spearman <- cor.test(data$satisfaccion,
                           data$frecuencia,
                           method = "spearman")
-
-cor_spearman
 ```
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+# Crear tabla estilo SPSS/APA7
+spearman_res <- data.frame(
+  Variable1 = "Satisfacción",
+  Variable2 = "Frecuencia",
+  N = length(data$satisfaccion),
+  r_s = cor_spearman$estimate,
+  p = cor_spearman$p.value
+)
+
+# Formatear para estilo APA
+spearman_res <- spearman_res |>
+  dplyr::mutate(
+    r_s = round(r_s, 3),
+    p = ifelse(p < .001, "< .001", round(p, 3))
+  )
+
+# Crear tabla HTML
+spearman_res |>
+  knitr::kable(format = "html",
+               col.names = c("Variable 1", "Variable 2", "N", "r_s", "p"),
+               caption = "Correlación de Spearman entre Satisfacción y Frecuencia") |>
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    full_width = FALSE,
+    position = "center"
+  )
+```
+
 
 **INTERPRETACIÓN**
 
@@ -485,8 +531,7 @@ Para cada constructo, se sumaron los 6 ítems individuales para generar **una va
 
 :::
 
-En este caso, la suma de ítems tiende a aproximarse a una distribución normal según el Teorema del Límite Central, especialmente si los ítems son independientes y la muestra es moderada o grande. Por ello, muchos estudios en ciencias sociales, que utilizan cuestionarios con escala Likert, suelen aplicar test de normalidad a las variables compuestas. Sin embargo, existen ciertas opiniones divididas al respecto, dado que estas variables provienen de la suma de puntajes ordinales y presentan un número limitado de categorías, los tests de normalidad pueden resultar sensibles y no necesariamente reflejar el ajuste real. Por esta razón, es común y estadísticamente riguroso utilizar directamente pruebas de correlación no paramétricas, como Spearman, que son consistentes con la naturaleza ordinal de los datos y permiten evaluar relaciones monotónicas entre variables compuestas.
-
+En este caso, la suma de ítems tiende a aproximarse a una distribución normal según el Teorema del Límite Central, especialmente si los ítems son independientes y la muestra es moderada o grande. Por ello, muchos estudios en ciencias sociales, que utilizan cuestionarios con escala Likert, suelen aplicar test de normalidad a las variables compuestas. Sin embargo, existen ciertas opiniones divididas al respecto, dado que estas variables provienen de la suma de puntajes ordinales y presentan un número limitado de categorías, los tests de normalidad pueden resultar sensibles y no necesariamente reflejar el ajuste real. 
 
 A continuación tenemos la siguiente data sobre el problema planteado:
 
@@ -522,36 +567,86 @@ desempeno_df$desempeno_total <- rowSums(desempeno_df)
 ```
 
 Mostramos las 5 primeras filas donde se aprecian los 6 ítems para cada variable y al final la suma de estos, formando asi una variable compuesta
-```{r}
-head(motivacion_df, 5)
+```{r echo=FALSE}
+# Mostrar los primeros 5 registros de motivacion_df con estilo HTML
+motivacion_df |> 
+  head(5) |> 
+  knitr::kable(format = "html") |> 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
-head(desempeno_df, 5)
 ```
 
-Obtenemos las 2 variables compuestas a patir de los ítems
+```{r echo=FALSE}
+desempeno_df |> 
+  head(5) |> 
+  knitr::kable(format = "html") |> 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
 
-```{r}
-# Crear data.frame final
+```
+
+
+
+
+```{r echo=FALSE}
+
 data <- data.frame(
   motivacion = motivacion_df$motivacion_total,
   desempeno  = desempeno_df$desempeno_total
 )
 
-head(data, 5)
-
 ```
 
+**Prueba de hipótesis**
 
 - **$H_0$:** No existe relación monotónica entre motivación y desempeño académico.  
 - **$H_1$:** Existe una relación monotónica entre motivación y desempeño académico.  
 
+**Criterio de evaluación**
+Nivel de significancia: $\alpha$ = 0.05
+
+- Si el p-valor ≤ 0.05, se rechaza $H_0$.
+- Si el p-valor > 0.05, no se rechaza $H_0$.
 
 ```{r message=FALSE, warning=FALSE}
 # Correlación de Spearman
 cor_spearman <- cor.test(data$motivacion, data$desempeno, method = "spearman", exact = FALSE)
-cor_spearman
+
 
 ```
+
+
+```{r echo=FALSE}
+# Crear tabla estilo SPSS/APA7
+spearman_res <- data.frame(
+  Variable1 = "Motivación",
+  Variable2 = "Desempeño",
+  N = length(data$motivacion),
+  r_s = cor_spearman$estimate,
+  p = cor_spearman$p.value
+)
+
+# Formatear valores para APA7
+spearman_res <- spearman_res |>
+  dplyr::mutate(
+    r_s = round(r_s, 3),
+    p = ifelse(p < .001, "< .001", round(p, 3))
+  )
+
+# Crear tabla HTML
+spearman_res |>
+  knitr::kable(
+    format = "html",
+    col.names = c("Variable 1", "Variable 2", "N", "r_s", "p"),
+    caption = "Correlación de Spearman entre Motivación y Desempeño"
+  ) |>
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    full_width = FALSE,
+    position = "center"
+  )
+```
+
+
 
 El coeficiente de correlación de Spearman obtenido es rho = `r round(cor_spearman$estimate, 3)`, indicando una fuerte relación positiva entre motivación y desempeño académico.
 
@@ -563,7 +658,7 @@ Esto significa que, estadísticamente, existe evidencia suficiente para afirmar 
 
 **Visualización usando la función `ggscatterstats()` de `library(ggstatsplot)` en R creado por [@Patil2021]**
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, eval=FALSE}
 # Gráfico usando Spearman
 ggscatterstats(
   data = data,
@@ -580,11 +675,18 @@ ggscatterstats(
 
 
 
+```{r echo=FALSE}
+#| out-width: "16cm"
+#| fig-align: "center" 
+knitr::include_graphics("images/fig16.png")
+```
+
+
 
 Para explorar gráficamente relaciones entre varias variables y complementar el análisis de correlación, se pueden usar funciones como `pairs.panels()` del paquete `psych` o `ggpairs()` del paquete `GGally`. Ambas permiten generar gráficos de pares de variables de forma rápida y visual, facilitando la interpretación de tendencias y correlaciones en conjuntos de datos con más de dos variables.
 
 
-::: {.callout-tip collapse="false"}
+::: {.callout-tip collapse="true"}
 ## En Resumen
 
 * **Pearson** → mide *asociación lineal*.
@@ -640,6 +742,13 @@ Es un estadístico no paramétrico que evalúa la **fuerza y dirección de la re
 6️⃣ Gibbons, J. D., & Chakraborti, S. (2010). Nonparametric statistical inference (5th ed.). CRC Press.
 
 
+
+
+```{r echo=FALSE}
+#| out-width: "2cm"
+#| fig-align: "center" 
+knitr::include_graphics("logoredondo.png")
+```
 
 
 

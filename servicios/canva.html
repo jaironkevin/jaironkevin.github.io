@@ -1,0 +1,73 @@
+<!-- 1. Contenedor del Canvas -->
+<canvas id="wavesCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: 0.3;"></canvas>
+
+<script>
+(function() {
+    const canvas = document.getElementById('wavesCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height, animationFrame;
+
+    // Configuración de las ondas
+    const waves = [
+        { y: 0.5, length: 0.01, amplitude: 40, speed: 0.02, color: 'rgba(212, 160, 23, 0.15)' },
+        { y: 0.5, length: 0.008, amplitude: 60, speed: 0.015, color: 'rgba(212, 160, 23, 0.1)' },
+        { y: 0.5, length: 0.005, amplitude: 80, speed: 0.01, color: 'rgba(212, 160, 23, 0.05)' }
+    ];
+
+    let increment = 0;
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    function drawWave(wave) {
+        ctx.beginPath();
+        ctx.moveTo(0, height * wave.y);
+
+        for (let i = 0; i < width; i++) {
+            // Fórmula de la onda: y = sin(x * frecuencia + desfase) * amplitud
+            const y = Math.sin(i * wave.length + increment * wave.speed) * wave.amplitude;
+            ctx.lineTo(i, height * wave.y + y);
+        }
+
+        ctx.strokeStyle = wave.color;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        
+        // Dibujamos cada una de las ondas del stack
+        waves.forEach(wave => drawWave(wave));
+        
+        increment += 1;
+        animationFrame = requestAnimationFrame(animate);
+    }
+
+    // Inicialización
+    window.addEventListener('resize', resize);
+    resize();
+    animate();
+
+    // Limpieza si Quarto navega (opcional)
+    document.addEventListener("quarto-page-load", () => {
+        cancelAnimationFrame(animationFrame);
+    });
+})();
+</script>
+
+<style>
+/* Forzamos que el contenido de trestles sea transparente para ver el fondo */
+.quarto-about-trestles, 
+.quarto-about-trestles .about-entity, 
+.quarto-about-trestles .about-contents {
+    background: transparent !important;
+}
+
+/* Ajuste sutil para que el texto resalte sobre la animación */
+.quarto-about-trestles .about-contents {
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+</style>

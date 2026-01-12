@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700;800;900&family=Merriweather:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            light: '#2c3e50',
+                            DEFAULT: '#1a2a3a',
+                            dark: '#0a141d',
+                        },
+                        gold: {
+                            DEFAULT: '#d4a017',
+                            light: '#f3dfa2',
+                            dark: '#b08512',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Fira Sans', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tesis-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(26, 42, 58, 0.05);
+        }
+        .tesis-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(212, 160, 23, 0.15);
+            border-color: #d4a017;
+        }
+        .bg-subtle-pattern {
+            background-color: #fafafa;
+            background-image: radial-gradient(circle at 1px 1px, rgba(212, 160, 23, 0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .tool-icon-mini {
+            width: 32px;
+            height: 32px;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+        .tool-item:hover .tool-icon-mini {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-subtle-pattern font-sans text-navy antialiased">
+
+<div class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- HEADER DE SECCIÓN -->
+    <header class="mb-16 text-center md:text-left">
+        <div class="inline-flex items-center gap-3 bg-gold/10 text-gold px-5 py-2 rounded-full text-xs font-black uppercase tracking-[0.3em] mb-6">
+            <i class="fa-solid fa-graduation-cap text-lg"></i>
+            Servicios Académicos
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black text-navy tracking-tighter leading-none mb-6">
+            Asesoría para <span class="text-gold">Tesis e Investigación</span>
+        </h1>
+        <div class="max-w-3xl bg-white/50 backdrop-blur-md border-l-8 border-gold p-8 rounded-2xl shadow-sm italic text-xl text-gray-600 font-serif leading-relaxed">
+            "Te guío en cada etapa de tu investigación para que avances con claridad, seguridad y un respaldo metodológico sólido. ¡Hagamos que tu informe sea ordenado, coherente y totalmente defendible!"
+        </div>
+    </header>
+
+    <!-- GRID DE SERVICIOS ACADÉMICOS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+        
+        <!-- Card 1 -->
+        <div class="tesis-card bg-white p-8 rounded-[2.5rem] shadow-sm flex flex-col">
+            <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <i class="fa-solid fa-lightbulb text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-black text-navy mb-4 uppercase tracking-tight">Formulación del proyecto</h4>
+            <ul class="space-y-3 text-gray-500 text-sm leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Problema, objetivos e hipótesis bien definidos</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Matriz de consistencia estructurada</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Marco teórico organizado y pertinente</li>
+            </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="tesis-card bg-white p-8 rounded-[2.5rem] shadow-sm flex flex-col">
+            <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <i class="fa-solid fa-clipboard-check text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-black text-navy mb-4 uppercase tracking-tight">Validez y fiabilidad</h4>
+            <ul class="space-y-3 text-gray-500 text-sm leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Revisión y adecuación del cuestionario</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Juicio de expertos y validez de contenido</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Prueba piloto y ajustes técnicos</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Alfa, Omega y KR-20</li>
+            </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="tesis-card bg-white p-8 rounded-[2.5rem] shadow-sm flex flex-col border-2 border-gold/10">
+            <div class="w-14 h-14 bg-gold text-navy rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <i class="fa-solid fa-flask text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-black text-navy mb-4 uppercase tracking-tight">Metodología y muestreo</h4>
+            <ul class="space-y-3 text-gray-500 text-sm leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Elección del enfoque y diseño correcto</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Tamaño de muestra y técnica de muestreo</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Variables y operacionalización claras</li>
+            </ul>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="tesis-card bg-white p-8 rounded-[2.5rem] shadow-sm flex flex-col">
+            <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <i class="fa-solid fa-chart-line text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-black text-navy mb-4 uppercase tracking-tight">Análisis estadístico</h4>
+            <ul class="space-y-3 text-gray-500 text-sm leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Descriptivos e inferenciales</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Regresiones y modelos predictivos</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Interpretación limpia y defendible</li>
+            </ul>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="tesis-card bg-white p-8 rounded-[2.5rem] shadow-sm flex flex-col">
+            <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <i class="fa-solid fa-pen-nib text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-black text-navy mb-4 uppercase tracking-tight">Redacción científica</h4>
+            <ul class="space-y-3 text-gray-500 text-sm leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Resultados y discusión con coherencia</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Conclusiones alineadas al objetivo</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Normas APA / Vancouver</li>
+            </ul>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="tesis-card bg-navy p-8 rounded-[2.5rem] shadow-2xl flex flex-col border-b-4 border-gold">
+            <div class="w-14 h-14 bg-gold text-navy rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <i class="fa-solid fa-shield-halved text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-black text-white mb-4 uppercase tracking-tight">Verificación de Similitud</h4>
+            <ul class="space-y-3 text-white/70 text-sm leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Detección de coincidencias y alertas</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Corrección y reescritura técnica</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Ajustes de estilo para originalidad</li>
+            </ul>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="tesis-card bg-white p-8 rounded-[2.5rem] shadow-sm flex flex-col">
+            <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <i class="fa-solid fa-chalkboard-user text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-black text-navy mb-4 uppercase tracking-tight">Defensa de Tesis</h4>
+            <ul class="space-y-3 text-gray-500 text-sm leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Diapositivas de alto impacto</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Entrenamiento y discurso técnico</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Manejo de preguntas clave del jurado</li>
+            </ul>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="tesis-card bg-white p-8 rounded-[2.5rem] shadow-sm flex flex-col md:col-span-2 lg:col-span-1">
+            <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <i class="fa-solid fa-file-code text-2xl"></i>
+            </div>
+            <h4 class="text-xl font-black text-navy mb-4 uppercase tracking-tight">Maquetación Editorial</h4>
+            <ul class="space-y-3 text-gray-500 text-sm leading-relaxed">
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Conversión a LaTeX, Quarto y RMarkdown</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Formato profesional para revistas</li>
+                <li class="flex items-start gap-2"><span class="text-gold font-bold">•</span> Estilo maquetado listo para publicar</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- HERRAMIENTAS UTILIZADAS -->
+    <div class="bg-navy rounded-[3.5rem] p-10 md:p-16 text-white relative overflow-hidden shadow-2xl mb-20">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gold opacity-5 rounded-full -mt-32 -mr-32 blur-3xl"></div>
+        <div class="relative z-10">
+            <h2 class="text-2xl md:text-3xl font-black mb-10 text-center uppercase tracking-widest">
+                <span class="text-gold">Tecnología</span> para tu investigación
+            </h2>
+            
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-8 items-center justify-items-center opacity-80">
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/logo-r.svg" class="tool-icon-mini" alt="R">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">R Project</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/RStudio.svg" class="tool-icon-mini" alt="RStudio">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">RStudio</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/logo-python.svg" class="tool-icon-mini" alt="Python">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">Python</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/jupyter.svg" class="tool-icon-mini" alt="Jupyter">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">Jupyter</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/SPSS.png" class="tool-icon-mini" alt="SPSS">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">SPSS</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/Jamovi_logo.png" class="tool-icon-mini" alt="Jamovi">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">Jamovi</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/stata.png" class="tool-icon-mini" alt="Stata">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">Stata</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/logo-minitab.svg" class="tool-icon-mini" alt="Minitab">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">Minitab</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/eviews.jpeg" class="tool-icon-mini" alt="EViews">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">EViews</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/logo-powerbi.svg" class="tool-icon-mini" alt="Power BI">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">Power BI</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/logo-excel.svg" class="tool-icon-mini" alt="Excel">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">Excel</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/logo-latex.svg" class="tool-icon-mini" alt="LaTeX">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">LaTeX</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/logo-quarto.svg" class="tool-icon-mini" alt="Quarto">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">Quarto</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-2">
+                    <img src="img/rmarkdown.png" class="tool-icon-mini" alt="RMarkdown">
+                    <span class="text-[9px] font-bold uppercase tracking-tighter">RMarkdown</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="relative bg-white rounded-[3rem] p-10 md:p-16 text-center shadow-2xl border border-gray-100 overflow-hidden">
+        <!-- Decoración -->
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-navy/5 rounded-full blur-3xl"></div>
+        
+        <div class="relative z-10">
+            <h2 class="text-3xl md:text-5xl font-black text-navy mb-4 leading-tight">
+                ¿Listo para llevar tus datos al <br><span class="text-gold text-gradient">siguiente nivel?</span>
+            </h2>
+            <p class="text-gray-500 text-lg mb-10 max-w-2xl mx-auto">
+                Agenda una consultoría personalizada y obtén resultados claros, precisos y con total garantía de originalidad.
+            </p>
+            
+            <a href="https://wa.me/51929519964" target="_blank" class="inline-flex items-center gap-4 bg-navy text-white hover:bg-gold hover:text-navy px-12 py-5 rounded-2xl font-black uppercase tracking-widest transition-all shadow-xl hover:-translate-y-2 active:scale-95 group">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                Agendar Asesoría
+                <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

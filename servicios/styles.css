@@ -1,289 +1,75 @@
-.row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e0e0e0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    padding: 10px 20px;       /* Reducir el padding para ajustar el tamaño de la tarjeta */
-    margin-bottom: 20px;      /* Añadir un margen inferior para separar del siguiente elemento */
-    width: 100%;
+/* =========================================================
+   PRESENTACIÓN – ANCHO COMPLETO (FULL WIDTH)
+   Solo afecta a presentacion-section
+   NO cambia tipografías
+   NO rompe navbar
+   ========================================================= */
+
+/* Saca el contenido del max-width de Quarto */
+body:has(.presentacion-section) #quarto-content,
+body:has(.presentacion-section) main.content {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-.justify-text {
-    text-align: justify; /* Justifica el texto de cualquier elemento que tenga esta clase */
-    margin-bottom: 10px; /* (Opcional) Añadir margen inferior para separar párrafos */
+/* Contenedor real de la presentación */
+.presentacion-section {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1rem, 4vw, 4rem);
+  padding-right: clamp(1rem, 4vw, 4rem);
 }
 
-.reduced-margin {
-    margin-top: 10px;      /* Reducir margen superior a 10px */
-    margin-bottom: 10px;   /* Reducir margen inferior a 10px */
+/* Mantiene legibilidad interna */
+.presentacion-section > * {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
-
-.column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; /* Alinea el contenido a la izquierda */
-    padding: 10px;
-    flex-grow: 1;
-}
-
-.profile-img {
-    width: 155px;
-    height: 155px;
-    border-radius: 50%;
-    display: block;
-    margin-bottom: 10px; /* Espacio debajo de la imagen */
-}
-
-.column.center-text {
-    align-items: center; /* Centra el texto solo en columnas específicas */
-}
-
-h1, .tagline {
-    margin: 5px 0;
-    text-align: center; /* Centrado aplicado solo a la cabecera y la etiqueta */
-}
-
-.info p, .info a {
-    font-size: 16px;
-    color: #555;
-    margin: 5px 0;
-    text-align: left; /* Alineación a la izquierda para info */
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Estilo para los enlaces */
-a {
-    color: #000080; /* Color azul marino */
-    text-decoration: none; /* Esto elimina el subrayado si es necesario */
-}
-
-/* Si deseas un estilo específico solo para los enlaces dentro de cierta sección (por ejemplo, una tarjeta de contacto), puedes usar una clase o un selector más específico */
-
-.contact-card a {
-    color: #000080; /* Cambiar color de los enlaces a azul marino */
-    text-decoration: none; /* Opcionalmente, quita el subrayado */
-}
-
-/* Puedes añadir un efecto "hover" para cuando el usuario pasa el mouse sobre el enlace */
-a:hover {
-    color: #0000CD; /* Puedes usar un tono ligeramente diferente para el hover */
-    text-decoration: underline; /* También puedes optar por subrayar el enlace al pasar el ratón */
+/* Secciones que sí deben ser full-bleed (opcional) */
+.presentacion-section .tool-grid,
+.presentacion-section .contact-footer {
+  max-width: none;
 }
 
 
 
-
-
-
-
-
-
-
-/* Estilo para el título, que debe estar centrado y subrayado */
-h3.centered-title {
-    text-align: center;             /* Centrar solo el título */
-    text-decoration: underline;     /* Subrayar solo el título */
-    margin-top: -2px;               /* Ajustar margen superior del título */
-    margin-bottom: 5px;             /* Ajustar margen inferior del título */
-}
-
-/* Asegurar que el contenido de la columna esté alineado a la izquierda y sin subrayado */
-.column {
-    text-align: left;               /* Alinear a la izquierda todo el contenido dentro de la columna */
-}
-
-.column p,
-.column ul,
-.column li,
-.column div,
-.column span,
-.column a {
-    text-align: left;               /* Asegurar que el contenido específico esté alineado a la izquierda */
-    text-decoration: none;          /* Asegurarse de quitar cualquier subrayado del contenido */
-}
-
-/* Si aún persiste el subrayado debido a estilos predeterminados, asegurémonos de eliminarlo de todos los elementos dentro de la columna */
-.column * {
-    text-decoration: none !important;  /* Forzar la eliminación de cualquier subrayado en los elementos dentro de la columna */
-}
-
-.custom-margin {
-    margin-top: -205px;              /* Ajustar margen superior (puedes ajustar este valor según sea necesario) */
-    margin-bottom: 15px;           /* Ajustar margen inferior (puedes ajustar este valor según sea necesario) */
+.presentacion-section {
+  min-height: calc(100vh - 72px); /* ajusta a tu navbar */
+  padding-top: 3rem;
+  padding-bottom: 4rem;
 }
 
 
+/* =========================================================
+   PRESENTACIÓN – FULL WIDTH ROBUSTO (sin :has)
+   Solo afecta a la página que tenga .presentacion-page
+   ========================================================= */
 
-
-
-
-
-
-
-.education {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px; /* Ajuste para reducir espacio entre bloques de educación */
-    padding: 5px; /* Reduce el relleno para evitar demasiado espacio adicional */
+/* 1) Rompe el límite de ancho del contenedor de Quarto */
+.presentacion-page {
+  width: 88vw;                 /* controla el ancho */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-x: clip;
+}
+/* 2) Asegura que el iframe use todo el ancho del full-bleed */
+.presentacion-page #presentacion-frame {
+  width: 100%;
+  display: block;
 }
 
-.details {
-    text-align: right;
-    margin: 0; /* Elimina espacio innecesario alrededor de fechas y lugar */
-    line-height: 0.5;
+/* 3) (Opcional) si tu tema aplica padding interno, lo neutralizamos SOLO aquí */
+.presentacion-page .content,
+.presentacion-page .content-container,
+.presentacion-page .page-columns,
+.presentacion-page main.content {
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
-
-.education strong {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 2px; /* Reduce el espacio entre el título de la carrera y la universidad */
-}
-
-.education p, .details p {
-    margin: 2px 0; /* Espacio pequeño para mejorar la apariencia */
-}
-
-.details p {
-    font-weight: bold;
-    color: #9B9898;;
-}
-
-
-
-
-
-
-
-
-.capacitacion {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline; /* Alineación en la misma línea de base para cursos y fechas */
-    margin-bottom: 5px; /* Espacio reducido entre bloques de capacitación */
-    padding: 5px;
-    max-width: 800px; /* Ancho máximo para el bloque completo */
-}
-
-.capacitacion .capacitacion-text {
-    flex: 3;
-    max-width: 70%; /* Limita el ancho para evitar colisiones con la sección de fechas */
-    line-height: 1; /* Reducir la altura de línea para juntar el nombre del curso y la institución */
-    margin-bottom: 1px; /* Reducir el espacio entre el curso y la institución */
-}
-
-.capacitaciones-details {
-    flex: 1;
-    text-align: right;
-    margin: 0;
-    line-height: 1; /* Reducir la altura de línea para juntar la fecha y el lugar */
-    max-width: 30%; /* Limitar el ancho para evitar problemas de alineación */
-}
-
-.capacitacion strong {
-    display: block;
-    font-weight: bold;
-    margin-bottom: -15px; /* Reducir el margen entre el título del curso y la institución */
-}
-
-.capacitacion p {
-    margin: 1px 0; /* Márgenes mínimos para mantener los elementos internos cercanos */
-}
-
-.institucion {
-    font-size: 0.7em; /* Reducir el tamaño de la fuente para la institución */
-    color: #4a4a4a; /* Un gris más oscuro para diferenciar la institución */
-}
-
-.capacitaciones-details p {
-    font-weight: bold;
-    color: #9B9898; /* Cambiado a un gris fuerte */
-    margin: 1px 0; /* Márgenes reducidos para juntar fecha y lugar lo más posible */
-    line-height: 1; /* Mantener compacto el espaciado interno de los párrafos */
-}
-
-
-h2 {
-    border-bottom: 3px solid #4a4a4a; /* Línea más gruesa y de un color más oscuro */
-    padding-bottom: 10px; /* Espacio entre el título y la línea */
-    margin-bottom: 15px; /* Espacio entre la línea y el contenido siguiente */
-}
-
-hr {
-    border: none; /* Quitar el borde predeterminado */
-    border-top: 3px solid #4a4a4a; /* Línea superior más gruesa y con un gris oscuro */
-    margin: 15px 0; /* Espacio superior e inferior a la línea */
-}
-
-
-
-
-
-
-.experiencia {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline; /* Alineación en la misma línea de base para empresa y fechas */
-    margin-bottom: 5px; /* Espacio reducido entre bloques de experiencia */
-    padding: 5px;
-    max-width: 800px; /* Ancho máximo para el bloque completo */
-}
-
-.experiencia .experiencia-text {
-    flex: 3;
-    max-width: 70%; /* Limita el ancho para evitar colisiones con la sección de fechas */
-    line-height: 1; /* Reducir la altura de línea para juntar el nombre del puesto y la institución */
-    margin-bottom: 1px; /* Reducir el espacio entre el puesto y las funciones */
-}
-
-.experiencia-details {
-    flex: 1;
-    text-align: right;
-    margin: 0;
-    line-height: 1; /* Reducir la altura de línea para juntar la fecha y el lugar */
-    max-width: 30%; /* Limitar el ancho para evitar problemas de alineación */
-}
-
-.experiencia strong {
-    display: block;
-    font-weight: bold;
-    margin-bottom: -15px; /* Reducir el margen entre el título de la empresa y el puesto */
-}
-
-.puesto {
-    font-size: 1em;
-    font-weight: bold; /* Puesto se muestra con letra un poco más destacada */
-    color: #4a4a4a; /* Gris oscuro para diferenciar el puesto */
-    margin-bottom: 2px; /* Reducir el espacio entre el puesto y las funciones */
-}
-
-.funciones {
-    font-size: 0.9em; /* Reducir el tamaño de letra para las funciones */
-    font-style: italic; /* Se usa cursiva para diferenciar las funciones */
-    color: #6a6a6a; /* Un gris más claro para diferenciar las funciones del resto del texto */
-    margin: 1px 0; /* Márgenes mínimos para mantener los elementos internos cercanos */
-}
-
-.experiencia-details p {
-    font-weight: bold;
-    color: #9B9898; /* Cambiado a un gris fuerte */
-    margin: 1px 0; /* Márgenes reducidos para juntar fecha y lugar lo más posible */
-    line-height: 1; /* Mantener compacto el espaciado interno de los párrafos */
-}
-
-
-
-
-

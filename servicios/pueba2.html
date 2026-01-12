@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700;800;900&family=Merriweather:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            light: '#2c3e50',
+                            DEFAULT: '#1a2a3a',
+                            dark: '#0a141d',
+                        },
+                        gold: {
+                            DEFAULT: '#d4a017',
+                            light: '#f3dfa2',
+                            dark: '#b08512',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Fira Sans', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    animation: {
+                        'hop': 'hop 3s ease-in-out infinite',
+                        'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        hop: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        },
+                        'pulse-soft': {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.5' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tool-card:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.15);
+        }
+        .tool-card img {
+            filter: grayscale(100%);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .bg-pattern {
+            background-color: #fafafa;
+            background-image: radial-gradient(circle at 1px 1px, rgba(212, 160, 23, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .glass-footer {
+            background: linear-gradient(135deg, rgba(26, 42, 58, 1) 0%, rgba(10, 20, 29, 1) 100%);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(212, 160, 23, 0.2);
+        }
+        /* Ocultar scrollbar interna para que Quarto maneje la altura */
+        html, body {
+            overflow: hidden;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="bg-pattern font-sans text-navy antialiased">
+
+<div class="w-full px-6 py-12 md:py-20">
+
+    <!-- HEADER: LOGO Y NOMBRE A LA IZQUIERDA + FOTO CERCANA -->
+    <header class="flex flex-col md:flex-row items-center md:items-center justify-start gap-8 md:gap-12 mb-24">
+        
+        <!-- Logo con Animación -->
+        <div class="flex-shrink-0 group">
+            <div class="relative animate-hop group-hover:pause">
+                <div class="absolute inset-0 bg-gold/15 blur-3xl rounded-full scale-75 group-hover:scale-100 transition-all duration-700"></div>
+                <img src="LOGONUEVO2.png" alt="Logo Jairon Ojeda" class="w-32 md:w-44 relative z-10 drop-shadow-2xl transition-transform duration-500 group-hover:rotate-3 group-hover:scale-110">
+            </div>
+        </div>
+
+        <!-- Información (Dimensiones Originales) -->
+        <div class="flex-initial text-center md:text-left space-y-3">
+            <div class="inline-flex items-center gap-2 bg-navy text-gold px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.25em] mb-1 shadow-lg shadow-navy/10">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
+                </span>
+                Estadístico Colegiado • Cód. 1706
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black text-navy tracking-tighter leading-none">
+                Jairon Ojeda
+            </h1>
+            <p class="text-xl md:text-3xl text-gray-400 font-light max-w-2xl leading-tight">
+                Análisis de Datos con <span class="text-navy font-bold border-b-2 border-gold/30">Rigor Científico</span> y Visión Estratégica.
+            </p>
+        </div>
+
+        <!-- Foto Personal (Sincronizada y cerca del nombre) -->
+        <div class="flex-shrink-0 group">
+            <div class="relative animate-hop group-hover:pause">
+                <div class="absolute inset-0 bg-gold/15 blur-3xl rounded-full scale-75 group-hover:scale-100 transition-all duration-700"></div>
+                <img src="foto.jpeg" alt="Jairon Ojeda" class="w-32 h-32 md:w-44 md:h-44 object-cover rounded-full border-4 border-white shadow-2xl relative z-10 transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-105">
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN ESTRATÉGICA -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-32 items-stretch">
+        <div class="lg:col-span-7 flex flex-col justify-center space-y-8">
+            <h2 class="text-4xl md:text-5xl font-black text-navy leading-[1.1]">
+                De la complejidad a la <br>
+                <span class="text-gold italic font-serif">certeza estadística.</span>
+            </h2>
+            <div class="text-lg text-gray-600 leading-relaxed space-y-6">
+                <p>
+                    Mi labor garantiza que cada fase de su investigación o proyecto empresarial se base en evidencia sólida. Utilizo herramientas con buenas practicas que permiten obtener <span class="text-navy font-bold">resultados confiables, reproducibles y útiles para la toma de decisiones.</span>
+                </p>
+                <div class="flex flex-wrap gap-8 pt-4">
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-2xl bg-white shadow-md flex items-center justify-center text-gold border border-transparent group-hover:border-gold/30 transition-all">
+                            <i class="fa-solid fa-graduation-cap text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-black text-navy text-sm uppercase">Investigación</div>
+                            <div class="text-xs opacity-60">Soporte para tesis y artículos</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-2xl bg-white shadow-md flex items-center justify-center text-gold border border-transparent group-hover:border-gold/30 transition-all">
+                            <i class="fa-solid fa-chart-line text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-black text-navy text-sm uppercase">Empresarial</div>
+                            <div class="text-xs opacity-60">Modelado y toma de decisiones</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Principios Premium -->
+        <div class="lg:col-span-5 h-full">
+            <div class="bg-navy rounded-[2.5rem] p-10 text-white shadow-2xl relative overflow-hidden group h-full flex flex-col justify-center">
+                <div class="absolute -right-16 -top-16 w-56 h-56 bg-gold opacity-10 rounded-full group-hover:scale-125 transition-transform duration-1000 blur-2xl"></div>
+                <h3 class="text-gold font-black mb-10 text-[10px] uppercase tracking-[0.4em] relative z-10 opacity-70">Principios de Trabajo</h3>
+                <ul class="space-y-8 relative z-10">
+                    <li class="flex items-start gap-5 group/item">
+                        <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center shrink-0 group-hover/item:bg-gold/30 transition-colors border border-gold/20">
+                            <i class="fa-solid fa-user-shield text-gold text-sm"></i>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-gold text-xs uppercase mb-1 tracking-wider">Ética Profesional</span>
+                            <span class="text-sm opacity-80 leading-snug">Manejo confidencial y transparente de bases de datos.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-5 group/item">
+                        <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center shrink-0 group-hover/item:bg-gold/30 transition-colors border border-gold/20">
+                            <i class="fa-solid fa-microscope text-gold text-sm"></i>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-gold text-xs uppercase mb-1 tracking-wider">Precisión Analítica</span>
+                            <span class="text-sm opacity-80 leading-snug">Cada modelo es validado mediante pruebas de robustez y significancia estadística.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-5 group/item">
+                        <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center shrink-0 group-hover/item:bg-gold/30 transition-colors border border-gold/20">
+                            <i class="fa-solid fa-code-merge text-gold text-sm"></i>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-gold text-xs uppercase mb-1 tracking-wider">Reproducibilidad</span>
+                            <span class="text-sm opacity-80 leading-snug">Uso de flujos automatizados para asegurar que cada análisis sea auditable.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- STACK TECNOLÓGICO -->
+    <section class="mb-32">
+        <div class="flex items-center gap-6 mb-16">
+            <h2 class="text-[10px] font-black uppercase tracking-[0.6em] text-gray-400">Stack Tecnológico</h2>
+            <div class="h-[1px] bg-gray-200 flex-grow"></div>
+        </div>
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-10">
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/logo-r.svg" class="w-14 h-14" alt="R"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">R Project</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/RStudio.svg" class="w-14 h-14" alt="RStudio"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">RStudio</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/logo-python.svg" class="w-14 h-14" alt="Python"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">Python</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/jupyter.svg" class="w-14 h-14" alt="Jupyter"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">Jupyter</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/SPSS.png" class="w-14 h-14" alt="SPSS"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">SPSS</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/Jamovi_logo.png" class="w-14 h-14" alt="Jamovi"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">Jamovi</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/stata.png" class="w-14 h-14" alt="Stata"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">Stata</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/logo-minitab.svg" class="w-14 h-14" alt="Minitab"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">Minitab</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/logo-powerbi.svg" class="w-14 h-14" alt="Power BI"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">Power BI</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/logo-sql.svg" class="w-14 h-14" alt="SQL"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">SQL</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/logo-quarto.svg" class="w-14 h-14" alt="Quarto"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">Quarto</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/logo-latex.svg" class="w-14 h-14" alt="LaTeX"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">LaTeX</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/logo-github.svg" class="w-14 h-14" alt="GitHub"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">GitHub</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/rmarkdown.png" class="w-14 h-14" alt="RMarkdown"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">RMarkdown</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
+                <img src="img/logo-excel.svg" class="w-14 h-14" alt="Excel"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">Excel</span>
+            </div>
+            <div class="tool-card flex flex-col items-center gap-4 text-gold hover:text-gold-dark transition-colors cursor-pointer">
+                <i class="fa-solid fa-plus-circle text-5xl opacity-40 hover:opacity-100"></i>
+                <span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-navy text-center">Otros</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER INTERACTIVO -->
+    <footer class="glass-footer rounded-[3.5rem] p-10 md:p-20 text-white relative overflow-hidden shadow-2xl">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-gold opacity-10 rounded-full -mb-32 -mr-32 blur-[100px] animate-pulse-soft"></div>
+        <div class="relative z-10 flex flex-col lg:flex-row justify-between items-center gap-16">
+            <div class="text-center lg:text-left space-y-6">
+                <h2 class="text-4xl md:text-6xl font-black leading-none tracking-tighter text-white">
+                    ¿Iniciamos su próximo <br><span class="text-gold">desafío de datos?</span>
+                </h2>
+                <p class="text-gray-400 max-w-md mx-auto lg:mx-0 text-lg">
+                    Acompañamiento técnico especializado para garantizar la solidez de sus resultados científicos.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-auto">
+                <a href="https://wa.me/51929519964" target="_blank" class="glow-hover group bg-white/5 border border-white/10 p-6 rounded-[2rem] flex items-center gap-5 hover:bg-gold hover:text-navy transition-all duration-500">
+                    <div class="w-12 h-12 rounded-2xl bg-gold/20 flex items-center justify-center group-hover:bg-navy/10"><i class="fab fa-whatsapp text-2xl text-gold group-hover:text-navy"></i></div>
+                    <div><div class="text-[10px] uppercase font-black tracking-widest opacity-40">WhatsApp</div><div class="font-black text-lg">+51 929 519 964</div></div>
+                </a>
+                <a href="mailto:jaironojeda99@gmail.com" class="glow-hover group bg-white/5 border border-white/10 p-6 rounded-[2rem] flex items-center gap-5 hover:bg-gold hover:text-navy transition-all duration-500">
+                    <div class="w-12 h-12 rounded-2xl bg-gold/20 flex items-center justify-center group-hover:bg-navy/10"><i class="fa-solid fa-envelope text-xl text-gold group-hover:text-navy"></i></div>
+                    <div><div class="text-[10px] uppercase font-black tracking-widest opacity-40">Email</div><div class="font-black text-sm break-all text-white">jaironojeda99@gmail.com</div></div>
+                </a>
+                <a href="https://linkedin.com/in/jairon-ojeda" target="_blank" class="glow-hover group bg-navy-dark border border-white/5 p-6 rounded-[2rem] flex items-center justify-center gap-4 hover:bg-gold hover:text-navy transition-all duration-500 sm:col-span-2">
+                    <i class="fab fa-linkedin text-2xl text-gold group-hover:text-navy"></i>
+                    <span class="font-black uppercase tracking-[0.3em] text-xs">Ver Perfil en LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- SCRIPT RESIZER PARA QUARTO -->
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        window.parent.postMessage({ type: "iframe-height", height: height }, "*");
+    }
+    window.addEventListener("load", sendHeight);
+    window.addEventListener("resize", sendHeight);
+    const observer = new ResizeObserver(() => sendHeight());
+    observer.observe(document.body);
+</script>
+</body>
+</html>

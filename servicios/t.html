@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;600;700;800;900&family=Merriweather:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { DEFAULT: '#1a2a3a', dark: '#0a141d' },
+            gold: { DEFAULT: '#d4a017' }
+          },
+          fontFamily: {
+            sans: ['Fira Sans', 'sans-serif'],
+            serif: ['Merriweather', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-pattern {
+      background-color: #fafafa;
+      background-image: radial-gradient(circle at 1px 1px, rgba(212,160,23,0.08) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+    .glass-footer {
+      background: linear-gradient(135deg, #1a2a3a 0%, #0a141d 100%);
+    }
+  </style>
+</head>
+
+<body class="bg-pattern font-sans text-navy antialiased">
+
+<!-- =========================
+     CONTENEDOR FULL WIDTH
+     ========================= -->
+<div class="w-full">
+
+  <!-- =========================
+       HERO / HEADER (FULL WIDTH)
+       ========================= -->
+  <header class="w-full px-6 py-20">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <img src="LOGONUEVO2.png" class="w-32 md:w-44" alt="Logo Jairon Ojeda">
+
+      <div class="text-center md:text-left space-y-4">
+        <span class="inline-block bg-navy text-gold px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">
+          Estadístico Colegiado • Cód. 1706
+        </span>
+
+        <h1 class="text-6xl md:text-8xl font-black tracking-tight">
+          Jairon Ojeda
+        </h1>
+
+        <p class="text-xl md:text-3xl text-gray-400 max-w-2xl">
+          Análisis de Datos con <strong class="text-navy">Rigor Científico</strong> y Visión Estratégica.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================
+       CONTENIDO CONTROLADO
+       ========================= -->
+  <section class="px-6 py-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+      <!-- TEXTO -->
+      <div class="lg:col-span-7 space-y-8">
+        <h2 class="text-4xl md:text-5xl font-black leading-tight">
+          De la complejidad a la
+          <span class="text-gold italic font-serif">certeza estadística.</span>
+        </h2>
+
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Mi labor garantiza que cada fase de su investigación o proyecto empresarial
+          se base en evidencia sólida, con resultados confiables, reproducibles y éticos.
+        </p>
+      </div>
+
+      <!-- PRINCIPIOS -->
+      <div class="lg:col-span-5">
+        <div class="bg-navy rounded-3xl p-10 text-white space-y-8 shadow-2xl">
+          <h3 class="text-gold uppercase tracking-widest text-xs font-black">
+            Principios de trabajo
+          </h3>
+
+          <ul class="space-y-6 text-sm opacity-90">
+            <li>Ética profesional y confidencialidad</li>
+            <li>Precisión analítica validada</li>
+            <li>Reproducibilidad y trazabilidad</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       FOOTER FULL WIDTH
+       ========================= -->
+  <footer class="glass-footer px-6 py-24 text-white">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
+
+      <h2 class="text-4xl md:text-6xl font-black leading-tight">
+        ¿Iniciamos su próximo <br>
+        <span class="text-gold">desafío de datos?</span>
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="https://wa.me/51929519964" class="bg-white/10 px-8 py-6 rounded-2xl hover:bg-gold hover:text-navy transition">
+          WhatsApp
+        </a>
+        <a href="mailto:jaironojeda99@gmail.com" class="bg-white/10 px-8 py-6 rounded-2xl hover:bg-gold hover:text-navy transition">
+          Correo
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+</div>
+
+<!-- =========================
+     AUTO HEIGHT PARA IFRAME
+     ========================= -->
+<script>
+  function sendHeight() {
+    const height = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+    window.parent.postMessage({ type: "iframe-height", height }, "*");
+  }
+
+  window.addEventListener("load", sendHeight);
+  window.addEventListener("resize", sendHeight);
+  setTimeout(sendHeight, 500);
+</script>
+
+<style>
+  html, body {
+    overflow: hidden;
+  }
+</style>
+
+</body>
+</html>

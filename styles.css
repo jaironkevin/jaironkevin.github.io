@@ -427,6 +427,355 @@ div.quarto-about-trestles .about-contents {
 
 
 
+/* ============================================================================
+   PATCH VISUAL CONSERVADOR
+   Azul marino base + dorado en hover
+   NO altera dimensiones ni elimina funciones
+   ============================================================================ */
+
+/* 1) Tipografía moderna (mismos tamaños) */
+body,
+h1, h2, h3, h4, h5,
+nav,
+.footer,
+.badge,
+.label,
+.quarto-category,
+.listing-category,
+.about-link-text {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* 2) Color base: azul marino (reemplaza plomo) */
+body,
+h1, h2, h3, h4, h5,
+blockquote,
+blockquote p {
+  color: #1a2a3a !important;
+}
+
+/* 3) Enlaces: azul marino → dorado al hover */
+a {
+  color: #1a2a3a !important;
+  border-bottom-color: rgba(26,42,58,0.45) !important;
+}
+
+a:hover {
+  color: #d4a017 !important;
+  border-bottom-color: #d4a017 !important;
+}
+
+/* 4) Navbar: ítem activo permanece marcado */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link[aria-current="page"] {
+  color: #d4a017 !important;
+  font-weight: 700;
+}
+
+/* 5) Badges y categorías: hover dorado (no blanco) */
+.quarto-category:hover,
+.listing-category:hover,
+.badge:hover,
+.label:hover {
+  background-color: #d4a017 !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* 6) Tarjetas / listados: hover con sombra dorada sutil */
+.quarto-listing-default .listing-item:hover,
+.card:hover {
+  box-shadow: 0 10px 28px rgba(212,160,23,0.25) !important;
+}
+
+/* 7) Foto de inicio: interacción moderna respetando forma circular */
+div.quarto-about-trestles .about-entity img {
+  border-radius: 50% !important; /* asegura redondo */
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+}
+
+div.quarto-about-trestles .about-entity img:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow:
+    0 0 0 5px rgba(212,160,23,0.35),
+    0 14px 35px rgba(0,0,0,0.25);
+  filter: contrast(1.05) saturate(1.05);
+}
+
+/* 8) Botones/redes sociales: dorado al hover */
+div.quarto-about-trestles .about-link:hover {
+  background-color: #d4a017 !important;
+  border-color: #d4a017 !important;
+  color: #ffffff !important;
+}
+
+/* 9) Footer y navbar: coherencia azul marino + dorado */
+.navbar,
+.nav-footer {
+  border-color: #d4a017 !important;
+}
+
+
+
+/* ============================================================================
+   NAVBAR & FOOTER – AZUL MARINO + DORADO
+   Seguro: no rompe funciones ni dimensiones
+   ============================================================================ */
+
+/* 1) Cinta superior (navbar) */
+.navbar {
+  background-color: #1a2a3a !important;   /* azul marino */
+}
+
+/* Texto normal en navbar */
+.navbar a,
+.navbar .nav-link,
+.navbar-brand {
+  color: #ffffff !important;              /* blanco */
+}
+
+/* Hover en navbar */
+.navbar a:hover,
+.navbar .nav-link:hover,
+.navbar-brand:hover {
+  color: #d4a017 !important;              /* dorado */
+}
+
+/* Ítem activo / seleccionado (permanece dorado) */
+.navbar .nav-link.active,
+.navbar .nav-link[aria-current="page"] {
+  color: #d4a017 !important;
+  font-weight: 700;
+}
+
+/* Línea inferior dorada (si ya la usas, se mantiene coherente) */
+.navbar {
+  border-bottom: 3px solid #d4a017 !important;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* 2) Cinta inferior (footer) */
+.nav-footer {
+  background-color: #1a2a3a !important;   /* azul marino */
+  color: #ffffff !important;              /* blanco */
+  border-top: 3px solid #d4a017 !important;
+}
+
+/* Texto y enlaces del footer */
+.nav-footer,
+.nav-footer a,
+.nav-footer p {
+  color: #ffffff !important;
+}
+
+/* Hover en enlaces del footer */
+.nav-footer a:hover {
+  color: #d4a017 !important;
+}
+
+/* Iconos (GitHub, LinkedIn, etc.) */
+.nav-footer svg,
+.nav-footer i {
+  fill: #ffffff !important;
+  transition: fill 0.2s ease;
+}
+
+.nav-footer a:hover svg,
+.nav-footer a:hover i {
+  fill: #d4a017 !important;
+}
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   NAVBAR PROFESIONAL – SIN ANIMACIONES, SIN UNDERLINES
+   Estilo académico / data science senior
+   ============================================================================ */
+
+/* Estado normal */
+.navbar .nav-link,
+.navbar-brand {
+  color: #ffffff !important;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+/* Hover: dorado sobrio */
+.navbar .nav-link:hover,
+.navbar-brand:hover {
+  color: #d4a017 !important;
+}
+
+/* Activo / seleccionado */
+.navbar .nav-link.active,
+.navbar .nav-link[aria-current="page"] {
+  color: #d4a017 !important;
+  font-weight: 700;
+  background-color: rgba(212,160,23,0.15); /* fondo dorado sutil */
+  border-radius: 6px;
+}
+
+/* Espaciado interno consistente */
+.navbar .nav-link {
+  padding: 0.4rem 0.7rem;
+}
+
+
+
+
+
+
+
+
+
+/* ============================================================================
+   DROPDOWN / SUBMENÚ – AZUL MARINO + TEXTO BLANCO
+   Corrige contraste y mantiene estilo profesional
+   ============================================================================ */
+
+/* Fondo del dropdown */
+.navbar .dropdown-menu {
+  background-color: #1a2a3a !important; /* azul marino */
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* Texto del dropdown */
+.navbar .dropdown-menu .dropdown-item {
+  color: #ffffff !important; /* blanco */
+  font-weight: 500;
+}
+
+/* Hover en items del dropdown */
+.navbar .dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus {
+  background-color: rgba(212,160,23,0.18) !important; /* dorado sutil */
+  color: #d4a017 !important;
+}
+
+/* Item activo/seleccionado */
+.navbar .dropdown-menu .dropdown-item.active,
+.navbar .dropdown-menu .dropdown-item[aria-current="page"] {
+  background-color: rgba(212,160,23,0.28) !important;
+  color: #d4a017 !important;
+  font-weight: 600;
+}
+
+/* Separadores dentro del dropdown */
+.navbar .dropdown-menu .dropdown-divider {
+  border-color: rgba(255,255,255,0.12);
+}
+
+
+
+/* ============================================================================
+   METADATOS DE PUBLICACIÓN – AZUL MARINO + DORADO
+   Reemplaza el plomo sin cambiar estructura
+   ============================================================================ */
+
+/* Contenedor de metadatos */
+.quarto-title-meta {
+  background-color: rgba(26, 42, 58, 0.08) !important; /* azul marino suave */
+  border: 1px solid rgba(26, 42, 58, 0.18);
+  color: #1a2a3a !important;
+}
+
+/* Títulos (AUTOR/A, FECHA DE PUBLICACIÓN, etc.) */
+.quarto-title-meta-heading {
+  color: #1a2a3a !important;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+/* Contenido (nombre, fecha) */
+.quarto-title-meta-contents {
+  color: #1a2a3a !important;
+}
+
+/* Hover sutil (opcional pero elegante) */
+.quarto-title-meta:hover {
+  background-color: rgba(212, 160, 23, 0.12) !important; /* dorado muy sutil */
+  border-color: rgba(212, 160, 23, 0.35);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HOME – Jerarquía visual del texto (sin cambiar tamaños) */
+body:has(.quarto-about-trestles) .about-contents h1,
+body:has(.quarto-about-trestles) .about-contents strong:first-of-type {
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+body:has(.quarto-about-trestles) .about-contents p:first-of-type {
+  font-weight: 500;
+}
+
+/* HOME – Cita más elegante */
+body:has(.quarto-about-trestles) blockquote {
+  background-color: rgba(26, 42, 58, 0.06);
+  border-left-color: #d4a017;
+}
+
+body:has(.quarto-about-trestles) blockquote p {
+  font-style: italic;
+  color: #1a2a3a;
+}
+
+/* HOME – Botones sociales refinados */
+body:has(.quarto-about-trestles) .about-link {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+body:has(.quarto-about-trestles) .about-link:hover {
+  box-shadow: 0 8px 20px rgba(212,160,23,0.35);
+}
+
+
+/* HOME – Aparición suave */
+body:has(.quarto-about-trestles) div.quarto-about-trestles {
+  animation: homeFade 0.6s ease-out;
+}
+
+@keyframes homeFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+
 
 
 

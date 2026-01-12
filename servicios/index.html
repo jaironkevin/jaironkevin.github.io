@@ -67,12 +67,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Merriweather" rel="stylesheet">
+<!-- Fuentes Modernas -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,600;1,400&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet">
+
+
+
+<!-- Tus Iconos Existentes -->
 
 <script src="https://kit.fontawesome.com/0fba9333d8.js" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
@@ -107,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../software/index.html"> 
-<span class="menu-text">Shiny apps</span></a>
+<span class="menu-text">Apps</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../portafolio/index.html"> 
@@ -154,224 +163,22 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="3raedic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:19cm"></p>
-</figure>
-</div>
-</div>
-</div>
+<div class="presentacion-page">
 
+<iframe id="presentacion-frame" src="presentacion.html" style="width:100%; border:none; overflow:hidden; display:block;"></iframe>
 
-<div class="tool-grid">
-  <div class="tool-item">
-    <img src="img/logo-r.svg" alt="R" class="tool-icon">
-    <span>R</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/RStudio.svg" alt="Rstudio" class="tool-icon">
-    <span>Rstudio</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-python.svg" alt="Python" class="tool-icon">
-    <span>Python</span>
-  </div>
-    <div class="tool-item">
-    <img src="img/jupyter.svg" alt="jupiterlab" class="tool-icon">
-    <span>jupiterlab</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/SPSS.png" alt="SPSS" class="tool-icon">
-    <span>SPSS</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/Jamovi_logo.png" alt="Jamovi" class="tool-icon">
-    <span>Jamovi</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/stata.png" alt="Stata" class="tool-icon">
-    <span>Stata</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-minitab.svg" alt="Minitab" class="tool-icon">
-    <span>Minitab</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/eviews.jpeg" alt="EViews" class="tool-icon">
-    <span>EViews</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-powerbi.svg" alt="Power BI" class="tool-icon">
-    <span>Power BI</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-excel.svg" alt="Excel" class="tool-icon">
-    <span>Excel</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-sql.svg" alt="MiSQL" class="tool-icon">
-    <span>SQL</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-github.svg" alt="GitHub" class="tool-icon">
-    <span>GitHub</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-latex.svg" alt="LaTeX" class="tool-icon">
-    <span>LaTeX</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-quarto.svg" alt="Quarto" class="tool-icon">
-    <span>Quarto</span>
-  </div>
-    <div class="tool-item">
-    <img src="img/rmarkdown.png" alt="Rmarkdown" class="tool-icon">
-    <span>Rmarkdown</span>
-  </div>
-</div>
-
-
-
-<div class="about-box animated-box">
-
-  <div class="about-text">
-    <h2 class="about-title anchored">
-      Jairon Ojeda — Estadístico &amp; Consultor en Análisis de Datos
-    </h2>
-
-    <p>
-      Soy profesional en estadística especializado en análisis avanzado de datos, 
-      modelamiento predictivo, investigación científica y visualización profesional. 
-      Acompaño a tesistas, empresas e investigadores en la transformación de datos 
-      en información clara, confiable y accionable.
-    </p>
-
-    <p>
-      Licenciado en Estadística y colegiado habilitado (Cód. 1706), con experiencia profesional en análisis de datos, investigación científica y consultoría aplicada.
-    </p>
-
-    <p>
-      Combino rigor metodológico con herramientas modernas para generar resultados sólidos, interpretables y listos para la toma 
-      de decisiones estratégicas.
-    </p>
-
-    <p class="about-tagline">
-      <strong>Mi misión:</strong> ayudarte a convertir datos en decisiones inteligentes.
-    </p>
-  </div>
+<script>
+  window.addEventListener("message", function(event) {
+    if (event.data && event.data.type === "iframe-height") {
+      const iframe = document.getElementById("presentacion-frame");
+      if (iframe) iframe.style.height = event.data.height + "px";
+    }
+  });
+</script>
 
 </div>
 
 
-
-<div class="fav-lang-card">
-  <h3 class="anchored"><i class="fa-solid fa-code"></i> Lenguajes favoritos</h3>
-
-  <div class="soft-tools">
-
-    <div class="soft-item">
-      <i class="fa-brands fa-r-project"></i> R
-    </div>
-
-    <div class="soft-item">
-      <i class="fa-brands fa-python"></i> Python
-    </div>
-
-  </div>
-
-  <p class="lang-desc">
-    R y Python son mis lenguajes principales para análisis estadístico, modelamiento predictivo,
-    automatización y desarrollo reproducible. Los utilizo en consultoría, investigación científica y proyectos de data science.
-  </p>
-</div>
-
-
-
-<section id="testimonios" class="level2">
-<h2 class="anchored" data-anchor-id="testimonios">Testimonios</h2>
-<div class="test-grid">
-<div class="test-card">
-<p class="test-text">
-“Gracias al análisis estadístico de Jairon, pude sustentar mi tesis con seguridad y obtener una investigación sólida, y con total garantía. Excelente acompañamiento.”
-</p>
-<p class="test-author">
-— Estudiante de Maestría
-</p>
-</div>
-<div class="test-card">
-<p class="test-text">
-“Los modelos predictivos que desarrolló nos ayudaron a optimizar decisiones internas y mejorar nuestro proceso operativo de la producción de mango.”
-</p>
-<p class="test-author">
-— Empresa privada del sector agrícola
-</p>
-</div>
-<div class="test-card">
-<p class="test-text">
-“Explica con claridad, trabaja con rigor metodológico y entrega resultados impecables. Totalmente recomendado.”
-</p>
-<p class="test-author">
-— Investigador independiente
-</p>
-</div>
-<div class="test-card">
-<p class="test-text">
-“Con la ayuda de Jairon, desarrollamos una encuesta de intención de voto altamente exitosa. Elaboró una ficha técnica estadísticamente fundamentada, cumpliendo las normas vigentes, realizó el procesamiento completo de las encuestas y nos entregó resultados claros, precisos y totalmente confiables.”
-</p>
-<p class="test-author">
-— Empresa Encuestadora
-</p>
-</div>
-</div>
-<div class="row" style="background-color: #e0e0e0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); padding: 20px; display: flex; align-items: center; justify-content: center;">
-<div class="column" style="text-align: center; display: flex; justify-content: center; align-items: center;">
-<p><img src="LOGONUEVO2.png" style="border-radius: 0;" width="190" height="190"></p>
-</div>
-<div class="column contact-info" style="display: flex; flex-direction: column; justify-content: center;">
-<div class="contact-item">
-<p><img src="llamar.png" class="contact-icon"> <a href="tel:+51929519964">929 519 964</a></p>
-</div>
-<div class="contact-item">
-<p><img src="whatsapp.png" class="contact-icon"> <a href="https://wa.me/51929519964" target="_blank">WhatsApp</a></p>
-</div>
-<div class="contact-item">
-<p><img src="correo.png" class="contact-icon"> <a href="mailto:jaironojeda99@gmail.com">jaironojeda99@gmail.com</a></p>
-</div>
-<div class="contact-item">
-<p><img src="linkedin.png" class="contact-icon"> <a href="https://linkedin.com/in/jairon-ojeda" target="_blank">LinkedIn</a></p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" title="Constancia de registro SUNEDU">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Constancia de registro SUNEDU
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Constancia</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="pdf-responsive-wrapper">
-<p><iframe src="constancia_2025-11-11.pdf#zoom=100&amp;toolbar=0&amp;navpanes=0" allow="fullscreen"></iframe></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

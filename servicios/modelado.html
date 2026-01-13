@@ -140,8 +140,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Análisis y Modelado Estadístico</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../servicios/ciencia_datos.html">
- <span class="dropdown-text">Ciencia de Datos y Automatización</span></a>
+    <a class="dropdown-item" href="../servicios/data_analisis.html">
+ <span class="dropdown-text">Data Analytics</span></a>
   </li>  
     </ul>
   </li>
@@ -163,138 +163,22 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="análisis-y-modelado-estadístico" class="level2">
-<h2 class="anchored" data-anchor-id="análisis-y-modelado-estadístico"><i class="fa-solid fa-chart-line"></i> Análisis y Modelado Estadístico</h2>
-<div class="tesis-intro">
-  Construyo modelos estadísticos interpretables, validados y enfocados en resolver preguntas reales: predicción, clasificación, estimación y análisis multivariante.
-</div>
+<div class="modelado-estadistico-page">
 
-<hr>
+<iframe id="modelado-estadistico-frame" src="modelado_estadistico.html" style="width:100%; border:none; overflow:hidden; display:block;"></iframe>
 
-<div class="tesis-grid">
-
-  <div class="tesis-card">
-    <i class="fa-solid fa-magnifying-glass-chart tesis-icon"></i>
-    <h4 class="anchored">Análisis descriptivo</h4>
-    <ul>
-      <li>Exploración de patrones y tendencias</li>
-      <li>Outliers y estructura del dataset</li>
-      <li>Visualizaciones avanzadas</li>
-    </ul>
-  </div>
-
-  <div class="tesis-card">
-    <i class="fa-solid fa-square-root-variable tesis-icon"></i>
-    <h4 class="anchored">Inferencia estadística</h4>
-    <ul>
-      <li>Pruebas paramétricas y no paramétricas</li>
-      <li>Analizar relaciones entre variables</li>
-      <li>Comparación de grupos y efectos</li>
-    </ul>
-  </div>
-
-  <div class="tesis-card">
-    <i class="fa-solid fa-brain tesis-icon"></i>
-    <h4 class="anchored">Modelos predictivos</h4>
-    <ul>
-      <li>Regresión lineal y logística</li>
-      <li>Árboles, Random Forest y Boosting</li>
-      <li>Series de tiempo (Holt-Winters, ARIMA, SARIMA, etc.)</li>
-    </ul>
-  </div>
-
-  <div class="tesis-card">
-    <i class="fa-solid fa-diagram-project tesis-icon"></i>
-    <h4 class="anchored">Análisis multivariante</h4>
-    <ul>
-      <li>PCA, clústeres y segmentación</li>
-      <li>Factores y componentes</li>
-      <li>Modelos estructurales (SEM)</li>
-    </ul>
-  </div>
+<script>
+  window.addEventListener("message", function(event) {
+    if (event.data && event.data.type === "iframe-height") {
+      const iframe = document.getElementById("modelado-estadistico-frame");
+      if (iframe) iframe.style.height = event.data.height + "px";
+    }
+  });
+</script>
 
 </div>
 
-<hr>
 
-
-
-
-<div class="tool-section-title">
-  Herramientas y lenguajes que utilizo
-</div>
-
-<div class="tool-grid">
-  <div class="tool-item">
-    <img src="img/logo-r.svg" alt="R" class="tool-icon">
-    <span>R</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/RStudio.svg" alt="Rstudio" class="tool-icon">
-    <span>Rstudio</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-python.svg" alt="Python" class="tool-icon">
-    <span>Python</span>
-  </div>
-    <div class="tool-item">
-    <img src="img/jupyter.svg" alt="jupiterlab" class="tool-icon">
-    <span>jupiterlab</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/SPSS.png" alt="SPSS" class="tool-icon">
-    <span>SPSS</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/Jamovi_logo.png" alt="Jamovi" class="tool-icon">
-    <span>Jamovi</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/stata.png" alt="Stata" class="tool-icon">
-    <span>Stata</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-minitab.svg" alt="Minitab" class="tool-icon">
-    <span>Minitab</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/eviews.jpeg" alt="EViews" class="tool-icon">
-    <span>EViews</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-powerbi.svg" alt="Power BI" class="tool-icon">
-    <span>Power BI</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-excel.svg" alt="Excel" class="tool-icon">
-    <span>Excel</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-latex.svg" alt="LaTeX" class="tool-icon">
-    <span>LaTeX</span>
-  </div>
-  <div class="tool-item">
-    <img src="img/logo-quarto.svg" alt="Quarto" class="tool-icon">
-    <span>Quarto</span>
-  </div>
-    <div class="tool-item">
-    <img src="img/rmarkdown.png" alt="Rmarkdown" class="tool-icon">
-    <span>Rmarkdown</span>
-  </div>
-</div>
-
-
-
-<div class="cta-box cta-animated">
-  <h2 class="anchored">¿Listo para llevar tus datos al siguiente nivel?</h2>
-  <p>Agenda una consultoría personalizada y obtén resultados claros, precisos y accionables.</p>
-
-  <a href="https://wa.me/929519964" class="cta-btn cta-btn-glow">Agendar Asesoría</a>
-</div>
-
-
-
-</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -721,7 +605,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2025 Jairon Ojeda. Website built with Quarto in RStudio</p>
+<p>© 2026 Jairon Ojeda. Website built with Quarto in RStudio</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sistema de registro usando BVA en Excel – Jairon K. Ojeda S.</title>
+<title>Sistema de Registro y Control de Producción de Mango en Excel (VBA + Dashboard) – Jairon K. Ojeda S.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,8 +138,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Análisis y Modelado Estadístico</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../servicios/ciencia_datos.html">
- <span class="dropdown-text">Ciencia de Datos y Automatización</span></a>
+    <a class="dropdown-item" href="../servicios/data_analisis.html">
+ <span class="dropdown-text">Data Analytics</span></a>
   </li>  
     </ul>
   </li>
@@ -162,7 +162,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#problema" id="toc-problema" class="nav-link active" data-scroll-target="#problema">Problema</a></li>
   <li><a href="#objetivo" id="toc-objetivo" class="nav-link" data-scroll-target="#objetivo">Objetivo</a></li>
   <li><a href="#solución" id="toc-solución" class="nav-link" data-scroll-target="#solución">Solución</a></li>
-  <li><a href="#producto" id="toc-producto" class="nav-link" data-scroll-target="#producto">Producto</a></li>
+  <li><a href="#producto-final" id="toc-producto-final" class="nav-link" data-scroll-target="#producto-final">Producto final</a></li>
+  <li><a href="#evidencias" id="toc-evidencias" class="nav-link" data-scroll-target="#evidencias">Evidencias</a>
+  <ul class="collapse">
+  <li><a href="#demostración-en-video" id="toc-demostración-en-video" class="nav-link" data-scroll-target="#demostración-en-video">Demostración en video</a></li>
+  <li><a href="#capturas" id="toc-capturas" class="nav-link" data-scroll-target="#capturas">Capturas</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -171,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sistema de registro usando BVA en Excel</h1>
+<h1 class="title">Sistema de Registro y Control de Producción de Mango en Excel (VBA + Dashboard)</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Data Analitics</div>
   </div>
@@ -197,25 +202,103 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Stack:</strong> Excel Avanzado · VBA (UserForms/Macros) · Tablas estructuradas · Segmentadores · Dashboard</p>
+</div>
+</div>
+</div>
 <section id="problema" class="level2">
 <h2 class="anchored" data-anchor-id="problema">Problema</h2>
-<p>La asociación de productores tenia problemas para organizar y analizar sus datos, por lo que no contaban con la herramienta optima y capaz de hacer todo ello, en consecuencia tradaban mucho en analizar …</p>
+<p>La asociación de productores de mango enfrentaba dificultades para <strong>registrar, organizar y analizar la información de producción y pagos por socio</strong>.<br>
+Los registros se realizaban de forma dispersa y manual, lo que generaba:</p>
+<ul>
+<li>Retrasos en el conteo de jabas/cajas cosechadas<br>
+</li>
+<li>Dificultad para conocer pagos realizados y saldos pendientes<br>
+</li>
+<li>Falta de reportes claros y oportunos para los socios<br>
+</li>
+<li>Alto riesgo de errores en cálculos y consolidación de información</li>
+</ul>
+<p>Como consecuencia, el análisis operativo y económico tomaba demasiado tiempo y no permitía una toma de decisiones ágil.</p>
 </section>
 <section id="objetivo" class="level2">
 <h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
-<p>Optimizar y automatizar la entrada de registros, para un conteo rápido de cajas cosechadas en campo de mango, y registros de pagos, y realizar un dasboard interactivo para optimizar reportes a los socios, y tomar mejores decisiones</p>
+<p><strong>Optimizar y automatizar el registro de producción y pagos</strong> de los socios, permitiendo:</p>
+<ul>
+<li>Conteo rápido y confiable de cajas cosechadas en campo<br>
+</li>
+<li>Cálculo automático de importes, descuentos, pagos y saldos<br>
+</li>
+<li>Visualización inmediata del estado de pagos por socio<br>
+</li>
+<li>Un <strong>dashboard interactivo</strong> para reportes claros y oportunos</li>
+</ul>
+<p>Orientado a <strong>mejorar la gestión interna y la toma de decisiones</strong> de la asociación.</p>
 </section>
 <section id="solución" class="level2">
 <h2 class="anchored" data-anchor-id="solución">Solución</h2>
-<p>Debido a que la asociación de productores de mangos tiene al menos 54 socios, lo cual no genera demasiados datos, se opto por usar como base de datos el mismo excel, optimizando los registros y ediciones con Vba en excel para … sin embargo se recomendó migrar a sql y power bi cuando existan mas socios o los registros se vuelvan masivos.</p>
+<p>Dado que la asociación cuenta con aproximadamente <strong>54 socios</strong> y un volumen de datos moderado, se diseñó una solución <strong>100% en Excel</strong>, utilizándolo como base de datos estructurada.</p>
+<p>La solución se apoyó en:</p>
+<ul>
+<li><strong>VBA en Excel</strong> para automatizar el ingreso, edición y validación de registros<br>
+</li>
+<li>Formularios (UserForms) para estandarizar la captura de datos<br>
+</li>
+<li>Tablas estructuradas para asegurar integridad y trazabilidad<br>
+</li>
+<li>Reportes dinámicos y segmentadores para análisis flexible</li>
+</ul>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Escalabilidad recomendada:</strong> migrar a <strong>SQL + Power BI</strong> si crece el número de socios o el volumen de registros se vuelve masivo.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="producto" class="level2">
-<h2 class="anchored" data-anchor-id="producto">Producto</h2>
-<p>Se elaboro un Sistema de registro con VBA para optimizar la entrada de estos, y generación de reporte en tiempo real.</p>
-<p>Debido a que fue un servicio particular solo se demuestra el trabajo en vídeo, con el respectivo permiso a continuación:</p>
-<p><video src="portafolio/demo/vbamango.mp4" class="img-fluid" controls=""><a href="portafolio/demo/vbamango.mp4">Video</a></video>{width=100% controls autoplay muted loop}</p>
+<section id="producto-final" class="level2">
+<h2 class="anchored" data-anchor-id="producto-final">Producto final</h2>
+<p>Se desarrolló un <strong>Sistema de Registro de Producción y Pagos en Excel</strong>, con características de aplicación:</p>
+<ul>
+<li>Menú de navegación tipo sistema (Inicio, Dashboard, Socios, Datos, Consultas)<br>
+</li>
+<li>Formulario de registro con cálculos automáticos (subtotal, descuento, total, pagado, saldo, estado)<br>
+</li>
+<li>Base de datos centralizada por socio y fecha<br>
+</li>
+<li>Módulo de gestión de socios (IDs y contactos)<br>
+</li>
+<li>Dashboard con <strong>KPIs</strong>, gráficos y filtros interactivos<br>
+</li>
+<li>Reportes en tiempo real para seguimiento operativo y financiero</li>
+</ul>
+<p>El sistema permitió <strong>reducir tiempos de registro, minimizar errores y mejorar la transparencia de la información</strong> hacia los socios.</p>
+</section>
+<section id="evidencias" class="level2">
+<h2 class="anchored" data-anchor-id="evidencias">Evidencias</h2>
+<section id="demostración-en-video" class="level3">
+<h3 class="anchored" data-anchor-id="demostración-en-video">Demostración en video</h3>
+<p>Debido a que se trata de un servicio particular, el proyecto se presenta mediante un <strong>video demostrativo</strong>, con la debida autorización:</p>
+<iframe src="https://drive.google.com/file/d/106DnUQwDCN3FDginGDdsNjTntDNhRqam/preview" width="100%" height="520" allow="autoplay">
+</iframe>
+</section>
+<section id="capturas" class="level3">
+<h3 class="anchored" data-anchor-id="capturas">Capturas</h3>
+<p><img src="img/mango/inicio.png" class="img-fluid" style="width:100.0%" alt="Pantalla de inicio del sistema en Excel"> <img src="img/mango/formulario.png" class="img-fluid" style="width:100.0%" alt="Formulario VBA de registro y consulta"></p>
+<p><img src="img/mango/data.png" class="img-fluid" style="width:100.0%" alt="Base de datos en tabla estructurada"> <img src="img/mango/socios.png" class="img-fluid" style="width:100.0%" alt="Módulo de socios (maestro)"></p>
+<p><img src="img/mango/dashboard.png" class="img-fluid" style="width:100.0%" alt="Dashboard con KPIs y gráficos"> <img src="img/mango/filtros.png" class="img-fluid" style="width:100.0%" alt="Filtros y segmentadores para análisis"></p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
@@ -643,7 +726,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2025 Jairon Ojeda. Website built with Quarto in RStudio</p>
+<p>© 2026 Jairon Ojeda. Website built with Quarto in RStudio</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

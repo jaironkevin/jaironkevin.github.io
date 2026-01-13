@@ -73,3 +73,117 @@ body:has(.presentacion-section) main.content {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+
+
+
+
+
+/* =========================================================
+   TESIS – FULL WIDTH ROBUSTO (sin conflicto)
+   Solo afecta a páginas con .tesis-page
+   ========================================================= */
+
+/* 1) Rompe el límite de ancho de Quarto SOLO aquí */
+.tesis-page {
+  width: 88vw;                 /* <-- AQUÍ controlas el ancho */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-x: clip;
+}
+
+/* 2) Asegura que el iframe use todo el ancho */
+.tesis-page #tesis-frame {
+  width: 100%;
+  display: block;
+}
+
+/* 3) Neutraliza contenedores internos de Quarto SOLO en tesis */
+.tesis-page .content,
+.tesis-page .content-container,
+.tesis-page .page-columns,
+.tesis-page main.content,
+.tesis-page #quarto-content {
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+
+
+
+
+
+
+/* =========================================================
+   MODELADO ESTADÍSTICO – FULL WIDTH ROBUSTO (sin conflicto)
+   Solo afecta a páginas con .modelado-estadistico-page
+   ========================================================= */
+
+/* 1) Rompe el límite de ancho de Quarto SOLO aquí */
+.modelado-estadistico-page {
+  width: 88vw;                 /* 👈 AQUÍ controlas el ancho */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-x: clip;
+}
+
+/* 2) Asegura que el iframe use todo el ancho */
+.modelado-estadistico-page #modelado-estadistico-frame {
+  width: 100%;
+  display: block;
+}
+
+/* 3) Neutraliza contenedores internos de Quarto SOLO en modelado */
+.modelado-estadistico-page .content,
+.modelado-estadistico-page .content-container,
+.modelado-estadistico-page .page-columns,
+.modelado-estadistico-page main.content,
+.modelado-estadistico-page #quarto-content {
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+
+
+
+/* =========================================================
+   DATA ANALYTICS – FULL WIDTH ROBUSTO (sin conflicto)
+   Solo afecta a páginas con .data-analitics-page
+   ========================================================= */
+
+/* 1) Rompe el límite de ancho de Quarto SOLO aquí */
+.data-analitics-page {
+  width: 88vw;                 /* 👈 AQUÍ controlas el ancho */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-x: clip;
+}
+
+/* 2) Asegura que el iframe use todo el ancho */
+.data-analitics-page #data-analitics-frame {
+  width: 100%;
+  display: block;
+}
+
+/* 3) Neutraliza contenedores internos de Quarto SOLO en data analytics */
+.data-analitics-page .content,
+.data-analitics-page .content-container,
+.data-analitics-page .page-columns,
+.data-analitics-page main.content,
+.data-analitics-page #quarto-content {
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+
+
+
+
+
+

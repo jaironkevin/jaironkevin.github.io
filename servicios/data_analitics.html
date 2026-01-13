@@ -94,7 +94,7 @@
             opacity: 0.8;
         }
 
-        /* --- Tarjetas Profesionales (Layout Horizontal) --- */
+        /* --- Tarjetas Profesionales --- */
         .service-card {
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
@@ -143,11 +143,8 @@
             transition: color 0.4s ease;
         }
 
-        .service-card:hover h4 {
-            color: white;
-        }
+        .service-card:hover h4 { color: white; }
 
-        /* --- Viñetas --- */
         .service-card ul {
             list-style: none;
             padding: 0;
@@ -173,9 +170,7 @@
             top: 2px;
         }
 
-        .service-card:hover ul li {
-            color: rgba(255, 255, 255, 0.85);
-        }
+        .service-card:hover ul li { color: rgba(255, 255, 255, 0.85); }
 
         /* --- Software Interactivo --- */
         .tool-box {
@@ -234,13 +229,22 @@
         .values-banner {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            flex-wrap: wrap; /* Evita desborde en móvil */
+            gap: 1.5rem;
             margin: 2rem 0 1rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.4em;
-            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
             color: var(--navy);
+        }
+
+        @media (min-width: 768px) {
+            .values-banner {
+                gap: 2.5rem;
+                letter-spacing: 0.4em;
+                font-size: 0.85rem; 
+            }
         }
     </style>
 </head>
@@ -253,16 +257,17 @@
     </svg>
 
     <!-- Hero Section -->
-    <section class="py-24 px-6 text-center relative z-10">
+    <section class="py-16 md:py-24 px-6 text-center relative z-10">
         <div class="max-w-5xl mx-auto reveal">
             <div class="mb-12">
-                <i class="fa-solid fa-chart-pie text-8xl" style="color: var(--gold); filter: drop-shadow(0 10px 20px var(--gold-glow));"></i>
+                <i class="fa-solid fa-chart-pie text-7xl md:text-8xl" style="color: var(--gold); filter: drop-shadow(0 10px 20px var(--gold-glow));"></i>
             </div>
-            <h1 class="text-6xl md:text-8xl font-black mb-10 tracking-tighter">
+            <!-- Título: text-3xl en móvil para que no se corte, md:text-8xl en laptop (Original) -->
+            <h1 class="text-3xl sm:text-6xl md:text-8xl font-black mb-10 tracking-tighter leading-tight">
                 Análisis y <br><span style="color: var(--gold);">Gestión de Datos</span>
             </h1>
             <div class="max-w-4xl mx-auto">
-                <p class="text-2xl md:text-3xl editorial-emphasis text-slate-600 leading-relaxed">
+                <p class="text-xl md:text-3xl editorial-emphasis text-slate-600 leading-relaxed">
                     "Transformo grandes volúmenes de información en conocimiento estratégico mediante procesos de análisis avanzado, visualización interactiva y automatización de reportes."
                 </p>
                 
@@ -280,7 +285,7 @@
 
     <!-- Services Grid - Análisis de Datos -->
     <section class="pb-24 px-6 relative z-10">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             <!-- Card 1: Preparación -->
             <div class="service-card reveal">
@@ -340,10 +345,10 @@
         </div>
     </section>
 
-    <!-- Software Grid Interactivo - Filtrado para Análisis de Datos -->
-    <section class="py-24 bg-white/60 backdrop-blur-xl border-y border-gray-200 relative z-10">
+    <!-- Software Grid Interactivo (Todos los iconos originales restaurados) -->
+    <section class="py-16 md:py-24 bg-white/60 backdrop-blur-xl border-y border-gray-200 relative z-10">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-xs font-black mb-16 uppercase tracking-[0.6em] text-slate-500">Herramientas y lenguajes que utilizo</h2>
+            <h2 class="text-xs font-black mb-16 uppercase tracking-[0.4em] md:tracking-[0.6em] text-slate-500">Herramientas y lenguajes que utilizo</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 reveal">
                 <!-- R Core -->
                 <div class="tool-box reveal">
@@ -370,46 +375,49 @@
                 </div>
                 <!-- Analysis & BI -->
                 <div class="tool-box reveal">
-                    <img src="img/logo-powerbi.svg" alt="Power BI" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-powerbi.svg" alt="Power BI" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.icon-icons.com/icons2/2699/PNG/512/microsoft_powerbi_logo_icon_170940.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Power BI</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/logo-excel.svg" alt="Excel" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-excel.svg" alt="Excel" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/excel/excel-original.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Excel</span>
                 </div>
                 <!-- Reporting & Publishing -->
                 <div class="tool-box reveal">
-                    <img src="img/logo-latex.svg" alt="LaTeX" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-latex.svg" alt="LaTeX" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">LaTeX</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/logo-quarto.svg" alt="Quarto" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-quarto.svg" alt="Quarto" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://quarto.org/quarto.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Quarto</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/rmarkdown.png" alt="RMarkdown" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/rmarkdown.png" alt="RMarkdown" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">RMarkdown</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="py-32 px-6 relative z-10">
+    <!-- Final CTA Section (Ajustado para Responsividad en Móvil) -->
+    <section class="py-20 md:py-32 px-6 relative z-10">
         <div class="max-w-6xl mx-auto reveal">
-            <div class="bg-[#1a2a3a] p-16 md:p-24 rounded-[4.5rem] text-center border-t-8 border-[#d4a017] shadow-2xl relative overflow-hidden">
+            <!-- p-6 en móvil para ganar espacio, md:p-24 en laptop (Original) -->
+            <div class="bg-[#1a2a3a] p-6 sm:p-12 md:p-24 rounded-[2.5rem] md:rounded-[4.5rem] text-center border-t-8 border-[#d4a017] shadow-2xl relative overflow-hidden">
                 <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(var(--gold) 1.5px, transparent 1px); background-size: 50px 50px;"></div>
                 
-                <h2 class="text-5xl md:text-7xl font-black text-white mb-10 relative z-10">
+                <!-- h2: text-2xl en móvil, md:text-7xl en laptop (Original) -->
+                <h2 class="text-2xl sm:text-4xl md:text-7xl font-black text-white mb-10 relative z-10 leading-tight">
                     Convirtamos tus Datos en <br><span style="color: var(--gold);">Valor Estratégico</span>
                 </h2>
-                <p class="text-2xl text-slate-300 mb-14 max-w-2xl mx-auto editorial-emphasis relative z-10">
+                <!-- p: text-base en móvil, md:text-2xl en laptop (Original) -->
+                <p class="text-base sm:text-lg md:text-2xl text-slate-300 mb-14 max-w-2xl mx-auto editorial-emphasis relative z-10">
                     Asegura el rigor analítico y el impacto visual de tu información. Agenda tu consultoría técnica hoy mismo.
                 </p>
                 <div class="relative z-10">
-                    <a href="https://wa.me/929519964" class="btn-gold inline-flex items-center gap-5">
-                        <i class="fab fa-whatsapp text-4xl"></i>
-                        Iniciar Análisis Técnico
+                    <a href="https://wa.me/929519964" class="btn-gold inline-flex items-center gap-4 text-xs sm:text-base">
+                        <i class="fab fa-whatsapp text-2xl md:text-4xl"></i>
+                        <span>Iniciar Análisis Técnico</span>
                     </a>
                 </div>
             </div>
@@ -427,22 +435,17 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
-<script>
-  /* === QUARTO IFRAME RESIZER – DATA ANALYTICS === */
-  function sendDataAnaliticsHeight() {
-    const height = document.documentElement.scrollHeight;
-    window.parent.postMessage(
-      { type: "iframe-height", height: height },
-      "*"
-    );
-  }
 
-  window.addEventListener("load", sendDataAnaliticsHeight);
-  window.addEventListener("resize", sendDataAnaliticsHeight);
-
-  const resizeObserver = new ResizeObserver(() => sendDataAnaliticsHeight());
-  resizeObserver.observe(document.body);
-</script>
-
+    <script>
+      /* === QUARTO IFRAME RESIZER – DATA ANALYTICS === */
+      function sendDataAnaliticsHeight() {
+        const height = document.documentElement.scrollHeight;
+        window.parent.postMessage({ type: "iframe-height", height: height }, "*");
+      }
+      window.addEventListener("load", sendDataAnaliticsHeight);
+      window.addEventListener("resize", sendDataAnaliticsHeight);
+      const resizeObserver = new ResizeObserver(() => sendDataAnaliticsHeight());
+      resizeObserver.observe(document.body);
+    </script>
 </body>
 </html>

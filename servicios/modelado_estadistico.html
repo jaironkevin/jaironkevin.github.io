@@ -22,25 +22,29 @@
             --text-gray: #4a5568;
         }
 
-        body {
-            background-color: var(--bg-light);
+        /* Lógica de Eliminación de Scroll (Quarto Integration) */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prohíbe scroll interno */
+            height: auto;     /* Permite que el body crezca según el contenido */
+            background-color: transparent; /* Permite ver la capa de fondo animada */
             color: var(--navy);
             font-family: 'Fira Sans', sans-serif;
-            scroll-behavior: smooth;
             position: relative;
-            overflow-x: hidden;
         }
 
-        /* --- Fondo de Datos Science Dinámica --- */
+        /* --- Fondo de Datos Science Dinámica (INTEGRIDAD TOTAL Y ANIMACIÓN VISIBLE) --- */
         .data-visual-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            z-index: -2;
             opacity: 0.15; 
             pointer-events: none;
+            background-color: var(--bg-light);
             background-image: 
                 radial-gradient(var(--navy) 1.5px, transparent 1.5px),
                 url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a2a3a' fill-opacity='0.4'%3E%3Cpath d='M80 80 L20 20 M20 80 L80 20' stroke-width='1' stroke='%23d4a017'/%3E%3Ccircle cx='20' cy='20' r='3'/%3E%3Ccircle cx='80' cy='80' r='3'/%3E%3Ccircle cx='50' cy='50' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -69,7 +73,7 @@
             font-style: italic;
         }
 
-        /* --- Línea de Luz (Efecto Glow) --- */
+        /* --- Línea de Luz (Efecto Glow ORIGINAL) --- */
         .light-glow-line {
             width: 150px;
             height: 3px;
@@ -94,7 +98,7 @@
             opacity: 0.8;
         }
 
-        /* --- Tarjetas Profesionales (Layout Horizontal) --- */
+        /* --- Tarjetas Profesionales --- */
         .service-card {
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
@@ -143,11 +147,8 @@
             transition: color 0.4s ease;
         }
 
-        .service-card:hover h4 {
-            color: white;
-        }
+        .service-card:hover h4 { color: white; }
 
-        /* --- Viñetas --- */
         .service-card ul {
             list-style: none;
             padding: 0;
@@ -173,9 +174,7 @@
             top: 2px;
         }
 
-        .service-card:hover ul li {
-            color: rgba(255, 255, 255, 0.85);
-        }
+        .service-card:hover ul li { color: rgba(255, 255, 255, 0.85); }
 
         /* --- Software Interactivo --- */
         .tool-box {
@@ -216,10 +215,10 @@
         .btn-gold:hover {
             background-color: #b88a14;
             transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(212, 160, 23, 0.6);
+            box-shadow: 0 20px 40px rgba(212, 160, 23, 0.5);
         }
 
-        /* --- Revelación --- */
+        /* --- Revelación (ORIGINAL) --- */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -234,35 +233,47 @@
         .values-banner {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            flex-wrap: wrap; 
+            gap: 1.5rem;
             margin: 2rem 0 1rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.4em;
-            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
             color: var(--navy);
+        }
+
+        @media (min-width: 768px) {
+            .values-banner {
+                gap: 2.5rem;
+                letter-spacing: 0.4em;
+                font-size: 0.85rem; 
+            }
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Capa de Datos Science Dinámica -->
+    <!-- Capa de Fondo Animada -->
     <div class="data-visual-bg"></div>
+    
+    <!-- SVG Gauss Decorativo -->
     <svg class="gauss-decoration" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 180 Q125 180 250 20 Q375 180 500 180" stroke="currentColor" fill="none" stroke-width="2" stroke-dasharray="10,5" />
     </svg>
 
     <!-- Hero Section -->
-    <section class="py-24 px-6 text-center relative z-10">
+    <section class="py-16 md:py-24 px-6 text-center relative z-10">
         <div class="max-w-5xl mx-auto reveal">
             <div class="mb-12">
-                <i class="fa-solid fa-chart-line text-8xl" style="color: var(--gold); filter: drop-shadow(0 10px 20px var(--gold-glow));"></i>
+                <i class="fa-solid fa-chart-line text-7xl md:text-8xl" style="color: var(--gold); filter: drop-shadow(0 10px 20px var(--gold-glow));"></i>
             </div>
-            <h1 class="text-6xl md:text-8xl font-black mb-10 tracking-tighter">
+            <!-- Título Principal Responsivo -->
+            <h1 class="text-3xl sm:text-6xl md:text-8xl font-black mb-10 tracking-tighter leading-tight">
                 Análisis y <br><span style="color: var(--gold);">Modelado Estadístico</span>
             </h1>
             <div class="max-w-4xl mx-auto">
-                <p class="text-2xl md:text-3xl editorial-emphasis text-slate-600 leading-relaxed">
+                <p class="text-xl md:text-3xl editorial-emphasis text-slate-600 leading-relaxed">
                     "Construyo modelos estadísticos interpretables, validados y enfocados en resolver preguntas reales: predicción, clasificación, estimación y análisis multivariante."
                 </p>
                 
@@ -272,17 +283,16 @@
                     <span class="flex items-center gap-2"><div class="w-2.5 h-2.5 rounded-full bg-[#d4a017]"></div>Éxito</span>
                 </div>
 
-                <!-- Línea de Luz -->
+                <!-- Línea de Luz Original -->
                 <div class="light-glow-line"></div>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid - Análisis y Modelado -->
+    <!-- Services Grid (CONTENIDO 1:1 ORIGINAL) -->
     <section class="pb-24 px-6 relative z-10">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            <!-- Card 1: Análisis Descriptivo -->
             <div class="service-card reveal">
                 <div class="card-header-horizontal">
                     <i class="fa-solid fa-magnifying-glass-chart"></i>
@@ -295,7 +305,6 @@
                 </ul>
             </div>
 
-            <!-- Card 2: Inferencia Estadística -->
             <div class="service-card reveal">
                 <div class="card-header-horizontal">
                     <i class="fa-solid fa-vial-circle-check"></i>
@@ -308,7 +317,6 @@
                 </ul>
             </div>
 
-            <!-- Card 3: Modelos Predictivos -->
             <div class="service-card reveal">
                 <div class="card-header-horizontal">
                     <i class="fa-solid fa-diagram-project"></i>
@@ -321,7 +329,6 @@
                 </ul>
             </div>
 
-            <!-- Card 4: Análisis Multivariante -->
             <div class="service-card reveal">
                 <div class="card-header-horizontal">
                     <i class="fa-solid fa-layer-group"></i>
@@ -333,91 +340,108 @@
                     <li>Modelos estructurales (SEM)</li>
                 </ul>
             </div>
-
         </div>
     </section>
 
-    <!-- Software Grid Interactivo -->
-    <section class="py-24 bg-white/60 backdrop-blur-xl border-y border-gray-200 relative z-10">
+    <!-- Software Grid (RUTAS ORIGINALES RESTAURADAS) -->
+    <section class="py-16 md:py-24 bg-white/60 backdrop-blur-xl border-y border-gray-200 relative z-10">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-xs font-black mb-16 uppercase tracking-[0.6em] text-slate-500">Herramientas y lenguajes que utilizo</h2>
+            <h2 class="text-xs font-black mb-16 uppercase tracking-[0.4em] md:tracking-[0.6em] text-slate-500">Herramientas y lenguajes que utilizo</h2>
             <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-6 reveal">
+                <!-- R Project -->
                 <div class="tool-box reveal">
                     <img src="img/logo-r.svg" alt="R" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">R Project</span>
                 </div>
+                <!-- RStudio -->
                 <div class="tool-box reveal">
                     <img src="img/RStudio.svg" alt="RStudio" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/d/d0/RStudio_logo_flat.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">RStudio</span>
                 </div>
+                <!-- Python -->
                 <div class="tool-box reveal">
                     <img src="img/logo-python.svg" alt="Python" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Python</span>
                 </div>
+                <!-- Jupyter -->
                 <div class="tool-box reveal">
                     <img src="img/jupyter.svg" alt="JupyterLab" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">JupyterLab</span>
                 </div>
+                <!-- SPSS -->
                 <div class="tool-box reveal">
-                    <img src="img/SPSS.png" alt="SPSS" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/SPSS.png" alt="SPSS" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/0/05/Logo_SPSS.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">SPSS</span>
                 </div>
+                <!-- Jamovi -->
                 <div class="tool-box reveal">
-                    <img src="img/Jamovi_logo.png" alt="Jamovi" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/Jamovi_logo.png" alt="Jamovi" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://www.jamovi.org/assets/images/jamovi-logo.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Jamovi</span>
                 </div>
+                <!-- Stata -->
                 <div class="tool-box reveal">
-                    <img src="img/stata.png" alt="Stata" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/stata.png" alt="Stata" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://www.stata.com/favicon.ico'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Stata</span>
                 </div>
+                <!-- Minitab -->
                 <div class="tool-box reveal">
-                    <img src="img/logo-minitab.svg" alt="Minitab" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-minitab.svg" alt="Minitab" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://www.minitab.com/content/dam/minitab/en/logos/minitab-logo.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Minitab</span>
                 </div>
+                <!-- EViews -->
                 <div class="tool-box reveal">
-                    <img src="img/eviews.jpeg" alt="EViews" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/eviews.jpeg" alt="EViews" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://www.eviews.com/favicon.ico'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">EViews</span>
                 </div>
+                <!-- Power BI -->
                 <div class="tool-box reveal">
-                    <img src="img/logo-powerbi.svg" alt="Power BI" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-powerbi.svg" alt="Power BI" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.icon-icons.com/icons2/2699/PNG/512/microsoft_powerbi_logo_icon_170940.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Power BI</span>
                 </div>
+                <!-- Excel -->
                 <div class="tool-box reveal">
-                    <img src="img/logo-excel.svg" alt="Excel" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-excel.svg" alt="Excel" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/excel/excel-original.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Excel</span>
                 </div>
+                <!-- LaTeX -->
                 <div class="tool-box reveal">
-                    <img src="img/logo-latex.svg" alt="LaTeX" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-latex.svg" alt="LaTeX" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">LaTeX</span>
                 </div>
+                <!-- Quarto -->
                 <div class="tool-box reveal">
-                    <img src="img/logo-quarto.svg" alt="Quarto" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-quarto.svg" alt="Quarto" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://quarto.org/quarto.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Quarto</span>
                 </div>
+                <!-- RMarkdown -->
                 <div class="tool-box reveal">
-                    <img src="img/rmarkdown.png" alt="RMarkdown" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/rmarkdown.png" alt="RMarkdown" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">RMarkdown</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="py-32 px-6 relative z-10">
+    <!-- Tarjeta de Contacto Final (CTA) - Lógica de Responsividad Aplicada -->
+    <section class="py-20 md:py-32 px-6 relative z-10">
         <div class="max-w-6xl mx-auto reveal">
-            <div class="bg-[#1a2a3a] p-16 md:p-24 rounded-[4.5rem] text-center border-t-8 border-[#d4a017] shadow-2xl relative overflow-hidden">
-                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(var(--gold) 1.5px, transparent 1.5px); background-size: 50px 50px;"></div>
+            <!-- Espaciado p-6 (móvil) vs p-24 (laptop) -->
+            <div class="bg-[#1a2a3a] p-6 sm:p-12 md:p-24 rounded-[2.5rem] md:rounded-[4.5rem] text-center border-t-8 border-[#d4a017] shadow-2xl relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(var(--gold) 1.5px, transparent 1px); background-size: 50px 50px;"></div>
                 
-                <h2 class="text-5xl md:text-7xl font-black text-white mb-10 relative z-10">
+                <!-- Título CTA responsivo: text-2xl vs md:text-7xl -->
+                <h2 class="text-2xl md:text-7xl font-black text-white mb-10 relative z-10 leading-tight">
                     Eleva tu Análisis al <br><span style="color: var(--gold);">Máximo Nivel</span>
                 </h2>
-                <p class="text-2xl text-slate-300 mb-14 max-w-2xl mx-auto editorial-emphasis relative z-10">
+                <!-- Párrafo CTA responsivo: text-base vs md:text-2xl -->
+                <p class="text-base md:text-2xl text-slate-300 mb-14 max-w-2xl mx-auto editorial-emphasis relative z-10">
                     Asegura el rigor científico y la interpretabilidad de tus modelos. Agenda tu consultoría técnica ahora.
                 </p>
                 <div class="relative z-10">
-                    <a href="https://wa.me/929519964" class="btn-gold inline-flex items-center gap-5">
-                        <i class="fab fa-whatsapp text-4xl"></i>
-                        Iniciar Asesoría Técnica
+                    <!-- Botón responsivo: text-xs para 320px -->
+                    <a href="https://wa.me/929519964" class="btn-gold inline-flex items-center gap-4 text-xs sm:text-base">
+                        <i class="fab fa-whatsapp text-2xl md:text-4xl"></i>
+                        <span>Iniciar Asesoría Técnica</span>
                     </a>
                 </div>
             </div>
@@ -425,32 +449,22 @@
     </section>
 
     <script>
+        // Animación Reveal Original
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // LÓGICA DE IFRAME RESIZER (Eliminación de scroll para Quarto)
+        function sendHeight() {
+            const height = document.body.offsetHeight;
+            window.parent.postMessage({ type: "iframe-height", height: height }, "*");
+        }
+        window.addEventListener("load", sendHeight);
+        window.addEventListener("resize", sendHeight);
+        new ResizeObserver(sendHeight).observe(document.body);
     </script>
-<script>
-  /* === QUARTO IFRAME RESIZER – MODELADO ESTADÍSTICO === */
-  function sendModeladoEstadisticoHeight() {
-    const height = document.documentElement.scrollHeight;
-    window.parent.postMessage(
-      { type: "iframe-height", height: height },
-      "*"
-    );
-  }
-
-  window.addEventListener("load", sendModeladoEstadisticoHeight);
-  window.addEventListener("resize", sendModeladoEstadisticoHeight);
-
-  const resizeObserver = new ResizeObserver(() => sendModeladoEstadisticoHeight());
-  resizeObserver.observe(document.body);
-</script>
-
 </body>
 </html>

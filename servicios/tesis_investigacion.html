@@ -22,13 +22,16 @@
             --text-gray: #4a5568;
         }
 
-        body {
-            background-color: var(--bg-light);
+        /* Gestión de Scroll y Altura para Quarto */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; 
+            height: auto;     
+            background-color: transparent; 
             color: var(--navy);
             font-family: 'Fira Sans', sans-serif;
-            scroll-behavior: smooth;
             position: relative;
-            overflow-x: hidden;
         }
 
         /* --- Fondo de Datos Science --- */
@@ -94,7 +97,7 @@
             opacity: 0.8;
         }
 
-        /* --- Tarjetas Profesionales (Layout Horizontal) --- */
+        /* --- Tarjetas Profesionales --- */
         .service-card {
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
@@ -190,6 +193,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            min-height: 120px;
         }
 
         .tool-box:hover {
@@ -204,13 +208,17 @@
         .btn-gold {
             background-color: var(--gold);
             color: white;
-            padding: 1.25rem 3.5rem;
+            padding: 1.25rem 2.5rem;
             border-radius: 1.25rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             transition: all 0.4s ease;
             box-shadow: 0 10px 25px rgba(212, 160, 23, 0.4);
+        }
+
+        @media (min-width: 640px) {
+            .btn-gold { padding: 1.25rem 3.5rem; letter-spacing: 2px; }
         }
 
         .btn-gold:hover {
@@ -234,22 +242,20 @@
         .values-banner {
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
             margin: 2rem 0 1rem;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.4em;
-            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
             color: var(--navy);
         }
-/* === QUARTO IFRAME INTEGRATION (AGREGADO) === */
-html, body {
-    height: auto;
-    overflow: hidden;
-}
+
+        @media (min-width: 640px) {
+            .values-banner { gap: 2.5rem; letter-spacing: 0.4em; font-size: 0.85rem; }
+        }
     </style>
-
-
 </head>
 <body class="antialiased">
 
@@ -260,17 +266,17 @@ html, body {
     </svg>
 
     <!-- Hero Section -->
-    <section class="py-24 px-6 text-center relative z-10">
+    <section class="py-16 md:py-24 px-6 text-center relative z-10">
         <div class="max-w-[88rem] mx-auto reveal">
-
             <div class="mb-12">
-                <i class="fa-solid fa-graduation-cap text-8xl" style="color: var(--gold); filter: drop-shadow(0 10px 20px var(--gold-glow));"></i>
+                <i class="fa-solid fa-graduation-cap text-7xl md:text-8xl" style="color: var(--gold); filter: drop-shadow(0 10px 20px var(--gold-glow));"></i>
             </div>
-            <h1 class="text-6xl md:text-8xl font-black mb-10 tracking-tighter">
+            <!-- Título Responsivo: text-3xl para 320px -->
+            <h1 class="text-3xl sm:text-6xl md:text-8xl font-black mb-10 tracking-tighter leading-tight">
                 Asesoría para <br><span style="color: var(--gold);">Tesis e Investigación</span>
             </h1>
             <div class="max-w-4xl mx-auto">
-                <p class="text-2xl md:text-3xl editorial-emphasis text-slate-600 leading-relaxed">
+                <p class="text-xl md:text-3xl editorial-emphasis text-slate-600 leading-relaxed">
                     "Te guío en cada etapa de tu investigación para que avances con claridad, seguridad y un respaldo metodológico sólido. Obtén un informe ordenado, coherente y completamente defendible."
                 </p>
                 
@@ -288,10 +294,7 @@ html, body {
 
     <!-- Services Grid - Layout Horizontal & Texto Fiel -->
     <section class="pb-24 px-4 md:px-6 lg:px-10 relative z-10">
-
         <div class="max-w-[92rem] mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            
             <!-- Card 1 -->
             <div class="service-card reveal">
                 <div class="card-header-horizontal">
@@ -397,7 +400,6 @@ html, body {
                     <li>Estilo formateado según normas académicas</li>
                 </ul>
             </div>
-
         </div>
     </section>
 
@@ -423,43 +425,43 @@ html, body {
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">JupyterLab</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/SPSS.png" alt="SPSS" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/SPSS.png" alt="SPSS" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/0/05/Logo_SPSS.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">SPSS</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/Jamovi_logo.png" alt="Jamovi" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/Jamovi_logo.png" alt="Jamovi" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://www.jamovi.org/assets/images/jamovi-logo.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Jamovi</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/stata.png" alt="Stata" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/stata.png" alt="Stata" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://www.stata.com/favicon.ico'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Stata</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/logo-minitab.svg" alt="Minitab" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-minitab.svg" alt="Minitab" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://www.minitab.com/content/dam/minitab/en/logos/minitab-logo.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Minitab</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/eviews.jpeg" alt="EViews" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/eviews.jpeg" alt="EViews" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://www.eviews.com/favicon.ico'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">EViews</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/logo-powerbi.svg" alt="Power BI" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-powerbi.svg" alt="Power BI" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.icon-icons.com/icons2/2699/PNG/512/microsoft_powerbi_logo_icon_170940.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Power BI</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/logo-excel.svg" alt="Excel" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-excel.svg" alt="Excel" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/excel/excel-original.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Excel</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/logo-latex.svg" alt="LaTeX" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-latex.svg" alt="LaTeX" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">LaTeX</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/logo-quarto.svg" alt="Quarto" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/logo-quarto.svg" alt="Quarto" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://quarto.org/quarto.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Quarto</span>
                 </div>
                 <div class="tool-box reveal">
-                    <img src="img/rmarkdown.png" alt="RMarkdown" class="w-14 h-14 object-contain mb-3">
+                    <img src="img/rmarkdown.png" alt="RMarkdown" class="w-14 h-14 object-contain mb-3" onerror="this.src='https://bookdown.org/yihui/rmarkdown/images/hex-rmarkdown.png'">
                     <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest">RMarkdown</span>
                 </div>
             </div>
@@ -467,21 +469,23 @@ html, body {
     </section>
 
     <!-- Final CTA Section -->
-    <section class="py-32 px-6 relative z-10">
+    <section class="py-24 md:py-32 px-6 relative z-10">
         <div class="max-w-6xl mx-auto reveal">
-            <div class="bg-[#1a2a3a] p-16 md:p-24 rounded-[4.5rem] text-center border-t-8 border-[#d4a017] shadow-2xl relative overflow-hidden">
+            <div class="bg-[#1a2a3a] p-10 md:p-24 rounded-[3rem] md:rounded-[4.5rem] text-center border-t-8 border-[#d4a017] shadow-2xl relative overflow-hidden">
                 <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(var(--gold) 1.5px, transparent 1.5px); background-size: 50px 50px;"></div>
                 
-                <h2 class="text-5xl md:text-7xl font-black text-white mb-10 relative z-10">
+                <!-- Título CTA Responsivo: text-2xl para 320px -->
+                <h2 class="text-2xl sm:text-5xl md:text-7xl font-black text-white mb-10 relative z-10 leading-tight">
                     Eleva tu Investigación <br><span style="color: var(--gold);">al Máximo Nivel</span>
                 </h2>
-                <p class="text-2xl text-slate-300 mb-14 max-w-2xl mx-auto editorial-emphasis relative z-10">
+                <p class="text-lg md:text-2xl text-slate-300 mb-14 max-w-2xl mx-auto editorial-emphasis relative z-10">
                     Asegura el rigor científico y el impacto académico de tus resultados. Agenda tu consultoría ahora.
                 </p>
                 <div class="relative z-10">
-                    <a href="https://wa.me/929519964" class="btn-gold inline-flex items-center gap-5">
-                        <i class="fab fa-whatsapp text-4xl"></i>
-                        Iniciar Asesoría Técnica
+                    <!-- Botón Responsivo: text-xs para 320px -->
+                    <a href="https://wa.me/929519964" class="btn-gold inline-flex items-center gap-4 text-xs sm:text-base">
+                        <i class="fab fa-whatsapp text-2xl md:text-4xl"></i>
+                        <span>Iniciar Asesoría Técnica</span>
                     </a>
                 </div>
             </div>
@@ -498,24 +502,21 @@ html, body {
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        /* === QUARTO IFRAME RESIZER === */
+        function sendHeightToParent() {
+            const height = document.documentElement.scrollHeight;
+            window.parent.postMessage(
+                { type: "iframe-height", height: height },
+                "*"
+            );
+        }
+
+        window.addEventListener("load", sendHeightToParent);
+        window.addEventListener("resize", sendHeightToParent);
+
+        const resizeObserver = new ResizeObserver(() => sendHeightToParent());
+        resizeObserver.observe(document.body);
     </script>
-<script>
-    /* === QUARTO IFRAME RESIZER (AGREGADO) === */
-    function sendHeightToParent() {
-        const height = document.documentElement.scrollHeight;
-        window.parent.postMessage(
-            { type: "iframe-height", height: height },
-            "*"
-        );
-    }
-
-    window.addEventListener("load", sendHeightToParent);
-    window.addEventListener("resize", sendHeightToParent);
-
-    const resizeObserver = new ResizeObserver(() => sendHeightToParent());
-    resizeObserver.observe(document.body);
-</script>
-
-
 </body>
 </html>

@@ -180,122 +180,164 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p><em>“Transformando datos en conocimientos, y conocimientos en buenas decisiones.”</em></p>
 </blockquote>
-<!-- 1. Contenedor del Canvas con Posicionamiento Corregido -->
-<canvas id="statsNetworkCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
-<script>
-(function() {
-    const canvas = document.getElementById('statsNetworkCanvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    const particleCount = 55; // Densidad equilibrada
-    const maxDistance = 190;  
-    let width, height;
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-        init(); 
-    }
-    class Particle {
-        constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            // Velocidad fluida (Mantenida según tu preferencia)
-            this.vx = (Math.random() - 0.5) * 0.9;
-            this.vy = (Math.random() - 0.5) * 0.9;
-            this.radius = Math.random() * 3 + 2; 
-            // Paleta de colores vibrante solicitada
-            const palette = [
-                '212, 160, 23',  // Dorado Principal
-                '26, 42, 58',    // Azul Marino
-                '243, 223, 162', // Oro Claro Brillante
-                '55, 118, 171'   // Azul Acero
-            ];
-            this.color = palette[Math.floor(Math.random() * palette.length)];
-            this.alpha = Math.random() * 0.3 + 0.6; 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fondo de Datos - Pura Animación Responsiva Estable</title>
+    <style>
+        /* 1. Reset y Transparencia para Quarto/Trestles */
+        body, 
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background: transparent !important;
         }
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            if (this.x < 0 || this.x > width) this.vx *= -1;
-            if (this.y < 0 || this.y > height) this.vy *= -1;
+        /* 2. Canvas Responsivo Fijo - Optimizado para evitar saltos en scroll */
+        #statsNetworkCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100dvh; 
+            z-index: -1; 
+            pointer-events: none;
+            display: block;
+            background-color: #ffffff;
         }
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            // Efecto de resplandor mantenido
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = `rgba(${this.color}, 0.5)`;
-            ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
-            ctx.fill();
-            // Reset de sombra para las líneas
-            ctx.shadowBlur = 0;
+        /* 3. Forzar transparencia en capas de Quarto */
+        body,
+        #quarto-content, 
+        #quarto-content > main, 
+        .page-columns, 
+        .quarto-about-trestles,
+        .about-entity,
+        .about-contents {
+            background: transparent !important;
         }
-    }
-    function init() {
-        particles = [];
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
+        @media (max-width: 768px) {
+            .about-entity {
+                background: rgba(255, 255, 255, 0.2) !important;
+                backdrop-filter: blur(3px);
+                border-radius: 20px;
+                padding: 15px;
+            }
         }
-    }
-    function animate() {
-        ctx.clearRect(0, 0, width, height);
-        for (let i = 0; i < particles.length; i++) {
-            const p1 = particles[i];
-            p1.update();
-            p1.draw();
-            for (let j = i + 1; j < particles.length; j++) {
-                const p2 = particles[j];
-                const dx = p1.x - p2.x;
-                const dy = p1.y - p2.y;
-                const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < maxDistance) {
-                    ctx.beginPath();
-                    // Líneas doradas visibles
-                    ctx.strokeStyle = `rgba(212, 160, 23, ${0.5 * (1 - dist / maxDistance)})`;
-                    ctx.lineWidth = 1.4; 
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.stroke();
+        .about-contents {
+            color: #1a2a3a !important;
+        }
+    </style>
+    <canvas id="statsNetworkCanvas"></canvas>
+    <script>
+    (function() {
+        const canvas = document.getElementById('statsNetworkCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let width, height;
+        // Configuración Dinámica
+        let targetParticleCount;
+        let maxDistance;
+        let speedMultiplier;
+        function updateResponsiveConfig() {
+            const isMobile = window.innerWidth < 768;
+            targetParticleCount = isMobile ? 30 : 55;
+            maxDistance = isMobile ? 140 : 190;
+            speedMultiplier = isMobile ? 0.7 : 0.9;
+        }
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            const prevCount = targetParticleCount;
+            updateResponsiveConfig();
+            // Si es la primera vez, inicializamos
+            if (particles.length === 0) {
+                for (let i = 0; i < targetParticleCount; i++) {
+                    particles.push(new Particle());
+                }
+            } else {
+                // Si el tamaño cambia, ajustamos la cantidad sin borrar las existentes
+                // Esto evita el "reinicio" visual al hacer scroll en móviles
+                if (particles.length < targetParticleCount) {
+                    for (let i = particles.length; i < targetParticleCount; i++) {
+                        particles.push(new Particle());
+                    }
+                } else if (particles.length > targetParticleCount) {
+                    particles.splice(targetParticleCount);
                 }
             }
         }
-        requestAnimationFrame(animate);
-    }
-    window.addEventListener('resize', () => {
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * speedMultiplier;
+                this.vy = (Math.random() - 0.5) * speedMultiplier;
+                this.radius = Math.random() * 3 + 2; 
+                const palette = [
+                    '212, 160, 23',  // Dorado Principal
+                    '26, 42, 58',    // Azul Marino
+                    '243, 223, 162', // Oro Claro Brillante
+                    '55, 118, 171'   // Azul Acero
+                ];
+                this.color = palette[Math.floor(Math.random() * palette.length)];
+                this.alpha = Math.random() * 0.3 + 0.6; 
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                // Lógica de rebote en bordes
+                if (this.x < 0) { this.x = 0; this.vx *= -1; }
+                if (this.x > width) { this.x = width; this.vx *= -1; }
+                if (this.y < 0) { this.y = 0; this.vy *= -1; }
+                if (this.y > height) { this.y = height; this.vy *= -1; }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = `rgba(${this.color}, 0.5)`;
+                ctx.fillStyle = `rgba(${this.color}, ${this.alpha})`;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+        }
+        function animate() {
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, width, height);
+            for (let i = 0; i < particles.length; i++) {
+                const p1 = particles[i];
+                p1.update();
+                p1.draw();
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < maxDistance) {
+                        ctx.beginPath();
+                        const lineOpacity = 0.5 * (1 - dist / maxDistance);
+                        ctx.strokeStyle = `rgba(212, 160, 23, ${lineOpacity})`;
+                        ctx.lineWidth = 1.4; 
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+        // Debounce para el resize para evitar micro-ajustes costosos
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(resize, 150);
+        });
+        // Inicialización
         resize();
-        init();
-    });
-    resize();
-    init();
-    animate();
-})();
-</script>
-<style>
-/* TRUCO DE TRANSPARENCIA PARA QUARTO 
-   Esto fuerza a que las capas de Quarto dejen ver el fondo
-*/
-body, 
-#quarto-content, 
-#quarto-content > main, 
-.page-columns, 
-.quarto-about-trestles, 
-.about-entity, 
-.about-contents {
-    background: transparent !important;
-}
-/* Ajuste específico para el contenedor de la foto en trestles */
-.about-entity {
-    background: rgba(255, 255, 255, 0.05) !important;
-    backdrop-filter: blur(2px);
-    border-radius: 20px;
-    padding: 20px;
-}
-/* Aseguramos que el texto sea siempre legible */
-.about-contents {
-    color: #1a2a3a !important;
-    padding: 20px;
-}
-</style>
+        animate();
+    })();
+    </script>
 
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main></div>

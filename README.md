@@ -55,8 +55,10 @@ En su estado actual, el sitio constituye un desarrollo **autónomo, original e i
 
 **Jairon Kevin Ojeda Silupu**
 
-Licenciado en Estadística – Universidad Nacional de Piura
-Estadístico Colegiado • Cód. 1706
+*Licenciado en Estadística – Universidad Nacional de Piura*
+
+Estadístico Colegiado **Cód. 1706**
+
 Piura, Perú
 
 

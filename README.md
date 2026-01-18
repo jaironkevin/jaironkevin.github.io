@@ -4,7 +4,7 @@ Este repositorio contiene el código fuente de mi sitio web académico y profesi
 
 🔗 Sitio web: https://jaironkevin.github.io
 
----
+
 
 ## 1. Descripción general
 
@@ -12,7 +12,7 @@ El sitio web tiene como finalidad centralizar y difundir contenidos vinculados a
 
 El proyecto responde a criterios de rigor metodológico, claridad expositiva y organización temática, alineados con buenas prácticas académicas y profesionales.
 
----
+
 
 ## 2. Origen del diseño y desarrollo del proyecto
 
@@ -28,7 +28,7 @@ A partir de dicha base inicial, el sitio fue objeto de un **proceso integral de 
 
 En su estado actual, el sitio constituye un desarrollo **autónomo, original e independiente**, tanto en diseño como en contenido, y no corresponde a un fork ni a una réplica directa del repositorio de referencia.
 
----
+
 
 ## 3. Estructura principal del repositorio
 
@@ -39,6 +39,8 @@ En su estado actual, el sitio constituye un desarrollo **autónomo, original e i
 ├── servicios/         # Servicios profesionales
 ├── software/          # Recursos y desarrollos técnicos
 ├── _quarto.yml        # Configuración global del sitio
+├── index.qmd          # Página principal
+├── styles.css         # Estilos personalizados
 ```
 
 ## Tecnologías empleadas
@@ -61,5 +63,3 @@ Piura, Perú
 
 
 
-├── index.qmd          # Página principal
-├── styles.css         # Estilos personalizados

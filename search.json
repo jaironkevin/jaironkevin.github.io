@@ -67,7 +67,7 @@
     "href": "blog/2.html",
     "title": "El Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial",
     "section": "",
-    "text": "En la estadística moderna, gran parte de las conclusiones que tomamos sobre poblaciones se basan en el análisis de muestras. Pero, ¿cómo podemos estar seguros de que los resultados obtenidos en una muestra realmente representan a toda la población?\nAquí es donde el Teorema Central del Límite (TCL) se convierte en una herramienta fundamental. según (Montgomery & Runger, 2010), este principio establece que, cuando se extraen muestras aleatorias de tamaño suficiente de cualquier población, la distribución de las medias muestrales tiende a una distribución normal, independientemente de la forma de la distribución original; es decir, incluso si la población tiene una distribución asimétrica, sesgada o multimodal, las medias de las muestras seguirán un patrón normal conforme aumenta el tamaño de la muestra."
+    "text": "En la estadística moderna, gran parte de las conclusiones que tomamos sobre poblaciones se basan en el análisis de muestras. Pero, ¿cómo podemos estar seguros de que los resultados obtenidos en una muestra realmente representan a toda la población?\nAquí es donde el Teorema Central del Límite (TCL) se convierte en una herramienta fundamental. según Montgomery y Runger(2010), este principio establece que, cuando se extraen muestras aleatorias de tamaño suficiente de cualquier población, la distribución de las medias muestrales tiende a una distribución normal, independientemente de la forma de la distribución original; es decir, incluso si la población tiene una distribución asimétrica, sesgada o multimodal, las medias de las muestras seguirán un patrón normal conforme aumenta el tamaño de la muestra."
   },
   {
     "objectID": "blog/2.html#el-umbral-de-n-geq-30-regla-empírica-para-la-normalidad",
@@ -168,11 +168,60 @@
     "text": "Evidencias\n\nDemostración en video\nDebido a que se trata de un servicio particular, el proyecto se presenta mediante un video demostrativo, con la debida autorización:\n\n\n\n\nCapturas"
   },
   {
+    "objectID": "blog/4.html",
+    "href": "blog/4.html",
+    "title": "¿Por qué menos es más?",
+    "section": "",
+    "text": "Nuestra comprensión del mundo es, en esencia, un mosaico de fragmentos. Cochran (1977), en su obra fundamental Sampling Techniques, plantea una analogía tan elegante como reveladora: imaginemos a un viajero que pasa apenas diez días en un país extranjero. Al regresar, imbuido de una falsa confianza, escribe un libro explicando cómo reformar las industrias de ese país, equilibrar su presupuesto o mejorar la gastronomía de sus hoteles.\nSolemos reírnos de este personaje, pero Cochran nos desafía a considerar que este viajero no es tan distinto del politólogo que dedica veinte años a estudiar la misma nación. Ambos basan sus conclusiones en una muestra de experiencia; lo único que protege al académico de la insensatez del viajero es un enfoque disciplinado y consciente sobre el “fragmento” observado. Ante la imposibilidad de procesar la totalidad de los datos globales, el muestreo emerge como nuestra herramienta más poderosa. Basándonos en la “biblia” de Cochran, exploramos aquí seis verdades que transforman la estadística en una lección de estrategia y humildad."
+  },
+  {
+    "objectID": "blog/4.html#la-paradoja-de-la-precisión-por-qué-una-muestra-supera-a-un-censo",
+    "href": "blog/4.html#la-paradoja-de-la-precisión-por-qué-una-muestra-supera-a-un-censo",
+    "title": "¿Por qué menos es más?",
+    "section": "La paradoja de la precisión: Por qué una muestra supera a un censo",
+    "text": "La paradoja de la precisión: Por qué una muestra supera a un censo\nNuestra intuición nos dicta que, para conocer la verdad absoluta, debemos medirlo todo. Sin embargo, la historia y la técnica contradicen esta noción. Cochran explica que un censo masivo una enumeración completa es a menudo un gigante con pies de barro. El problema radica en el volumen: cuando la escala es abrumadora, la calidad del control se diluye irremediablemente.\nEl punto de inflexión histórico ocurrió en el Censo de los Estados Unidos de 1940, donde se introdujo por primera vez una muestra del 5% para ampliar el alcance de las preguntas y acelerar los resultados. Al reducir el volumen de trabajo, fue posible emplear personal de mayor calificación y ejercer una supervisión que en un censo total sería impensable. Cochran lo sentencia así:\n“Debido a que se puede emplear personal de mayor calidad y darle un entrenamiento intensivo, y debido a que se vuelve factible una supervisión más cuidadosa del trabajo de campo y del procesamiento de los resultados cuando el volumen de trabajo se reduce, una muestra puede producir resultados más precisos que el tipo de enumeración completa que se puede realizar”."
+  },
+  {
+    "objectID": "blog/4.html#más-allá-de-la-fórmula-el-muestreo-como-gestión-administrativa",
+    "href": "blog/4.html#más-allá-de-la-fórmula-el-muestreo-como-gestión-administrativa",
+    "title": "¿Por qué menos es más?",
+    "section": "Más allá de la fórmula: El muestreo como gestión administrativa",
+    "text": "Más allá de la fórmula: El muestreo como gestión administrativa\nAunque Sampling Techniques es un monumento a la elegancia matemática, su autor nos advierte que la teoría es solo una pieza menor del éxito. El muestreo es, en última instancia, un “negocio administrativo”. Cochran nos desafía a entender que el rigor matemático no sirve de nada si falla la logística.\nDesde la definición de la población hasta la organización del trabajo de campo, cada paso requiere habilidades de gestión estratégica. La advertencia es clara: un diseño impecable en el papel puede ser arruinado por un trabajo deficiente en la fase de recolección. El éxito no es un fenómeno puramente numérico, sino el resultado de una cadena de ejecución donde el eslabón más débil —sea la supervisión o la edición de datos— define la resistencia de toda la estructura."
+  },
+  {
+    "objectID": "blog/4.html#el-marco-y-la-imaginación-estadística-el-drama-de-la-lista",
+    "href": "blog/4.html#el-marco-y-la-imaginación-estadística-el-drama-de-la-lista",
+    "title": "¿Por qué menos es más?",
+    "section": "El “Marco” y la imaginación estadística: El drama de la lista",
+    "text": "El “Marco” y la imaginación estadística: El drama de la lista\nPara seleccionar una muestra, necesitamos un “Marco” (the frame): una lista o mapa que delimite las unidades de estudio. Cochran relata que los estadísticos han desarrollado una “amargura crítica” frente a los marcos existentes. En el mundo real, las listas están incompletas, son ilegibles o están plagadas de duplicaciones.\nEsta es una lección vital para nuestra era de algoritmos y big data: si el marco donde se entrena el modelo es defectuoso, la conclusión será una ficción. Cochran destaca la “imaginación estadística” necesaria cuando falla lo convencional, citando el ejemplo de Jessen (1955), quien construyó un marco de muestreo a partir de las ramas de un árbol frutal para estudiar la producción. Si no tenemos una lista de personas, quizás debamos construir una lista de ramas, de calles o de procesos; la creatividad es el antídoto contra el sesgo del marco."
+  },
+  {
+    "objectID": "blog/4.html#la-regla-del-10-cuando-el-tamaño-de-la-población-se-vuelve-irrelevante",
+    "href": "blog/4.html#la-regla-del-10-cuando-el-tamaño-de-la-población-se-vuelve-irrelevante",
+    "title": "¿Por qué menos es más?",
+    "section": "La Regla del 10%: Cuando el tamaño de la población se vuelve irrelevante",
+    "text": "La Regla del 10%: Cuando el tamaño de la población se vuelve irrelevante\nUna de las verdades más contra-intuitivas de la estadística es que la precisión de una muestra depende casi exclusivamente de su propio tamaño (n) y no del tamaño de la población total (N). Este concepto se materializa en la “Corrección por Población Finita” o fpc, cuya lógica se resume en la fracción (N-n)/N.\nCochran demuestra que a medida que N crece y se vuelve muy grande en relación con n, esta fracción se aproxima a 1, haciendo que el tamaño de la población desaparezca de la ecuación de error. En la práctica, si la muestra es menor al 10% de la población, el valor de N es irrelevante. Ignorar la población total en estos casos solo lleva a una ligera sobreestimación del error, lo cual funciona como un margen de seguridad aceptable. Es una lección de eficiencia: para probar una sopa, basta con una cucharada, ya sea que la sopa esté en una taza o en una olla de cincuenta litros."
+  },
+  {
+    "objectID": "blog/4.html#ética-y-azar-cómo-preguntar-lo-impronunciable",
+    "href": "blog/4.html#ética-y-azar-cómo-preguntar-lo-impronunciable",
+    "title": "¿Por qué menos es más?",
+    "section": "Ética y azar: Cómo preguntar lo impronunciable",
+    "text": "Ética y azar: Cómo preguntar lo impronunciable\n¿Cómo obtener datos veraces sobre temas sensibles sin comprometer la privacidad? Cochran describe una técnica de una elegancia ética asombrosa: el uso de la aleatoriedad para generar confianza.\nEl método consiste en presentar al encuestado dos preguntas: una comprometedora y una inocua (por ejemplo: “¿Ha evadido impuestos?” vs. “¿Nació usted en mayo?”). El sujeto elige cuál responder mediante un proceso de azar que el entrevistador no puede ver. Gracias a las leyes de la probabilidad, el investigador puede calcular la prevalencia del comportamiento sensible en la población general sin saber jamás qué respondió un individuo específico. Es el uso de la matemática como un escudo de privacidad, demostrando que la aleatoriedad, lejos de ser desorden, puede ser el cimiento de la verdad y la confianza."
+  },
+  {
+    "objectID": "blog/4.html#el-sesgo-y-el-error-cuadrático-medio-la-regla-del-110",
+    "href": "blog/4.html#el-sesgo-y-el-error-cuadrático-medio-la-regla-del-110",
+    "title": "¿Por qué menos es más?",
+    "section": "El Sesgo y el Error Cuadrático Medio: La regla del 1/10",
+    "text": "El Sesgo y el Error Cuadrático Medio: La regla del 1/10\nEn el análisis de datos, es vital distinguir entre Precisión (el tamaño de las desviaciones respecto al promedio de la muestra, m) y Exactitud (el tamaño de las desviaciones respecto al valor real de la población, \\mu). Cochran nos enseña que el sesgo no siempre es el villano absoluto, siempre que sepamos medir su impacto.\nSu “regla de oro” establece que el efecto del sesgo sobre la precisión es insignificante si este es menor a una décima parte de la desviación estándar. En términos estratégicos, a veces es preferible un estimador ligeramente sesgado pero con una varianza pequeña, lo que se traduce en un Error Cuadrático Medio (MSE) reducido. Cochran lo resume en esta cita técnica fundamental:\n“Como regla de trabajo, el efecto del sesgo sobre la precisión de una estimación es insignificante si el sesgo es menor que una décima parte de la desviación estándar de la estimación… el uso del MSE como criterio de exactitud equivale a considerar dos estimaciones que tienen el mismo MSE como equivalentes”.\n\n\n\n\n\n\nConclusión: La ventana hacia lo desconocido\n\n\n\nEl muestreo, más que una técnica matemática, es un ejercicio de humildad intelectual. Es el reconocimiento de que solo vemos fragmentos y de que, para entender la totalidad, no necesitamos más datos, sino mejores procesos. Cochran nos legó una herramienta para navegar la incertidumbre: aceptar que el “marco” siempre tendrá grietas, pero que con rigor administrativo y respeto por el azar, una fracción de la realidad puede iluminar el todo.\nAl final del día, vale la pena preguntarse: en nuestras decisiones diarias y estrategias de negocio, ¿en qué “marcos” defectuosos estamos confiando? ¿Estamos buscando una exactitud total imposible o la precisión estratégica que realmente importa?"
+  },
+  {
     "objectID": "blog/index.html",
     "href": "blog/index.html",
     "title": "My blog",
     "section": "",
-    "text": "Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nCoeficiente de Correlación de los Rangos de Spearman\n\n\n\n\n\n\nCorrelación\n\n\n\n\n\n\n\n\n\n15 septiembre 2025\n\n\nJairon Ojeda S.\n\n\n\n\n\n\n\n\n\n\n\n\nEl Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial\n\n\n\n\n\n\nEstadística\n\n\nDistribución normal\n\n\nTLC\n\n\n\n\n\n\n\n\n\n1 agosto 2024\n\n\nJairon Ojeda S.\n\n\n\n\n\n\n\n\n\n\n\n\nLa Estadística: Una ciencia detras de los datos\n\n\n\n\n\n\nEstadística\n\n\nData Science\n\n\n\n\n\n\n\n\n\n15 julio 2024\n\n\nJairon Ojeda S.\n\n\n\n\n\n\nNo hay resultados\n\n Volver arriba"
+    "text": "Ordenar por\n       Por defecto\n         \n          Título\n        \n         \n          Fecha - Menos reciente\n        \n         \n          Fecha - Más reciente\n        \n         \n          Autor/a\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\n¿Por qué menos es más?\n\n\n6 verdades contra-intuitivas sobre el arte del muestreo\n\n\n\nEstadística\n\n\nMuestreo\n\n\n\n\n\n\n\n\n\n1 noviembre 2025\n\n\nJairon Ojeda S.\n\n\n\n\n\n\n\n\n\n\n\n\nCoeficiente de Correlación de los Rangos de Spearman\n\n\n\n\n\n\nCorrelación\n\n\n\n\n\n\n\n\n\n15 septiembre 2025\n\n\nJairon Ojeda S.\n\n\n\n\n\n\n\n\n\n\n\n\nEl Teorema Central del Límite: El Pilar Oculto detrás de la Estadística Inferencial\n\n\n\n\n\n\nEstadística\n\n\nDistribución normal\n\n\nTLC\n\n\n\n\n\n\n\n\n\n1 agosto 2024\n\n\nJairon Ojeda S.\n\n\n\n\n\n\n\n\n\n\n\n\nLa Estadística: Una ciencia detras de los datos\n\n\n\n\n\n\nEstadística\n\n\nData Science\n\n\n\n\n\n\n\n\n\n15 julio 2024\n\n\nJairon Ojeda S.\n\n\n\n\n\n\nNo hay resultados\n\n Volver arriba"
   },
   {
     "objectID": "portafolio/index.html",

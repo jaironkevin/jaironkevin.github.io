@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jairon Ojeda S.">
 
-<title>index – Jairon K. Ojeda S.</title>
+<title>¿Por qué menos es más? – Jairon K. Ojeda S.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -82,14 +103,55 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/0fba9333d8.js" crossorigin="anonymous"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -156,31 +218,125 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#la-paradoja-de-la-precisión-por-qué-una-muestra-supera-a-un-censo" id="toc-la-paradoja-de-la-precisión-por-qué-una-muestra-supera-a-un-censo" class="nav-link active" data-scroll-target="#la-paradoja-de-la-precisión-por-qué-una-muestra-supera-a-un-censo">La paradoja de la precisión: Por qué una muestra supera a un censo</a></li>
+  <li><a href="#más-allá-de-la-fórmula-el-muestreo-como-gestión-administrativa" id="toc-más-allá-de-la-fórmula-el-muestreo-como-gestión-administrativa" class="nav-link" data-scroll-target="#más-allá-de-la-fórmula-el-muestreo-como-gestión-administrativa">Más allá de la fórmula: El muestreo como gestión administrativa</a></li>
+  <li><a href="#el-marco-y-la-imaginación-estadística-el-drama-de-la-lista" id="toc-el-marco-y-la-imaginación-estadística-el-drama-de-la-lista" class="nav-link" data-scroll-target="#el-marco-y-la-imaginación-estadística-el-drama-de-la-lista">El “Marco” y la imaginación estadística: El drama de la lista</a></li>
+  <li><a href="#la-regla-del-10-cuando-el-tamaño-de-la-población-se-vuelve-irrelevante" id="toc-la-regla-del-10-cuando-el-tamaño-de-la-población-se-vuelve-irrelevante" class="nav-link" data-scroll-target="#la-regla-del-10-cuando-el-tamaño-de-la-población-se-vuelve-irrelevante">La Regla del 10%: Cuando el tamaño de la población se vuelve irrelevante</a></li>
+  <li><a href="#ética-y-azar-cómo-preguntar-lo-impronunciable" id="toc-ética-y-azar-cómo-preguntar-lo-impronunciable" class="nav-link" data-scroll-target="#ética-y-azar-cómo-preguntar-lo-impronunciable">Ética y azar: Cómo preguntar lo impronunciable</a></li>
+  <li><a href="#el-sesgo-y-el-error-cuadrático-medio-la-regla-del-110" id="toc-el-sesgo-y-el-error-cuadrático-medio-la-regla-del-110" class="nav-link" data-scroll-target="#el-sesgo-y-el-error-cuadrático-medio-la-regla-del-110">El Sesgo y el Error Cuadrático Medio: La regla del 1/10</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">¿Por qué menos es más?</h1>
+<p class="subtitle lead">6 verdades contra-intuitivas sobre el arte del muestreo</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">Estadística</div>
+    <div class="quarto-category">Muestreo</div>
+  </div>
+  </div>
 
 
 
-<div class="presentacion-page">
+<div class="quarto-title-meta">
 
-<iframe id="presentacion-frame" src="presentacion.html" style="width:100%; border:none; overflow:hidden; display:block;"></iframe>
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jairon Ojeda S. </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">1 noviembre 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
-<script>
-  window.addEventListener("message", function(event) {
-    if (event.data && event.data.type === "iframe-height") {
-      const iframe = document.getElementById("presentacion-frame");
-      if (iframe) iframe.style.height = event.data.height + "px";
-    }
-  });
-</script>
 
+</header>
+
+
+<p>Nuestra comprensión del mundo es, en esencia, un mosaico de fragmentos. Cochran <span class="citation" data-cites="Cochran1977Sampling">(<a href="#ref-Cochran1977Sampling" role="doc-biblioref">1977</a>)</span>, en su obra fundamental Sampling Techniques, plantea una analogía tan elegante como reveladora: imaginemos a un viajero que pasa apenas diez días en un país extranjero. Al regresar, imbuido de una falsa confianza, escribe un libro explicando cómo reformar las industrias de ese país, equilibrar su presupuesto o mejorar la gastronomía de sus hoteles.</p>
+<p>Solemos reírnos de este personaje, pero Cochran nos desafía a considerar que este viajero no es tan distinto del politólogo que dedica veinte años a estudiar la misma nación. Ambos basan sus conclusiones en una muestra de experiencia; lo único que protege al académico de la insensatez del viajero es un enfoque disciplinado y consciente sobre el “fragmento” observado. Ante la imposibilidad de procesar la totalidad de los datos globales, el muestreo emerge como nuestra herramienta más poderosa. Basándonos en la “biblia” de Cochran, exploramos aquí seis verdades que transforman la estadística en una lección de estrategia y humildad.</p>
+<section id="la-paradoja-de-la-precisión-por-qué-una-muestra-supera-a-un-censo" class="level2">
+<h2 class="anchored" data-anchor-id="la-paradoja-de-la-precisión-por-qué-una-muestra-supera-a-un-censo">La paradoja de la precisión: Por qué una muestra supera a un censo</h2>
+<p>Nuestra intuición nos dicta que, para conocer la verdad absoluta, debemos medirlo todo. Sin embargo, la historia y la técnica contradicen esta noción. Cochran explica que un censo masivo una enumeración completa es a menudo un gigante con pies de barro. El problema radica en el volumen: cuando la escala es abrumadora, la calidad del control se diluye irremediablemente.</p>
+<p>El punto de inflexión histórico ocurrió en el Censo de los Estados Unidos de 1940, donde se introdujo por primera vez una muestra del 5% para ampliar el alcance de las preguntas y acelerar los resultados. Al reducir el volumen de trabajo, fue posible emplear personal de mayor calificación y ejercer una supervisión que en un censo total sería impensable. Cochran lo sentencia así:</p>
+<p>“Debido a que se puede emplear personal de mayor calidad y darle un entrenamiento intensivo, y debido a que se vuelve factible una supervisión más cuidadosa del trabajo de campo y del procesamiento de los resultados cuando el volumen de trabajo se reduce, una muestra puede producir resultados más precisos que el tipo de enumeración completa que se puede realizar”.</p>
+</section>
+<section id="más-allá-de-la-fórmula-el-muestreo-como-gestión-administrativa" class="level2">
+<h2 class="anchored" data-anchor-id="más-allá-de-la-fórmula-el-muestreo-como-gestión-administrativa">Más allá de la fórmula: El muestreo como gestión administrativa</h2>
+<p>Aunque Sampling Techniques es un monumento a la elegancia matemática, su autor nos advierte que la teoría es solo una pieza menor del éxito. El muestreo es, en última instancia, un “negocio administrativo”. Cochran nos desafía a entender que el rigor matemático no sirve de nada si falla la logística.</p>
+<p>Desde la definición de la población hasta la organización del trabajo de campo, cada paso requiere habilidades de gestión estratégica. La advertencia es clara: un diseño impecable en el papel puede ser arruinado por un trabajo deficiente en la fase de recolección. El éxito no es un fenómeno puramente numérico, sino el resultado de una cadena de ejecución donde el eslabón más débil —sea la supervisión o la edición de datos— define la resistencia de toda la estructura.</p>
+</section>
+<section id="el-marco-y-la-imaginación-estadística-el-drama-de-la-lista" class="level2">
+<h2 class="anchored" data-anchor-id="el-marco-y-la-imaginación-estadística-el-drama-de-la-lista">El “Marco” y la imaginación estadística: El drama de la lista</h2>
+<p>Para seleccionar una muestra, necesitamos un “Marco” (the frame): una lista o mapa que delimite las unidades de estudio. Cochran relata que los estadísticos han desarrollado una “amargura crítica” frente a los marcos existentes. En el mundo real, las listas están incompletas, son ilegibles o están plagadas de duplicaciones.</p>
+<p>Esta es una lección vital para nuestra era de algoritmos y big data: si el marco donde se entrena el modelo es defectuoso, la conclusión será una ficción. Cochran destaca la “imaginación estadística” necesaria cuando falla lo convencional, citando el ejemplo de Jessen (1955), quien construyó un marco de muestreo a partir de las ramas de un árbol frutal para estudiar la producción. Si no tenemos una lista de personas, quizás debamos construir una lista de ramas, de calles o de procesos; la creatividad es el antídoto contra el sesgo del marco.</p>
+</section>
+<section id="la-regla-del-10-cuando-el-tamaño-de-la-población-se-vuelve-irrelevante" class="level2">
+<h2 class="anchored" data-anchor-id="la-regla-del-10-cuando-el-tamaño-de-la-población-se-vuelve-irrelevante">La Regla del 10%: Cuando el tamaño de la población se vuelve irrelevante</h2>
+<p>Una de las verdades más contra-intuitivas de la estadística es que la precisión de una muestra depende casi exclusivamente de su propio tamaño (n) y no del tamaño de la población total (N). Este concepto se materializa en la “Corrección por Población Finita” o fpc, cuya lógica se resume en la fracción <span class="math inline">(N-n)/N</span>.</p>
+<p>Cochran demuestra que a medida que N crece y se vuelve muy grande en relación con n, esta fracción se aproxima a 1, haciendo que el tamaño de la población desaparezca de la ecuación de error. En la práctica, si la muestra es menor al 10% de la población, el valor de N es irrelevante. Ignorar la población total en estos casos solo lleva a una ligera sobreestimación del error, lo cual funciona como un margen de seguridad aceptable. Es una lección de eficiencia: para probar una sopa, basta con una cucharada, ya sea que la sopa esté en una taza o en una olla de cincuenta litros.</p>
+</section>
+<section id="ética-y-azar-cómo-preguntar-lo-impronunciable" class="level2">
+<h2 class="anchored" data-anchor-id="ética-y-azar-cómo-preguntar-lo-impronunciable">Ética y azar: Cómo preguntar lo impronunciable</h2>
+<p>¿Cómo obtener datos veraces sobre temas sensibles sin comprometer la privacidad? Cochran describe una técnica de una elegancia ética asombrosa: el uso de la aleatoriedad para generar confianza.</p>
+<p>El método consiste en presentar al encuestado dos preguntas: una comprometedora y una inocua (por ejemplo: “¿Ha evadido impuestos?” vs.&nbsp;“¿Nació usted en mayo?”). El sujeto elige cuál responder mediante un proceso de azar que el entrevistador no puede ver. Gracias a las leyes de la probabilidad, el investigador puede calcular la prevalencia del comportamiento sensible en la población general sin saber jamás qué respondió un individuo específico. Es el uso de la matemática como un escudo de privacidad, demostrando que la aleatoriedad, lejos de ser desorden, puede ser el cimiento de la verdad y la confianza.</p>
+</section>
+<section id="el-sesgo-y-el-error-cuadrático-medio-la-regla-del-110" class="level2">
+<h2 class="anchored" data-anchor-id="el-sesgo-y-el-error-cuadrático-medio-la-regla-del-110">El Sesgo y el Error Cuadrático Medio: La regla del 1/10</h2>
+<p>En el análisis de datos, es vital distinguir entre Precisión (el tamaño de las desviaciones respecto al promedio de la muestra, m) y Exactitud (el tamaño de las desviaciones respecto al valor real de la población, <span class="math inline">\mu</span>). Cochran nos enseña que el sesgo no siempre es el villano absoluto, siempre que sepamos medir su impacto.</p>
+<p>Su “regla de oro” establece que el efecto del sesgo sobre la precisión es insignificante si este es menor a una décima parte de la desviación estándar. En términos estratégicos, a veces es preferible un estimador ligeramente sesgado pero con una varianza pequeña, lo que se traduce en un Error Cuadrático Medio (MSE) reducido. Cochran lo resume en esta cita técnica fundamental:</p>
+<p>“Como regla de trabajo, el efecto del sesgo sobre la precisión de una estimación es insignificante si el sesgo es menor que una décima parte de la desviación estándar de la estimación… el uso del MSE como criterio de exactitud equivale a considerar dos estimaciones que tienen el mismo MSE como equivalentes”.</p>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conclusión: La ventana hacia lo desconocido
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El muestreo, más que una técnica matemática, es un ejercicio de humildad intelectual. Es el reconocimiento de que solo vemos fragmentos y de que, para entender la totalidad, no necesitamos más datos, sino mejores procesos. Cochran nos legó una herramienta para navegar la incertidumbre: aceptar que el “marco” siempre tendrá grietas, pero que con rigor administrativo y respeto por el azar, una fracción de la realidad puede iluminar el todo.</p>
+<p>Al final del día, vale la pena preguntarse: en nuestras decisiones diarias y estrategias de negocio, ¿en qué “marcos” defectuosos estamos confiando? ¿Estamos buscando una exactitud total imposible o la precisión estratégica que realmente importa?</p>
+</div>
 </div>
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-Cochran1977Sampling" class="csl-entry" role="listitem">
+Cochran, W. G. (1977). <em>Sampling Techniques</em> (3.ª ed.). John Wiley &amp; Sons.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Cómo citar</h2><div><div class="quarto-appendix-secondary-label">BibTeX</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{ojeda_s.2025,
+  author = {Ojeda S., Jairon},
+  title = {¿Por qué menos es más?},
+  date = {2025-11-01},
+  url = {https://jaironkevin.github.io/blog/4.html},
+  langid = {es}
+}
+</code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">Por favor, cita este trabajo como:</div><div id="ref-ojeda_s.2025" class="csl-entry quarto-appendix-citeas" role="listitem">
+Ojeda S., J. (2025, November 1). <em>¿Por qué menos es más?</em> <a href="https://jaironkevin.github.io/blog/4.html">https://jaironkevin.github.io/blog/4.html</a>
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

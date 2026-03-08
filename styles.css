@@ -781,5 +781,28 @@ body:has(.quarto-about-trestles) div.quarto-about-trestles {
 }
 
 
+.navbar {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+
+
+@media (max-width: 991px) {
+  .navbar-brand img {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 991px) {
+  .navbar {
+    min-height: 64px;
+  }
+}
+
+
+
 
 

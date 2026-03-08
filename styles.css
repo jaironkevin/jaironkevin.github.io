@@ -775,8 +775,10 @@ body:has(.quarto-about-trestles) div.quarto-about-trestles {
 
 
 
-
-
+.navbar-brand img {
+  max-height: none;
+  height: 56px;
+}
 
 
 

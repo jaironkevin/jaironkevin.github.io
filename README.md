@@ -2,7 +2,7 @@
 
 Este repositorio contiene el código fuente de mi sitio web académico y profesional, desarrollado mediante **Quarto** desde **RStudio** y publicado a través de **GitHub Pages**.
 
-🔗 Sitio web: https://jaironkevin.github.io
+🔗 Sitio web: https://jaironojeda.com/
 
 
 

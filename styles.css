@@ -805,4 +805,125 @@ body:has(.quarto-about-trestles) div.quarto-about-trestles {
 
 
 
+/* ============================================================================
+   NAVBAR FINAL SIMPLE
+   Normal: blanco
+   Hover: dorado + subrayado
+   Activo: dorado + subrayado, sin sombreado
+   ============================================================================ */
 
+/* Estado normal */
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-brand {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  border-radius: 0 !important;
+  padding: 0.4rem 0.7rem;
+}
+
+/* Hover */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-brand:hover {
+  color: #d4a017 !important;
+  background-color: transparent !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+}
+
+/* Página activa: mismo efecto que hover, pero fijo */
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link[aria-current="page"],
+.navbar .navbar-nav .nav-item.active > .nav-link,
+.navbar .navbar-nav .nav-link.current,
+.navbar .navbar-nav .nav-link.selected {
+  color: #d4a017 !important;
+  background-color: transparent !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  font-weight: 700 !important;
+}
+
+/* Si la pestaña activa recibe hover, mantiene el mismo estilo */
+.navbar .navbar-nav .nav-link.active:hover,
+.navbar .navbar-nav .nav-link[aria-current="page"]:hover,
+.navbar .navbar-nav .nav-item.active > .nav-link:hover,
+.navbar .navbar-nav .nav-link.current:hover,
+.navbar .navbar-nav .nav-link.selected:hover {
+  color: #d4a017 !important;
+  background-color: transparent !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  font-weight: 700 !important;
+}
+
+
+
+
+/* ============================================================================
+   NAVBAR FINAL — HOVER Y PESTAÑA ACTIVA SIN SOMBREADO
+   ============================================================================ */
+
+/* Estado normal */
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-brand {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  border-radius: 0 !important;
+  padding: 0.4rem 0.7rem;
+}
+
+/* Hover: dorado + subrayado */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-brand:hover {
+  color: #d4a017 !important;
+  background-color: transparent !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+}
+
+/* Pestaña activa: mismo efecto que hover, pero fijo */
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link[aria-current="page"],
+.navbar .navbar-nav .nav-item.active > .nav-link,
+.navbar .navbar-nav .nav-link.current,
+.navbar .navbar-nav .nav-link.selected {
+  color: #d4a017 !important;
+  background-color: transparent !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  font-weight: 700 !important;
+}
+
+/* Pestaña activa + hover: se mantiene igual */
+.navbar .navbar-nav .nav-link.active:hover,
+.navbar .navbar-nav .nav-link[aria-current="page"]:hover,
+.navbar .navbar-nav .nav-item.active > .nav-link:hover,
+.navbar .navbar-nav .nav-link.current:hover,
+.navbar .navbar-nav .nav-link.selected:hover {
+  color: #d4a017 !important;
+  background-color: transparent !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  font-weight: 700 !important;
+}

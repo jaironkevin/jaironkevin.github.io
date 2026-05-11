@@ -192,340 +192,478 @@ gtag('config', 'G-Z90QTB6BQZ', { 'anonymize_ip': true});
 
 
 
+<style>
+    :root {
+        --navy-deep: #152238; 
+        --navy-light: #1E2D45;
+        --gold: #B8860B;
+        --gold-light: #D4AF37;
+        --white: #FFFFFF;
+        --gray-bg: #F0F2F5;
+        --gray-text: #4A5568;
+        --success: #1B5E20;
+        --success-bg: #E8F5E9;
+        --error: #B71C1C;
+        --error-bg: #FFEBEE;
+    }
 
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Verificación Profesional - Lic. Jairon K. Ojeda S.</title>
-    <style>
-        :root {
-            --navy-deep: #152238; 
-            --navy-light: #1E2D45;
-            --gold: #B8860B;
-            --gold-light: #D4AF37;
-            --white: #FFFFFF;
-            --gray-bg: #F0F2F5;
-            --gray-text: #4A5568;
-            --success: #1B5E20;
-            --success-bg: #E8F5E9;
-            --error: #B71C1C;
-            --error-bg: #FFEBEE;
-        }
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 
-        /* Ajuste para integración en Quarto: sin scroll ni márgenes externos */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            color: var(--navy-deep);
-            line-height: 1.5;
-            overflow: visible; /* Evita doble barra deslizante */
-        }
+    /* Contenedor general: permite que el bloque se ensanche sin generar barra horizontal */
+    .verification-wrapper {
+    width: 100dvw;
+    max-width: 100dvw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 0 16px;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--navy-deep);
+    line-height: 1.5;
+}
 
-        .main-container {
-            max-width: 850px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: 4px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
-            overflow: hidden;
-            border: 1px solid #E2E8F0;
-        }
+.main-container {
+    width: 100%;
+    max-width: 1060px;
+    margin: 30px auto;
+    background: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 1px solid #E2E8F0;
+}
 
-        /* ── Header Institucional Sin Logo ─────────────────────────── */
+    /* ── Header Institucional Sin Logo ─────────────────────────── */
+    .header-brand {
+        background: var(--navy-deep);
+        color: var(--white);
+        padding: 40px 30px;
+        border-bottom: 5px solid var(--gold);
+        text-align: center;
+    }
+
+    .header-text h1 {
+        margin: 0;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-weight: 400;
+        color: var(--white);
+    }
+
+    .header-text .sub-info {
+        margin-top: 5px;
+        font-size: 1.1rem;
+        color: #CBD5E0;
+        font-weight: 300;
+    }
+
+    .header-text .ley {
+        font-size: 0.75rem;
+        color: var(--gold-light);
+        margin-top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        font-weight: 600;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+
+    .badge-habilitado {
+        display: inline-block;
+        margin-top: 15px;
+        background: var(--gold);
+        color: white;
+        padding: 4px 15px;
+        border-radius: 2px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* ── Contenido Principal ──────────────────────────────────── */
+    .content {
+        padding: 30px;
+    }
+
+    .intro-text {
+        max-width: none;
+        width: 100%;
+        margin: 0 auto 18px auto;
+        padding: 0 18px;
+        font-size: 0.92rem;
+        line-height: 1.55;
+        color: #4b5563;
+        text-align: justify;
+        overflow-wrap: break-word;
+    }
+
+    .legal-box {
+        background: #F8FAFC;
+        border-left: 4px solid var(--gold);
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+
+    .legal-box h4 {
+        margin: 0 0 12px;
+        color: var(--navy-deep);
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+        overflow-wrap: break-word;
+    }
+
+    .legal-box p {
+        font-size: 0.88rem;
+        color: var(--gray-text);
+        margin: 0;
+        text-align: justify;
+        overflow-wrap: break-word;
+    }
+
+    .legal-footer {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px dashed #CBD5E0;
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--navy-deep);
+        text-align: center;
+        overflow-wrap: break-word;
+    }
+
+    .legal-footer a {
+        color: var(--gold-dark);
+        text-decoration: none;
+        overflow-wrap: anywhere;
+    }
+
+    /* ── Buscador ──────────────────────────────────────────────── */
+    .search-area {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .input-group {
+        display: flex;
+        background: #FFF;
+        border: 2px solid var(--navy-deep);
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all 0.2s;
+    }
+
+    .input-group:focus-within {
+        border-color: var(--gold);
+        box-shadow: 0 0 10px rgba(184, 134, 11, 0.15);
+    }
+
+    .input-group input {
+        flex: 1;
+        min-width: 0;
+        padding: 16px 20px;
+        border: none;
+        font-size: 1rem;
+        outline: none;
+    }
+
+    .input-group button {
+        background: var(--navy-deep);
+        color: white;
+        border: none;
+        padding: 0 30px;
+        cursor: pointer;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        white-space: nowrap;
+    }
+
+    .input-group button:disabled {
+        background: var(--navy-light);
+        opacity: 0.7;
+        cursor: wait;
+    }
+
+    .search-hint {
+        display: block;
+        margin-top: 12px;
+        font-size: 0.78rem;
+        color: var(--gray-text);
+    }
+
+    /* ── Resultados ────────────────────────────────────────────── */
+    #result-display {
+        margin-top: 40px;
+        display: none;
+    }
+
+    .status-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid rgba(0,0,0,0.05);
+    }
+
+    .card-valid {
+        background: var(--success-bg);
+        border: 1px solid #C6F6D5;
+        padding: 30px;
+        border-radius: 4px;
+    }
+
+    .card-invalid {
+        background: var(--error-bg);
+        border: 1px solid #FED7D7;
+        padding: 30px;
+        border-radius: 4px;
+    }
+
+    .data-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .data-item label {
+        display: block;
+        font-size: 0.65rem;
+        color: var(--gray-text);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    .data-item span {
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--navy-deep);
+        overflow-wrap: break-word;
+    }
+
+    .btn-new {
+        margin-top: 30px;
+        background: white;
+        border: 1px solid #E2E8F0;
+        padding: 12px 25px;
+        border-radius: 4px;
+        font-weight: 700;
+        color: var(--navy-deep);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2.5;
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 700px) {
+.verification-wrapper {
+    width: 100dvw;
+    max-width: 100dvw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 0 6px;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 24px auto;
+    border-radius: 3px;
+}
+
         .header-brand {
-            background: var(--navy-deep);
-            color: var(--white);
-            padding: 40px 30px;
-            border-bottom: 5px solid var(--gold);
-            text-align: center; /* Centrado tras quitar el logo */
+            padding: 28px 12px;
         }
 
-        .header-text h1 {
-            margin: 0;
-            font-size: 2rem;
-            letter-spacing: 1px;
-            font-family: 'Georgia', 'Times New Roman', serif;
-            font-weight: 400;
-            color: var(--white);
+        .header-text span {
+            font-size: clamp(1.55rem, 6vw, 1.95rem) !important;
+            line-height: 1.15 !important;
+            overflow-wrap: break-word;
         }
 
         .header-text .sub-info {
-            margin-top: 5px;
-            font-size: 1.1rem;
-            color: #CBD5E0;
-            font-weight: 300;
+            font-size: 0.95rem;
+            line-height: 1.35;
+            overflow-wrap: break-word;
         }
 
         .header-text .ley {
-            font-size: 0.75rem;
-            color: var(--gold-light);
-            margin-top: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            font-weight: 600;
+            font-size: 0.68rem;
+            line-height: 1.35;
+            letter-spacing: 0.6px;
+            overflow-wrap: break-word;
+            white-space: normal;
         }
 
         .badge-habilitado {
-            display: inline-block;
-            margin-top: 15px;
-            background: var(--gold);
-            color: white;
-            padding: 4px 15px;
-            border-radius: 2px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.68rem;
         }
 
-        /* ── Contenido Principal ──────────────────────────────────── */
+        .intro-text {
+            padding: 0 14px;
+            font-size: 0.86rem;
+            line-height: 1.5;
+        }
+
         .content {
-            padding: 30px;
+            padding: 16px 10px;
         }
 
         .legal-box {
-            background: #F8FAFC;
-            border-left: 4px solid var(--gold);
-            padding: 25px;
-            margin-bottom: 30px;
+            padding: 18px 12px;
+            margin-bottom: 24px;
         }
 
         .legal-box h4 {
-            margin: 0 0 12px;
-            color: var(--navy-deep);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Centrado del título legal */
-            gap: 10px;
+            font-size: 0.78rem;
+            line-height: 1.35;
+            flex-wrap: wrap;
         }
 
         .legal-box p {
-            font-size: 0.88rem;
-            color: var(--gray-text);
-            margin: 0;
-            text-align: justify;
+            font-size: 0.84rem;
+            line-height: 1.5;
         }
 
         .legal-footer {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px dashed #CBD5E0;
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--navy-deep);
-            text-align: center;
+            font-size: 0.82rem;
+            line-height: 1.45;
         }
 
-        .legal-footer a {
-            color: var(--gold-dark);
-            text-decoration: none;
-        }
-
-        /* ── Buscador ──────────────────────────────────────────────── */
         .search-area {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
+            max-width: 100%;
         }
 
         .input-group {
-            display: flex;
-            background: #FFF;
-            border: 2px solid var(--navy-deep);
-            border-radius: 4px;
-            overflow: hidden;
-            transition: all 0.2s;
-        }
-
-        .input-group:focus-within {
-            border-color: var(--gold);
-            box-shadow: 0 0 10px rgba(184, 134, 11, 0.15);
+            flex-direction: column;
+            border: none;
         }
 
         .input-group input {
-            flex: 1;
-            padding: 16px 20px;
-            border: none;
-            font-size: 1rem;
-            outline: none;
+            width: 100%;
+            border: 2px solid var(--navy-deep);
+            margin-bottom: 10px;
+            border-radius: 4px;
+            padding: 14px;
         }
 
         .input-group button {
-            background: var(--navy-deep);
-            color: white;
-            border: none;
-            padding: 0 30px;
-            cursor: pointer;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 4px;
+            justify-content: center;
         }
 
-        .input-group button:disabled {
-            background: var(--navy-light);
-            opacity: 0.7;
-            cursor: wait;
-        }
-
-        .search-hint {
-            display: block;
-            margin-top: 12px;
-            font-size: 0.78rem;
-            color: var(--gray-text);
-        }
-
-        /* ── Resultados ────────────────────────────────────────────── */
-        #result-display {
-            margin-top: 40px;
-            display: none;
+        .card-valid,
+        .card-invalid {
+            padding: 20px 14px;
         }
 
         .status-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid rgba(0,0,0,0.05);
-        }
-
-        .card-valid {
-            background: var(--success-bg);
-            border: 1px solid #C6F6D5;
-            padding: 30px;
-            border-radius: 4px;
-        }
-
-        .card-invalid {
-            background: var(--error-bg);
-            border: 1px solid #FED7D7;
-            padding: 30px;
-            border-radius: 4px;
+            align-items: flex-start;
+            gap: 10px;
         }
 
         .data-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 16px;
         }
+    }
+</style>
 
-        .data-item label {
-            display: block;
-            font-size: 0.65rem;
-            color: var(--gray-text);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
+<div class="verification-wrapper">
+    <div class="main-container">
+        <header class="header-brand">
+            <div class="header-text">
 
-        .data-item span {
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--navy-deep);
-        }
+                <div>
+                    <strong>
+                        <span style="font-size:2.2em; line-height:1.2;">
+                            Lic. Jairon K. Ojeda S.
+                        </span>
+                    </strong>
+                </div>
 
-        .btn-new {
-            margin-top: 30px;
-            background: white;
-            border: 1px solid #E2E8F0;
-            padding: 12px 25px;
-            border-radius: 4px;
-            font-weight: 700;
-            color: var(--navy-deep);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
+                <div class="sub-info">
+                    Estadístico Colegiado · COESPE N.° 1706
+                </div>
 
-        .icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2.5; }
+                <div class="ley">
+                    Ley N.° 32208 – Ley de Trabajo del Profesional Estadístico
+                </div>
 
-        @media (max-width: 700px) {
-            .header-brand { padding: 30px 20px; }
-            .input-group { flex-direction: column; border: none; }
-            .input-group input { border: 2px solid var(--navy-deep); margin-bottom: 10px; border-radius: 4px; }
-            .input-group button { padding: 18px; border-radius: 4px; justify-content: center; }
-        }
-    </style>
+                <div class="badge-habilitado">
+                    Habilitado.
+                </div>
 
+            </div>
+        </header>
 
+        <p class="intro-text">
+            Esta sección permite verificar documentos emitidos en servicios estadísticos o de investigación que requirieron firma y sello profesional, a fin de confirmar su correspondencia con el registro interno y prevenir usos indebidos, alteraciones o falsificaciones.
+        </p>
 
-<div class="main-container">
-    <header class="header-brand">
-        <div class="header-text">
+        <div class="content">
+            <!-- Cláusula Jurídica -->
+            <div class="legal-box">
+                <h4 class="anchored">
+                    <svg class="icon" style="width:20px; color:var(--gold)" viewbox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    Declaración de Autenticidad y Verificación Documental
+                </h4>
+                <p>
+                    Los documentos, informes y servicios profesionales que lleven mi firma y sello deben corresponder con la información registrada en este sistema de verificación documental. Este registro permite constatar la existencia del servicio emitido, su código de identificación y los datos generales asociados al documento. Cualquier alteración, reproducción no autorizada, uso indebido de firma o sello, o discrepancia relevante respecto del documento original podrá ser comunicada y evaluada para las acciones que correspondan, conforme a la normativa vigente.
+                </p>
 
-            <div>
-                <strong>
-                    <span style="font-size:2.2em; line-height:1.2;">
-                        Lic. Jairon K. Ojeda S.
-                    </span>
-                </strong>
+                <div class="legal-footer">
+                    Si el documento que posee no figura en este registro o presenta inconsistencias, comuníquese de inmediato a
+                    <a href="mailto:jaironojeda99@gmail.com">jaironojeda99@gmail.com</a> o al  
+                    <a href="tel:+51929519964">929 519 964</a>.
+                </div>
             </div>
 
-            <div class="sub-info">
-                Estadístico Colegiado · COESPE N.° 1706
+            <!-- Buscador -->
+            <div id="search-section" class="search-area">
+                <div class="input-group">
+                    <input type="text" id="codInput" placeholder="Ej: JKOS-00-000">
+                    <button id="btnVerify" onclick="validarCodigo()">
+                        <span id="btnLabel">Verificar</span>
+                    </button>
+                </div>
+                <span class="search-hint">Ingrese el Código de Verificación</span>
             </div>
 
-            <div class="ley">
-                Ley N.° 32208 – Ley de Trabajo del Profesional Estadístico
-            </div>
-
-            <div class="badge-habilitado">
-                Habilitado.
-            </div>
-
+            <!-- Resultados -->
+            <div id="result-display"></div>
         </div>
-    </header>
-
-<p style="
-    max-width: 880px;
-    margin: 0 auto 18px auto;
-    padding: 0 18px;
-    font-size: 0.92rem;
-    line-height: 1.55;
-    color: #4b5563;
-    text-align: justify;
-">
-    Esta sección permite verificar documentos emitidos en servicios estadísticos o de investigación que requirieron firma y sello profesional, a fin de confirmar su correspondencia con el registro interno y prevenir usos indebidos, alteraciones o falsificaciones.
-</p>
-
-    <div class="content">
-        <!-- Cláusula Jurídica -->
-        <div class="legal-box">
-            <h4 class="anchored">
-                <svg class="icon" style="width:20px; color:var(--gold)" viewbox="0 0 24 24">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-                Declaración de Autenticidad y Verificación Documental
-            </h4>
-            <p>
-                Los documentos, informes y servicios profesionales que lleven mi firma y sello deben corresponder con la información registrada en este sistema de verificación documental. Este registro permite constatar la existencia del servicio emitido, su código de identificación y los datos generales asociados al documento. Cualquier alteración, reproducción no autorizada, uso indebido de firma o sello, o discrepancia relevante respecto del documento original podrá ser comunicada y evaluada para las acciones que correspondan, conforme a la normativa vigente.
-    </p>
-            <p></p>
-            <div class="legal-footer">
-                Si el documento que posee no figura en este registro o presenta inconsistencias, comuníquese de inmediato a
-        <a href="mailto:jaironojeda99@gmail.com">jaironojeda99@gmail.com</a> o al  
-                <a href="tel:+51929519964">929 519 964</a>.
-            </div>
-        </div>
-
-        <!-- Buscador -->
-        <div id="search-section" class="search-area">
-            <div class="input-group">
-                <input type="text" id="codInput" placeholder="Ej: JKOS-00-000">
-                <button id="btnVerify" onclick="validarCodigo()">
-                    <span id="btnLabel">Verificar</span>
-                </button>
-            </div>
-            <span class="search-hint">Ingrese el Código de Verificación</span>
-        </div>
-
-        <!-- Resultados -->
-        <div id="result-display"></div>
     </div>
 </div>
 
@@ -628,8 +766,6 @@ gtag('config', 'G-Z90QTB6BQZ', { 'anonymize_ip': true});
         document.getElementById('codInput').focus();
     }
 </script>
-
-
 
 
 

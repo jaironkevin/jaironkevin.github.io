@@ -626,46 +626,62 @@ gtag('config', 'G-Z90QTB6BQZ', { 'anonymize_ip': true});
             </div>
         </header>
 
-        <p class="intro-text">
-            Esta sección permite verificar documentos emitidos en servicios estadísticos o de investigación que requirieron firma y sello profesional, a fin de confirmar su correspondencia con el registro interno y prevenir usos indebidos, alteraciones o falsificaciones.
+<div class="content">
+    <!-- Cláusula Jurídica -->
+    <div class="legal-box">
+        <h4 class="anchored">
+            <svg class="icon" style="width:20px; color:var(--gold)" viewbox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            Declaración de Autenticidad y Verificación Documental
+        </h4>
+
+        <p>
+            Este sistema de verificación permite contrastar los códigos asociados a servicios profesionales emitidos por mi persona y registrados internamente, especialmente aquellos documentos que contienen mi firma y sello profesional. La consulta no reemplaza la revisión integral del contenido del documento, sino que permite verificar la existencia del registro del servicio y sus datos generales asociados.
         </p>
 
-        <div class="content">
-            <!-- Cláusula Jurídica -->
-            <div class="legal-box">
-                <h4 class="anchored">
-                    <svg class="icon" style="width:20px; color:var(--gold)" viewbox="0 0 24 24">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    </svg>
-                    Declaración de Autenticidad y Verificación Documental
-                </h4>
-                <p>
-                    Los documentos, informes y servicios profesionales que lleven mi firma y sello deben corresponder con la información registrada en este sistema de verificación documental. Este registro permite constatar la existencia del servicio emitido, su código de identificación y los datos generales asociados al documento. Cualquier alteración, reproducción no autorizada, uso indebido de firma o sello, o discrepancia relevante respecto del documento original podrá ser comunicada y evaluada para las acciones que correspondan, conforme a la normativa vigente.
-                </p>
+        <p style="margin-top:12px;">
+            La verificación aplica a servicios estadísticos, metodológicos o de investigación, entre ellos validación de instrumentos, análisis de fiabilidad u otros servicios que requieran constancia documental. La firma y el sello profesional consignados en un documento deben guardar correspondencia con el código registrado en este sistema.
+        </p>
 
-                <div class="legal-footer">
-                    Si el documento que posee no figura en este registro o presenta inconsistencias, comuníquese de inmediato a
-                    <a href="mailto:jaironojeda99@gmail.com">jaironojeda99@gmail.com</a> o al  
-                    <a href="tel:+51929519964">929 519 964</a>.
-                </div>
-            </div>
+        <p style="margin-top:12px;">
+            Si el código consultado arroja “registro no encontrado”, dicha situación constituye una inconsistencia documental y podrá ser objeto de revisión, verificación adicional y, de corresponder, de las acciones pertinentes conforme a la normativa vigente.
+        </p>
 
-            <!-- Buscador -->
-            <div id="search-section" class="search-area">
-                <div class="input-group">
-                    <input type="text" id="codInput" placeholder="Ej: JKOS-00-000">
-                    <button id="btnVerify" onclick="validarCodigo()">
-                        <span id="btnLabel">Verificar</span>
-                    </button>
-                </div>
-                <span class="search-hint">Ingrese el Código de Verificación</span>
-            </div>
+        <div class="legal-footer">
+            Para consultas o reportes relacionados con la autenticidad documental, puede comunicarse a
+            <a href="mailto:jaironojeda99@gmail.com">jaironojeda99@gmail.com</a> o al  
+            <a href="tel:+51929519964">929 519 964</a>.
+
+            <br><br>
+
+            La colegiatura profesional puede ser consultada en el portal del Colegio de Estadísticos del Perú:
+            <a href="https://coespe.org.pe/buscarColegiado.php" target="_blank" rel="noopener noreferrer">
+                Buscar colegiado en COESPE
+            </a>.
+        </div>
+    </div>
+
+    <!-- Buscador -->
+    <div id="search-section" class="search-area">
+        <div class="input-group">
+            <input type="text" id="codInput" placeholder="Ej: JKOS-00-000">
+            <button id="btnVerify" onclick="validarCodigo()">
+                <span id="btnLabel">Verificar</span>
+            </button>
+        </div>
+        <span class="search-hint">Ingrese el Código de Verificación</span>
+    </div>
+
+    <!-- Resultados -->
+    <div id="result-display"></div>
+</div>
 
             <!-- Resultados -->
             <div id="result-display"></div>
         </div>
     </div>
-</div>
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main></div>
 
 <script>
     /**
@@ -765,12 +781,25 @@ gtag('config', 'G-Z90QTB6BQZ', { 'anonymize_ip': true});
         document.getElementById('codInput').value = '';
         document.getElementById('codInput').focus();
     }
+    
+    // Verificación automática cuando el código viene desde el QR
+document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const codigo = params.get("codigo");
+
+    if (codigo) {
+        const input = document.getElementById("codInput");
+        input.value = codigo.trim().toUpperCase();
+
+        validarCodigo();
+    }
+});
 </script>
 
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Volver arriba</a></main> <!-- /main -->
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1171,7 +1200,7 @@ gtag('config', 'G-Z90QTB6BQZ', { 'anonymize_ip': true});
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">

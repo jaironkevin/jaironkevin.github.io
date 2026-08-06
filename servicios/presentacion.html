@@ -4,6 +4,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios profesionales | Jairon Ojeda</title>
+    <meta name="description" content="Servicios profesionales de estadística, investigación, análisis de datos y modelado ofrecidos por Jairon Ojeda.">
+    <link rel="canonical" href="https://jaironojeda.com/servicios/presentacion.html">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome -->
@@ -93,6 +96,32 @@
             box-shadow: 0 0 20px rgba(212, 160, 23, 0.3);
         }
 
+        .text-brand-accessible {
+            color: #8a650c !important;
+        }
+
+        :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+            outline: 3px solid #ffffff !important;
+            outline-offset: 2px !important;
+            box-shadow: 0 0 0 5px #1a2a3a !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .tool-card:hover img,
+            [class*="group-hover:"]:hover {
+                transform: none !important;
+            }
+        }
+
         html, body {
             height: auto;
             overflow: hidden;
@@ -148,7 +177,7 @@
             <div class="lg:col-span-7 flex flex-col justify-center space-y-8">
                 <h2 class="text-4xl md:text-5xl font-black text-navy leading-[1.1]">
                     De la complejidad a la <br>
-                    <span class="text-gold italic font-serif">certeza estadística.</span>
+                    <span class="text-brand-accessible italic font-serif">certeza estadística.</span>
                 </h2>
                 <div class="text-lg text-gray-600 leading-relaxed space-y-6">
                     <p>
@@ -156,7 +185,7 @@
                     </p>
                     <div class="flex flex-wrap gap-8 pt-4">
                         <div class="flex items-center gap-4 group">
-                            <div class="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md shadow-md flex items-center justify-center text-gold border border-transparent group-hover:border-gold/30 transition-all">
+                            <div class="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md shadow-md flex items-center justify-center text-brand-accessible border border-transparent group-hover:border-gold/30 transition-all">
                                 <i class="fa-solid fa-graduation-cap text-xl"></i>
                             </div>
                             <div>
@@ -165,7 +194,7 @@
                             </div>
                         </div>
                         <div class="flex items-center gap-4 group">
-                            <div class="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md shadow-md flex items-center justify-center text-gold border border-transparent group-hover:border-gold/30 transition-all">
+                            <div class="w-12 h-12 rounded-2xl bg-white/90 backdrop-blur-md shadow-md flex items-center justify-center text-brand-accessible border border-transparent group-hover:border-gold/30 transition-all">
                                 <i class="fa-solid fa-chart-line text-xl"></i>
                             </div>
                             <div>
@@ -267,7 +296,7 @@
                 <div class="tool-card flex flex-col items-center gap-4 cursor-pointer">
                     <img src="img/logo-excel.svg" class="w-14 h-14" alt="Excel"><span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-center">Excel</span>
                 </div>
-                <div class="tool-card flex flex-col items-center gap-4 text-gold hover:text-gold-dark transition-colors cursor-pointer">
+                <div class="tool-card flex flex-col items-center gap-4 text-brand-accessible transition-colors">
                     <i class="fa-solid fa-plus-circle text-5xl opacity-40 hover:opacity-100"></i>
                     <span class="text-[9px] font-black uppercase tracking-[0.2em] opacity-40 text-navy text-center">Otros</span>
                 </div>
@@ -287,7 +316,7 @@
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 w-full lg:w-auto">
-    <a href="https://wa.me/51929519964" target="_blank" class="glow-hover group bg-white/5 border border-white/10 p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] flex items-center gap-4 md:gap-5 hover:bg-gold hover:text-navy transition-all duration-500">
+                <a href="https://wa.me/51929519964" target="_blank" rel="noopener noreferrer" class="glow-hover group bg-white/5 border border-white/10 p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] flex items-center gap-4 md:gap-5 hover:bg-gold hover:text-navy transition-all duration-500">
         <div class="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-gold/20 flex items-center justify-center group-hover:bg-navy/10 shrink-0">
             <i class="fab fa-whatsapp text-xl md:text-2xl text-gold group-hover:text-navy"></i>
         </div>
@@ -307,7 +336,7 @@
         </div>
     </a>
 
-    <a href="https://linkedin.com/in/jairon-ojeda" target="_blank" class="glow-hover group bg-navy-dark border border-white/5 p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center gap-4 hover:bg-gold hover:text-navy transition-all duration-500 md:col-span-2">
+                <a href="https://linkedin.com/in/jairon-ojeda" target="_blank" rel="noopener noreferrer" class="glow-hover group bg-navy-dark border border-white/5 p-4 md:p-6 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center gap-4 hover:bg-gold hover:text-navy transition-all duration-500 md:col-span-2">
         <i class="fab fa-linkedin text-xl md:text-2xl text-gold group-hover:text-navy"></i>
         <span class="font-black uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs">Ver Perfil en LinkedIn</span>
     </a>
@@ -321,6 +350,12 @@
         let particles = [];
         const particleCount = 150;      // Más nodos para que se note mucho más
         const connectionDistance = 180; // Líneas más largas para cubrir más área
+        const connectionDistanceSquared = connectionDistance * connectionDistance;
+        const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let reduceMotion = reduceMotionQuery.matches;
+        let animationFrame = null;
+        let resizeFrame = null;
+        let running = false;
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
@@ -356,31 +391,107 @@
             }
         }
 
-        function animate() {
+        function renderParticles(updatePositions) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const spatialGrid = new Map();
             particles.forEach((p, i) => {
-                p.update(); p.draw();
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = p.x - particles[j].x;
-                    const dy = p.y - particles[j].y;
-                    const dist = Math.sqrt(dx*dx + dy*dy);
-                    if (dist < connectionDistance) {
-                        ctx.beginPath();
-                        // Opacidad de líneas aumentada para máximo impacto
-                        ctx.strokeStyle = `rgba(212, 160, 23, ${0.4 * (1 - dist / connectionDistance)})`;
-                        ctx.lineWidth = 1.2; // Líneas más gruesas
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
+                if (updatePositions) p.update();
+                p.draw();
+
+                const cellX = Math.floor(p.x / connectionDistance);
+                const cellY = Math.floor(p.y / connectionDistance);
+                const key = `${cellX},${cellY}`;
+                if (!spatialGrid.has(key)) spatialGrid.set(key, []);
+                spatialGrid.get(key).push(i);
+            });
+
+            particles.forEach((p, i) => {
+                const cellX = Math.floor(p.x / connectionDistance);
+                const cellY = Math.floor(p.y / connectionDistance);
+
+                for (let offsetX = -1; offsetX <= 1; offsetX++) {
+                    for (let offsetY = -1; offsetY <= 1; offsetY++) {
+                        const nearby = spatialGrid.get(`${cellX + offsetX},${cellY + offsetY}`);
+                        if (!nearby) continue;
+
+                        nearby.forEach((j) => {
+                            if (j <= i) return;
+                            const dx = p.x - particles[j].x;
+                            const dy = p.y - particles[j].y;
+                            const distanceSquared = dx * dx + dy * dy;
+                            if (distanceSquared >= connectionDistanceSquared) return;
+
+                            const dist = Math.sqrt(distanceSquared);
+                            ctx.beginPath();
+                            // Opacidad de líneas aumentada para máximo impacto
+                            ctx.strokeStyle = `rgba(212, 160, 23, ${0.4 * (1 - dist / connectionDistance)})`;
+                            ctx.lineWidth = 1.2; // Líneas más gruesas
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        });
                     }
                 }
             });
-            requestAnimationFrame(animate);
         }
 
-        window.addEventListener('resize', resizeCanvas);
+        function animate() {
+            if (!running) return;
+            renderParticles(true);
+            animationFrame = requestAnimationFrame(animate);
+        }
+
+        function startAnimation() {
+            if (running || reduceMotion || document.hidden) return;
+            running = true;
+            animate();
+        }
+
+        function stopAnimation() {
+            running = false;
+            if (animationFrame !== null) {
+                cancelAnimationFrame(animationFrame);
+                animationFrame = null;
+            }
+        }
+
+        function scheduleResize() {
+            if (resizeFrame !== null) cancelAnimationFrame(resizeFrame);
+            resizeFrame = requestAnimationFrame(() => {
+                resizeCanvas();
+                if (reduceMotion || !running) renderParticles(false);
+                resizeFrame = null;
+            });
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopAnimation();
+            } else if (reduceMotion) {
+                renderParticles(false);
+            } else {
+                startAnimation();
+            }
+        });
+
+        reduceMotionQuery.addEventListener('change', (event) => {
+            reduceMotion = event.matches;
+            if (reduceMotion) {
+                stopAnimation();
+                renderParticles(false);
+            } else {
+                startAnimation();
+            }
+        });
+
+        window.addEventListener('resize', scheduleResize);
         resizeCanvas();
-        animate();
+        if (reduceMotion) {
+            renderParticles(false);
+        } else {
+            startAnimation();
+        }
 
         // 2. COMUNICACIÓN CON QUARTO (RESIZER)
         function sendHeight() {

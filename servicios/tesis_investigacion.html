@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asesoría Estadística | Excelencia Académica</title>
+    <meta name="description" content="Asesoría metodológica y estadística para tesis e investigaciones, desde el diseño hasta la interpretación de resultados.">
+    <link rel="canonical" href="https://jaironojeda.com/servicios/tesis_investigacion.html">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Iconos y Tipografía -->
@@ -16,6 +18,7 @@
         :root {
             --navy: #1a2a3a;
             --gold: #d4a017;
+            --gold-accessible: #8a650c;
             --gold-glow: rgba(212, 160, 23, 0.6);
             --gold-bright: #f1c40f;
             --bg-light: #fafafa;
@@ -126,7 +129,7 @@
         }
 
         .service-card i {
-            color: var(--gold);
+            color: var(--gold-accessible);
             font-size: 2.5rem;
             transition: all 0.4s ease;
             flex-shrink: 0;
@@ -207,7 +210,7 @@
         /* --- Botón Dorado --- */
         .btn-gold {
             background-color: var(--gold);
-            color: white;
+            color: var(--navy);
             padding: 1.25rem 2.5rem;
             border-radius: 1.25rem;
             font-weight: 800;
@@ -255,6 +258,39 @@
         @media (min-width: 640px) {
             .values-banner { gap: 2.5rem; letter-spacing: 0.4em; font-size: 0.85rem; }
         }
+
+        :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+            outline: 3px solid #ffffff !important;
+            outline-offset: 2px !important;
+            box-shadow: 0 0 0 5px var(--navy) !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .data-visual-bg {
+                animation: none !important;
+            }
+
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .service-card:hover,
+            .service-card:hover i,
+            .tool-box:hover,
+            .btn-gold:hover {
+                transform: none !important;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -269,11 +305,11 @@
     <section class="py-16 md:py-24 px-6 text-center relative z-10">
         <div class="max-w-[88rem] mx-auto reveal">
             <div class="mb-12">
-                <i class="fa-solid fa-graduation-cap text-7xl md:text-8xl" style="color: var(--gold); filter: drop-shadow(0 10px 20px var(--gold-glow));"></i>
+                <i class="fa-solid fa-graduation-cap text-7xl md:text-8xl" style="color: var(--gold-accessible); filter: drop-shadow(0 10px 20px var(--gold-glow));"></i>
             </div>
             <!-- Título Responsivo: text-3xl para 320px -->
             <h1 class="text-3xl sm:text-6xl md:text-8xl font-black mb-10 tracking-tighter leading-tight">
-                Asesoría para <br><span style="color: var(--gold);">Tesis e Investigación</span>
+                Asesoría para <br><span style="color: var(--gold-accessible);">Tesis e Investigación</span>
             </h1>
             <div class="max-w-4xl mx-auto">
                 <p class="text-xl md:text-3xl editorial-emphasis text-slate-600 leading-relaxed">

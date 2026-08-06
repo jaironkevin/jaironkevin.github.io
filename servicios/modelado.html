@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Servicio profesional de análisis y modelado estadístico para investigación, tesis y toma de decisiones basada en datos.">
 
-<title>modelado – Jairon K. Ojeda S.</title>
+<title>Análisis y modelado estadístico | Jairon Ojeda – Jairon K. Ojeda S.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -98,8 +99,19 @@ gtag('config', 'G-Z90QTB6BQZ', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="– Jairon K. Ojeda S.">
+<meta property="og:title" content="Análisis y modelado estadístico | Jairon Ojeda">
+<meta property="og:description" content="Servicio profesional de análisis y modelado estadístico para investigación, tesis y toma de decisiones basada en datos.">
+<meta property="og:image" content="https://jaironojeda.com/servicios/img/logo_unico.png">
 <meta property="og:site_name" content="Jairon K. Ojeda S.">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:width" content="1024">
+<meta name="twitter:title" content="Análisis y modelado estadístico | Jairon Ojeda">
+<meta name="twitter:description" content="Servicio profesional de análisis y modelado estadístico para investigación, tesis y toma de decisiones basada en datos.">
+<meta name="twitter:image" content="https://jaironojeda.com/servicios/img/logo_unico.png">
+<meta name="twitter:image-height" content="1024">
+<meta name="twitter:image-width" content="1024">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://jaironojeda.com/servicios/modelado.html">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -124,7 +136,7 @@ gtag('config', 'G-Z90QTB6BQZ', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> <i class="bi bi-house-door-fill" role="img">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house-door-fill" role="img" aria-label="Inicio">
 </i> 
 <span class="menu-text"> </span></a>
   </li>  
@@ -167,11 +179,6 @@ gtag('config', 'G-Z90QTB6BQZ', { 'anonymize_ip': true});
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../autenticidad/index.html"> <i class="bi bi-shield-check" role="img">
-</i> 
-<span class="menu-text"> </span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -195,13 +202,20 @@ gtag('config', 'G-Z90QTB6BQZ', { 'anonymize_ip': true});
 
 <div class="modelado-estadistico-page">
 
-<iframe id="modelado-estadistico-frame" src="modelado_estadistico.html" style="width:100%; border:none; overflow:hidden; display:block;"></iframe>
+<iframe id="modelado-estadistico-frame" src="modelado_estadistico.html" title="Servicio de análisis y modelado estadístico" style="width:100%; border:none; overflow:hidden; display:block;"></iframe>
 
 <script>
   window.addEventListener("message", function(event) {
-    if (event.data && event.data.type === "iframe-height") {
-      const iframe = document.getElementById("modelado-estadistico-frame");
-      if (iframe) iframe.style.height = event.data.height + "px";
+    const iframe = document.getElementById("modelado-estadistico-frame");
+    if (iframe &&
+        event.source === iframe.contentWindow &&
+        event.origin === window.location.origin &&
+        event.data &&
+        event.data.type === "iframe-height") {
+      const height = Number(event.data.height);
+      if (Number.isFinite(height) && height > 0 && height < 20000) {
+        iframe.style.height = Math.ceil(height) + "px";
+      }
     }
   });
 </script>

@@ -94,7 +94,7 @@ blockquote:before {
 }
 
 .table {
-  --bs-table-bg: @faf8f8 !important;
+  --bs-table-bg: #faf8f8 !important;
 }
 
 td, th {
@@ -482,6 +482,11 @@ a:hover {
   opacity: 1 !important;
 }
 
+/* En los artículos, la categoría contiene un enlace con color propio. */
+.quarto-title .quarto-categories .quarto-category:hover > a {
+  color: #ffffff !important;
+}
+
 /* 6) Tarjetas / listados: hover con sombra dorada sutil */
 .quarto-listing-default .listing-item:hover,
 .card:hover {
@@ -806,69 +811,6 @@ body:has(.quarto-about-trestles) div.quarto-about-trestles {
 
 
 /* ============================================================================
-   NAVBAR FINAL SIMPLE
-   Normal: blanco
-   Hover: dorado + subrayado
-   Activo: dorado + subrayado, sin sombreado
-   ============================================================================ */
-
-/* Estado normal */
-.navbar .navbar-nav .nav-link,
-.navbar .navbar-brand {
-  color: #ffffff !important;
-  background-color: transparent !important;
-  border-bottom: none !important;
-  text-decoration: none !important;
-  font-weight: 500;
-  border-radius: 0 !important;
-  padding: 0.4rem 0.7rem;
-}
-
-/* Hover */
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-brand:hover {
-  color: #d4a017 !important;
-  background-color: transparent !important;
-  text-decoration: underline !important;
-  text-underline-offset: 4px;
-  border-bottom: none !important;
-  border-radius: 0 !important;
-}
-
-/* Página activa: mismo efecto que hover, pero fijo */
-.navbar .navbar-nav .nav-link.active,
-.navbar .navbar-nav .nav-link[aria-current="page"],
-.navbar .navbar-nav .nav-item.active > .nav-link,
-.navbar .navbar-nav .nav-link.current,
-.navbar .navbar-nav .nav-link.selected {
-  color: #d4a017 !important;
-  background-color: transparent !important;
-  text-decoration: underline !important;
-  text-underline-offset: 4px;
-  border-bottom: none !important;
-  border-radius: 0 !important;
-  font-weight: 700 !important;
-}
-
-/* Si la pestaña activa recibe hover, mantiene el mismo estilo */
-.navbar .navbar-nav .nav-link.active:hover,
-.navbar .navbar-nav .nav-link[aria-current="page"]:hover,
-.navbar .navbar-nav .nav-item.active > .nav-link:hover,
-.navbar .navbar-nav .nav-link.current:hover,
-.navbar .navbar-nav .nav-link.selected:hover {
-  color: #d4a017 !important;
-  background-color: transparent !important;
-  text-decoration: underline !important;
-  text-underline-offset: 4px;
-  border-bottom: none !important;
-  border-radius: 0 !important;
-  font-weight: 700 !important;
-}
-
-
-
-
-/* ============================================================================
    NAVBAR FINAL — HOVER Y PESTAÑA ACTIVA SIN SOMBREADO
    ============================================================================ */
 
@@ -926,4 +868,86 @@ body:has(.quarto-about-trestles) div.quarto-about-trestles {
   border-bottom: none !important;
   border-radius: 0 !important;
   font-weight: 700 !important;
+}
+
+
+/* ============================================================================
+   ACCESIBILIDAD — CONTRASTE, FOCO Y MOVIMIENTO REDUCIDO
+   Mantiene el dorado original sobre fondos oscuros y usa una variante
+   accesible únicamente cuando hay texto blanco/dorado sobre fondos claros.
+   ============================================================================ */
+
+:root {
+  --gold-accessible: #8a650c;
+}
+
+/* El dorado original no alcanza contraste suficiente sobre fondos claros. */
+body a:hover {
+  color: var(--gold-accessible) !important;
+  border-bottom-color: var(--gold-accessible) !important;
+}
+
+.quarto-category:hover,
+.listing-category:hover,
+.badge:hover,
+.label:hover,
+div.quarto-about-trestles .about-link:hover {
+  background-color: var(--gold-accessible) !important;
+  border-color: var(--gold-accessible) !important;
+  color: #ffffff !important;
+}
+
+/* El navbar, dropdown y footer conservan el dorado luminoso sobre azul marino. */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-brand:hover,
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link[aria-current="page"],
+.navbar .navbar-nav .nav-item.active > .nav-link,
+.navbar .navbar-nav .nav-link.current,
+.navbar .navbar-nav .nav-link.selected,
+.navbar .dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus,
+.navbar .dropdown-menu .dropdown-item.active,
+.navbar .dropdown-menu .dropdown-item[aria-current="page"],
+.nav-footer a:hover {
+  color: #d4a017 !important;
+}
+
+/* Indicador de teclado de dos colores: visible en fondos claros y oscuros. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #ffffff !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 5px #1a2a3a !important;
+}
+
+/* Garantiza el mínimo táctil sin agrandar controles que ya son mayores. */
+.navbar .nav-link,
+.navbar-toggler,
+.nav-footer .nav-link,
+div.quarto-about-trestles .about-link {
+  min-width: 24px;
+  min-height: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  body:has(.quarto-about-trestles) div.quarto-about-trestles {
+    animation: none !important;
+  }
+
+  div.quarto-about-trestles .about-entity img:hover {
+    transform: none !important;
+  }
 }
